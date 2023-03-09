@@ -42,9 +42,21 @@ class _UserHomePageState extends State<UserHomePage> {
                 child: CircleAvatar(
                   radius: 70,
                   backgroundImage: AssetImage(
-                    'assets/images/p1.jpg',
+                    'assets/images/anurag.jpg',
                   ),
                 ),
+              ),
+
+              Text(
+                "IMPACT ME",
+                style: GoogleFonts.raleway(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 7),
+              ),
+
+              const SizedBox(
+                height: 50,
               ),
 
               // HOME Tile
@@ -167,6 +179,7 @@ class _UserHomePageState extends State<UserHomePage> {
         ),
       ),
       child: Scaffold(
+          backgroundColor: Colors.white,
           appBar: AppBar(
             backgroundColor: const Color(0xff243b55),
             title: Row(
@@ -227,14 +240,14 @@ class _UserHomePageState extends State<UserHomePage> {
             ),
           ),
           body: pageIndex == 0
-              ? Home()
+              ? const Home()
               : pageIndex == 1
-                  ? Feeds()
+                  ? const Feeds()
                   : pageIndex == 2
-                      ? Profile()
+                      ? const Profile()
                       : pageIndex == 3
-                          ? Settings()
-                          : AboutUs()),
+                          ? const Settings()
+                          : const AboutUs()),
     );
   }
 
@@ -257,7 +270,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Center(
       child: Text(
-        "FEEDS",
+        "HOME",
         style: GoogleFonts.raleway(),
       ),
     );

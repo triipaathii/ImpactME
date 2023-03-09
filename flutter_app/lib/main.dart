@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_app/screens/homepage.dart';
 import 'firebase_options.dart';
-import 'screens/enter_user_number.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

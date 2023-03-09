@@ -6,6 +6,6 @@ showToastNotification(String empty, String msg) {
       msg: msg,
       toastLength: Toast.LENGTH_LONG,
       textColor: Colors.white,
-      backgroundColor: Color(0xff243b55),
+      backgroundColor: const Color(0xff243b55),
       fontSize: 16.0);
 }
