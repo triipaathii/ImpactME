@@ -6,6 +6,8 @@ import 'package:flutter_app/screens/profile.dart';
 import 'package:flutter_app/screens/settings.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'home.dart';
+
 class UserHomePage extends StatefulWidget {
   const UserHomePage({super.key});
 
@@ -258,21 +260,4 @@ class _UserHomePageState extends State<UserHomePage> {
   }
 }
 
-class Home extends StatefulWidget {
-  const Home({super.key});
 
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        "HOME",
-        style: GoogleFonts.raleway(),
-      ),
-    );
-  }
-}
