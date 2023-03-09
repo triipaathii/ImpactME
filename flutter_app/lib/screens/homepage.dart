@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
+import 'package:flutter_app/screens/about_us.dart';
+import 'package:flutter_app/screens/feeds.dart';
+import 'package:flutter_app/screens/profile.dart';
+import 'package:flutter_app/screens/settings.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class UserHomePage extends StatefulWidget {
@@ -16,7 +20,7 @@ class _UserHomePageState extends State<UserHomePage> {
   @override
   Widget build(BuildContext context) {
     return AdvancedDrawer(
-      backdropColor: Color.fromARGB(255, 43, 70, 100),
+      backdropColor: const Color.fromARGB(255, 43, 70, 100),
       controller: _advancedDrawerController,
       animationCurve: Curves.easeInOut,
       animationDuration: const Duration(milliseconds: 300),
@@ -42,64 +46,119 @@ class _UserHomePageState extends State<UserHomePage> {
                   ),
                 ),
               ),
+
+              // HOME Tile
               ListTile(
                 onTap: () {
                   setState(() {
                     pageIndex = 0;
                   });
                 },
-                leading: const Icon(Icons.home),
+                tileColor: pageIndex == 0 ? Colors.white : Colors.transparent,
+                leading: Icon(
+                  Icons.home,
+                  color: pageIndex == 0
+                      ? const Color.fromARGB(255, 43, 70, 100)
+                      : Colors.white,
+                ),
                 title: Text(
                   'Home',
-                  style: GoogleFonts.raleway(),
+                  style: GoogleFonts.raleway(
+                      color: pageIndex == 0
+                          ? const Color.fromARGB(255, 43, 70, 100)
+                          : Colors.white),
                 ),
               ),
+
+              // FEEDS Tile
               ListTile(
                 onTap: () {
                   setState(() {
                     pageIndex = 1;
                   });
                 },
-                leading: const Icon(Icons.ads_click_rounded),
+                tileColor: pageIndex == 1 ? Colors.white : Colors.transparent,
+                leading: Icon(
+                  Icons.ads_click_rounded,
+                  color: pageIndex == 1
+                      ? const Color.fromARGB(255, 43, 70, 100)
+                      : Colors.white,
+                ),
                 title: Text(
                   'Feeds',
-                  style: GoogleFonts.raleway(),
+                  style: GoogleFonts.raleway(
+                      color: pageIndex == 1
+                          ? const Color.fromARGB(255, 43, 70, 100)
+                          : Colors.white),
                 ),
               ),
+
+              // PROFILE Tile
               ListTile(
                 onTap: () {
                   setState(() {
                     pageIndex = 2;
                   });
                 },
-                leading: const Icon(Icons.account_circle_rounded),
+                tileColor: pageIndex == 2 ? Colors.white : Colors.transparent,
+                leading: Icon(
+                  Icons.account_circle_rounded,
+                  color: pageIndex == 2
+                      ? const Color.fromARGB(255, 43, 70, 100)
+                      : Colors.white,
+                ),
                 title: Text(
                   'Profile',
-                  style: GoogleFonts.raleway(),
+                  style: GoogleFonts.raleway(
+                      color: pageIndex == 2
+                          ? const Color.fromARGB(255, 43, 70, 100)
+                          : Colors.white),
                 ),
               ),
+
+              // SETTINGS Tile
               ListTile(
                 onTap: () {
                   setState(() {
                     pageIndex = 3;
                   });
                 },
-                leading: const Icon(Icons.settings),
+                tileColor: pageIndex == 3 ? Colors.white : Colors.transparent,
+                leading: Icon(
+                  Icons.settings,
+                  color: pageIndex == 3
+                      ? const Color.fromARGB(255, 43, 70, 100)
+                      : Colors.white,
+                ),
                 title: Text(
                   'Settings',
-                  style: GoogleFonts.raleway(),
+                  style: GoogleFonts.raleway(
+                      color: pageIndex == 3
+                          ? const Color.fromARGB(255, 43, 70, 100)
+                          : Colors.white),
                 ),
               ),
+
+              // ABOUT US Tile
               ListTile(
                 onTap: () {
                   setState(() {
                     pageIndex = 4;
                   });
                 },
-                leading: const Icon(Icons.info_rounded),
+                tileColor: pageIndex == 4 ? Colors.white : Colors.transparent,
+                leading: Icon(
+                  Icons.info_rounded,
+                  color: pageIndex == 4
+                      ? const Color.fromARGB(255, 43, 70, 100)
+                      : Colors.white,
+                ),
                 title: Text(
                   'About Us',
-                  style: GoogleFonts.raleway(),
+                  style: GoogleFonts.raleway(
+                      color: pageIndex == 4
+                          ? const Color.fromARGB(255, 43, 70, 100)
+                          : Colors.white),
                 ),
               ),
               const Spacer(),
@@ -108,67 +167,74 @@ class _UserHomePageState extends State<UserHomePage> {
         ),
       ),
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color(0xff243b55),
-          title: Row(
-            children: pageIndex == 0
-                ? <Widget>[
-                    const Icon(Icons.home),
-                    Text(
-                      '  HOME',
-                      style: GoogleFonts.raleway(),
+          appBar: AppBar(
+            backgroundColor: const Color(0xff243b55),
+            title: Row(
+              children: pageIndex == 0
+                  ? <Widget>[
+                      const Icon(Icons.home),
+                      Text(
+                        '  HOME',
+                        style: GoogleFonts.raleway(),
+                      ),
+                    ]
+                  : pageIndex == 1
+                      ? <Widget>[
+                          const Icon(Icons.ads_click_rounded),
+                          Text(
+                            '  FEEDS',
+                            style: GoogleFonts.raleway(),
+                          ),
+                        ]
+                      : pageIndex == 2
+                          ? <Widget>[
+                              const Icon(Icons.account_circle_rounded),
+                              Text(
+                                '  PROFILE',
+                                style: GoogleFonts.raleway(),
+                              ),
+                            ]
+                          : pageIndex == 3
+                              ? <Widget>[
+                                  const Icon(Icons.settings),
+                                  Text(
+                                    '  SETTINGS',
+                                    style: GoogleFonts.raleway(),
+                                  ),
+                                ]
+                              : <Widget>[
+                                  const Icon(Icons.info_rounded),
+                                  Text(
+                                    '  ABOUT US',
+                                    style: GoogleFonts.raleway(),
+                                  ),
+                                ],
+            ),
+            leading: IconButton(
+              onPressed: _handleMenuButtonPressed,
+              icon: ValueListenableBuilder<AdvancedDrawerValue>(
+                valueListenable: _advancedDrawerController,
+                builder: (_, value, __) {
+                  return AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 250),
+                    child: Icon(
+                      value.visible ? Icons.clear : Icons.menu,
+                      key: ValueKey<bool>(value.visible),
                     ),
-                  ]
-                : pageIndex == 1
-                    ? <Widget>[
-                        const Icon(Icons.ads_click_rounded),
-                        Text(
-                          '  FEEDS',
-                          style: GoogleFonts.raleway(),
-                        ),
-                      ]
-                    : pageIndex == 2
-                        ? <Widget>[
-                            const Icon(Icons.account_circle_rounded),
-                            Text(
-                              '  PROFILE',
-                              style: GoogleFonts.raleway(),
-                            ),
-                          ]
-                        : pageIndex == 3
-                            ? <Widget>[
-                                const Icon(Icons.settings),
-                                Text(
-                                  '  SETTINGS',
-                                  style: GoogleFonts.raleway(),
-                                ),
-                              ]
-                            : <Widget>[
-                                const Icon(Icons.info_rounded),
-                                Text(
-                                  '  ABOUT US',
-                                  style: GoogleFonts.raleway(),
-                                ),
-                              ],
-          ),
-          leading: IconButton(
-            onPressed: _handleMenuButtonPressed,
-            icon: ValueListenableBuilder<AdvancedDrawerValue>(
-              valueListenable: _advancedDrawerController,
-              builder: (_, value, __) {
-                return AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 250),
-                  child: Icon(
-                    value.visible ? Icons.clear : Icons.menu,
-                    key: ValueKey<bool>(value.visible),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             ),
           ),
-        ),
-        body: Container(),
-      ),
+          body: pageIndex == 0
+              ? Home()
+              : pageIndex == 1
+                  ? Feeds()
+                  : pageIndex == 2
+                      ? Profile()
+                      : pageIndex == 3
+                          ? Settings()
+                          : AboutUs()),
     );
   }
 
@@ -176,5 +242,24 @@ class _UserHomePageState extends State<UserHomePage> {
     // NOTICE: Manage Advanced Drawer state through the Controller.
     // _advancedDrawerController.value = AdvancedDrawerValue.visible();
     _advancedDrawerController.showDrawer();
+  }
+}
+
+class Home extends StatefulWidget {
+  const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        "FEEDS",
+        style: GoogleFonts.raleway(),
+      ),
+    );
   }
 }
