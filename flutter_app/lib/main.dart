@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_app/screens/homepage.dart';
 import 'firebase_options.dart';
 import 'screens/enter_user_number.dart';
 
@@ -18,11 +19,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'ImpactME',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const EnterUserNumber(),
+      home: const UserHomePage(),
     );
   }
 }

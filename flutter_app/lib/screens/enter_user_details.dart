@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_app/screens/homepage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
@@ -181,7 +182,12 @@ class _EnterUserBasicDetailsState extends State<EnterUserBasicDetails> {
                   height: 30,
                 ),
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const UserHomePage()));
+                    },
                     style: ElevatedButton.styleFrom(
                         elevation: 0, backgroundColor: const Color(0xff0ccda3)),
                     child: Text(
