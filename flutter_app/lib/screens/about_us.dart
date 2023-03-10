@@ -222,8 +222,9 @@ class AboutUs extends StatelessWidget {
             "ANURAG TRIPATHI",
             style: GoogleFonts.raleway(fontSize: 18),
           ),
+          const SizedBox(height: 20),
           const Padding(
-            padding: EdgeInsets.symmetric(vertical: 40),
+            padding: EdgeInsets.symmetric(vertical: 20),
             child: CircleAvatar(
               radius: 70,
               backgroundImage: AssetImage(
@@ -266,8 +267,9 @@ class AboutUs extends StatelessWidget {
             "ADITHYA SRIVASTAVA",
             style: GoogleFonts.raleway(fontSize: 18),
           ),
+          const SizedBox(height: 20),
           const Padding(
-            padding: EdgeInsets.symmetric(vertical: 40),
+            padding: EdgeInsets.symmetric(vertical: 20),
             child: CircleAvatar(
               radius: 70,
               backgroundImage: AssetImage(
@@ -310,8 +312,9 @@ class AboutUs extends StatelessWidget {
             "ANUSHA SHARMA",
             style: GoogleFonts.raleway(fontSize: 18),
           ),
+          const SizedBox(height: 20),
           const Padding(
-            padding: EdgeInsets.symmetric(vertical: 40),
+            padding: EdgeInsets.symmetric(vertical: 20),
             child: CircleAvatar(
               radius: 70,
               backgroundImage: AssetImage(

@@ -72,10 +72,11 @@ class _EnterUserNumberState extends State<EnterUserNumber> {
 
     return Container(
       decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              colors: <Color>[Color(0xff0ccda3), Color(0xff243b55)],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter)),
+          // gradient: LinearGradient(
+          //     colors: <Color>[Color(0xff0ccda3), Color(0xff243b55)],
+          //     begin: Alignment.topCenter,
+          //     end: Alignment.bottomCenter)
+          color: Color(0xff243b55)),
       child: SafeArea(
         child: Scaffold(
           resizeToAvoidBottomInset: false,
@@ -87,6 +88,11 @@ class _EnterUserNumberState extends State<EnterUserNumber> {
               const SizedBox(
                 width: double.infinity,
               ),
+              Image.asset(
+                "assets/images/logo.png",
+                color: Colors.white,
+                height: 100,
+              ),
               Text(
                 "IMPACT ME",
                 style: GoogleFonts.raleway(
@@ -97,8 +103,8 @@ class _EnterUserNumberState extends State<EnterUserNumber> {
               ),
               const SizedBox(height: 50),
               Text(
-                "Enter your Mobile Number",
-                style: GoogleFonts.raleway(color: Colors.white, fontSize: 22),
+                "ENTER YOUR MOBILE NUMBER",
+                style: GoogleFonts.raleway(color: Colors.white, fontSize: 19),
               ),
               const SizedBox(height: 10),
               Padding(
@@ -174,7 +180,7 @@ class _EnterUserNumberState extends State<EnterUserNumber> {
                             fontWeight: FontWeight.w700),
                         decoration: BoxDecoration(
                           border: Border.all(
-                              color: const Color(0xff243b55), width: 3),
+                              color: const Color(0xff0ccda3), width: 3),
                           borderRadius: BorderRadius.circular(20),
                         ),
                       ),

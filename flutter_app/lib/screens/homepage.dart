@@ -39,14 +39,32 @@ class _UserHomePageState extends State<UserHomePage> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 50),
-                child: CircleAvatar(
-                  radius: 70,
-                  backgroundImage: AssetImage(
-                    'assets/images/anurag.jpg',
+              const SizedBox(
+                height: 50,
+              ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(vertical: 20),
+              //   child: Image.asset(
+              //     "assets/images/logo.png",
+              //     color: Colors.white,
+              //     height: 100,
+              //   ),
+              // ),
+
+              CircleAvatar(
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Image.asset(
+                    "assets/images/logo.png",
+                    color: const Color.fromARGB(255, 43, 70, 100),
                   ),
                 ),
+                backgroundColor: Colors.white,
+                radius: 70,
+              ),
+
+              const SizedBox(
+                height: 25,
               ),
 
               Text(
@@ -58,7 +76,7 @@ class _UserHomePageState extends State<UserHomePage> {
               ),
 
               const SizedBox(
-                height: 50,
+                height: 25,
               ),
 
               // HOME Tile
@@ -259,5 +277,3 @@ class _UserHomePageState extends State<UserHomePage> {
     _advancedDrawerController.showDrawer();
   }
 }
-
-
