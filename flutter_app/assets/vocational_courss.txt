@@ -13,3 +13,14 @@ kite production
 shoe designing
 
 home page m humlog har available course ko mention krenge with photos
+
+Volunteer Registration
+-> State
+-> City
+-> Skills he know
+-> Skills he is interested in
+-> Highest Degree
+-> Qualification
+-> Email Address
+-> PinCode
+-> Languages you are comfortable in

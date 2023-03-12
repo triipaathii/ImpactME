@@ -65,7 +65,10 @@ class AboutUs extends StatelessWidget {
                   letterSpacing: 2),
             ),
           ),
-          Image.asset("assets/images/community_growth.jpg"),
+          Image.asset(
+            "assets/images/community_growth.jpg",
+            
+          ),
           Padding(
             padding: const EdgeInsets.all(14.0),
             child: RichText(

@@ -1,3 +1,5 @@
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/course_page.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -39,7 +41,146 @@ class _HomeState extends State<Home> {
                   height: height * 0.03,
                 ),
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showModalBottomSheet<void>(
+                          useSafeArea: true,
+                          backgroundColor: Color(0xff243b55),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(20),
+                                  topRight: Radius.circular(20))),
+                          context: context,
+                          builder: (BuildContext context) {
+                            int currentPageIndex = 0;
+                            return StatefulBuilder(
+                              builder: (context, setState) => Column(
+                                children: [
+                                  CarouselSlider(
+                                      items: [
+                                        Column(
+                                          children: [
+                                            SizedBox(
+                                              height: height * 0.05,
+                                            ),
+                                            Text(
+                                              "AGE DOES NOT MATTER",
+                                              style: GoogleFonts.raleway(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 18,
+                                                  letterSpacing: 5),
+                                            ),
+                                            SizedBox(
+                                              height: height * 0.05,
+                                            ),
+                                            Image.asset(
+                                              "assets/images/age_volunteer.png",
+                                              height: height * 0.25,
+                                            )
+                                          ],
+                                        ),
+                                        Column(
+                                          children: [
+                                            SizedBox(
+                                              height: height * 0.05,
+                                            ),
+                                            Text(
+                                              "GET CERTIFIED",
+                                              style: GoogleFonts.raleway(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 18,
+                                                  letterSpacing: 5),
+                                            ),
+                                            SizedBox(
+                                              height: height * 0.05,
+                                            ),
+                                            Image.asset(
+                                              "assets/images/certified_volunteer.png",
+                                              height: height * 0.25,
+                                            )
+                                          ],
+                                        ),
+                                        Column(
+                                          children: [
+                                            SizedBox(
+                                              height: height * 0.05,
+                                            ),
+                                            Text(
+                                              "UPGRADE THE SOCIETY",
+                                              style: GoogleFonts.raleway(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 18,
+                                                  letterSpacing: 5),
+                                            ),
+                                            SizedBox(
+                                              height: height * 0.05,
+                                            ),
+                                            Image.asset(
+                                              "assets/images/upgrade_volunteer.png",
+                                              height: height * 0.25,
+                                            )
+                                          ],
+                                        ),
+                                        Column(
+                                          children: [
+                                            SizedBox(
+                                              height: height * 0.05,
+                                            ),
+                                            Image.asset(
+                                              "assets/images/happy_community.png",
+                                              height: height * 0.25,
+                                            ),
+                                            SizedBox(
+                                              height: height * 0.05,
+                                            ),
+                                            ElevatedButton(
+                                                onPressed: () {},
+                                                style: ElevatedButton.styleFrom(
+                                                    backgroundColor:
+                                                        Colors.white),
+                                                child: Text(
+                                                  "APPLY NOW",
+                                                  style: GoogleFonts.raleway(
+                                                      color: const Color(
+                                                          0xff243b55)),
+                                                ))
+                                          ],
+                                        ),
+                                      ],
+                                      options: CarouselOptions(
+                                          height: height * 0.5,
+                                          autoPlayCurve: Curves.decelerate,
+                                          viewportFraction: 1,
+                                          enlargeCenterPage: true,
+                                          animateToClosest: false,
+                                          enableInfiniteScroll: false,
+                                          disableCenter: false,
+                                          enlargeStrategy:
+                                              CenterPageEnlargeStrategy.scale,
+                                          onPageChanged: (index, _) {
+                                            print(index);
+                                            setState(() {
+                                              currentPageIndex = index;
+                                            });
+                                          })),
+                                  DotsIndicator(
+                                    dotsCount: 4,
+                                    position: double.parse(
+                                        currentPageIndex.toString()),
+                                    decorator: DotsDecorator(
+                                        color: Colors.grey.shade600,
+                                        activeColor: Colors.white,
+                                        spacing: EdgeInsets.all(3),
+                                        activeSize: Size.square(height * 0.01),
+                                        size: Size.square(height * 0.008)),
+                                  )
+                                ],
+                              ),
+                            );
+                          });
+                    },
                     style:
                         ElevatedButton.styleFrom(backgroundColor: Colors.white),
                     child: Text(
@@ -146,7 +287,35 @@ class _HomeState extends State<Home> {
             ),
           SizedBox(
             height: height * 0.02,
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 3,
+                  width: width * 0.175,
+                  color: const Color(0xff243b55),
+                ),
+                const Text(
+                  "   X   ",
+                  style: TextStyle(
+                    color: Color(0xff243b55),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Container(
+                  height: 3,
+                  width: width * 0.175,
+                  color: const Color(0xff243b55),
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: height * 0.02,
+          ),
         ],
       ),
     );
