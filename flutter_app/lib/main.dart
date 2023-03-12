@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_app/screens/enter_user_number.dart';
+import 'package:flutter_app/screens/homepage.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -19,10 +19,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'ImpactME',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const EnterUserNumber(),
+      home: const UserHomePage(),
     );
   }
 }
