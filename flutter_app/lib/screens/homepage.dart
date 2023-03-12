@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:flutter_app/screens/about_us.dart';
 import 'package:flutter_app/screens/feeds.dart';
@@ -21,6 +22,12 @@ class _UserHomePageState extends State<UserHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+        statusBarColor: Color(0xff243b55),
+        statusBarIconBrightness: Brightness.light,
+        systemNavigationBarColor: Color(0xff243b55),
+        systemNavigationBarIconBrightness: Brightness.light));
+
     return AdvancedDrawer(
       backdropColor: const Color.fromARGB(255, 43, 70, 100),
       controller: _advancedDrawerController,

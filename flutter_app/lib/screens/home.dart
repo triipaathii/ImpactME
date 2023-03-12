@@ -87,51 +87,65 @@ class _HomeState extends State<Home> {
             ),
           ),
           SizedBox(
+            height: height * 0.01,
+          ),
+          Text(
+            "Tap on any to know more",
+            style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
+          ),
+          SizedBox(
             height: height * 0.0275,
           ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          CourseDescriptionPage(course: courses[0])));
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.redAccent.shade400,
-              ),
-              padding: EdgeInsets.all(10),
-              height: height * 0.2,
-              width: width * 0.7,
-              child: Stack(
-                children: [
-                  Positioned(
-                    left: 0,
-                    bottom: 0,
-                    child: Hero(
-                      tag: "${courses[0]['course_id']}",
-                      child: Image.asset(
-                        "${courses[0]['image_path']}",
-                        height: height * 0.15,
-                      ),
-                    ),
+          for (var course in courses)
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: height * 0.01),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              CourseDescriptionPage(course: course)));
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: course['color'],
                   ),
-                  Positioned(
-                    right: width * 0.02,
-                    top: width * 0.02,
-                    child: Text(
-                      "${courses[0]['course_name']}".toUpperCase(),
-                      style: GoogleFonts.raleway(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
+                  padding: EdgeInsets.all(10),
+                  height: height * 0.2,
+                  width: width * 0.7,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        left: 0,
+                        bottom: 0,
+                        child: Hero(
+                          tag: "${course['course_id']}",
+                          child: Image.asset(
+                            "${course['image_path']}",
+                            height: height * 0.15,
+                          ),
+                        ),
                       ),
-                    ),
-                  )
-                ],
+                      Positioned(
+                        right: width * 0.02,
+                        top: width * 0.02,
+                        child: Text(
+                          "${course['course_name']}".toUpperCase(),
+                          style: GoogleFonts.raleway(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               ),
             ),
+          SizedBox(
+            height: height * 0.02,
           )
         ],
       ),
