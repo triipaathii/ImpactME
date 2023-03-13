@@ -195,7 +195,7 @@ class AboutUs extends StatelessWidget {
             child: CircleAvatar(
               radius: 70,
               backgroundImage: AssetImage(
-                'assets/images/anurag.jpg',
+                'https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FProfile%20Pictures%2FAnurag.jpg?alt=media&token=79074c83-d864-4d20-bf84-d029e0917c05',
               ),
             ),
           ),
@@ -240,7 +240,7 @@ class AboutUs extends StatelessWidget {
             child: CircleAvatar(
               radius: 70,
               backgroundImage: AssetImage(
-                'assets/images/cops.jpeg',
+                'https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FProfile%20Pictures%2FAdithya.png?alt=media&token=9c794b7b-fd16-48ac-91e9-d885fc70e36e',
               ),
             ),
           ),
@@ -285,7 +285,7 @@ class AboutUs extends StatelessWidget {
             child: CircleAvatar(
               radius: 70,
               backgroundImage: AssetImage(
-                'assets/images/anusha.jpeg',
+                'https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FProfile%20Pictures%2FAnusha.jpeg?alt=media&token=37c8608a-ba8a-4068-841f-3517f3dc98bc',
               ),
             ),
           ),
@@ -330,7 +330,7 @@ class AboutUs extends StatelessWidget {
             child: CircleAvatar(
               radius: 70,
               backgroundImage: AssetImage(
-                'assets/images/tanisha.jpeg',
+                'https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FProfile%20Pictures%2FTanisha.png?alt=media&token=60a3f3e4-36cf-419f-9492-72b526b790e4',
               ),
             ),
           ),

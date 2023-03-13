@@ -65,6 +65,7 @@ final courses = <Map<String, dynamic>>[
   {
     'course_id': 1003,
     'course_name': "Sewing",
+<<<<<<< HEAD
     'description':
         "    This sewing cource is suitable for beginners who have little or no experience in sewing. "
             "This cource will cover the basics of using a  sewing machine, reading patterns, cutting and measuring fabrics and sewing techniques."
@@ -76,20 +77,42 @@ final courses = <Map<String, dynamic>>[
       "Reading and understanding patterns",
       "Making simple garments and accessories",
       "Finishing techniques such as pressing and ironing",
+=======
+    'description': "This sewing course is suitable for beginners who have little or no"
+        "experience in sewing. The course will cover the basics of using a sewing machine,"
+        "reading patterns, cutting and measuring fabrics, and sewing techniques. By the end of"
+        "the course, students will have the skills to create their own garments and accessories.",
+    'course_content': [
+      "Introduction to sewing machines and equipment",
+      "Understanding fabric types and their properties",
+      "Measuring and cutting fabrics",
+      "Sewing techniques including hemming, seaming, and inserting zippers",
+      "Reading and understanding patterns",
+      "Making simple garments and accessories",
+      "Finishing techniques such as pressing and ironing"
+>>>>>>> 3ec4ffcf87cea87f4cd09f94f28d911121e40493
     ],
     'perks': [
       "Learn a valuable skill that can be used for personal or professional purposes",
       "The ability to create your own clothing and accessories",
       "A fun and creative way to express your personal style",
+<<<<<<< HEAD
       "“The potential to save money by creating your own garments and home decor items",
       "Opportunities to connect with a community of sewing enthusiasts through online groups or in-person classes",
       "Gain a sense of accomplishment and pride in creating something from scratch",
+=======
+      "The potential to save money by creating your own garments and home decor items",
+      "Opportunities to connect with a community of sewing enthusiasts through online",
+      "groups or in-person classes",
+      "Gain a sense of accomplishment and pride in creating something from scratch."
+>>>>>>> 3ec4ffcf87cea87f4cd09f94f28d911121e40493
     ],
     'image_path': "assets/images/pottery.png",
     'color': Colors.blueGrey.shade600
   },
   {
     'course_id': 1004,
+<<<<<<< HEAD
     'course_name': "Fishing",
     'description':
         "     The fishing course is designed to provide individuals with the necessary knowledge and skills to become proficient anglers."
@@ -355,6 +378,9 @@ opportunities in kite production, design, and manufacturing",
   {
     'course_id': 1013,
     'course_name': "Shoe Designing",
+=======
+    'course_name': "Tailoring",
+>>>>>>> 3ec4ffcf87cea87f4cd09f94f28d911121e40493
     'description':
         "    This course offers a thorough, well-organized, and detailed "
             "approach to the numerous aspects of the of the potter's "
