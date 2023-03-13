@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/course_page.dart';
+import 'package:flutter_app/screens/volunteer_registration.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../models/courses.dart';
@@ -136,7 +137,13 @@ class _HomeState extends State<Home> {
                                               height: height * 0.05,
                                             ),
                                             ElevatedButton(
-                                                onPressed: () {},
+                                                onPressed: () {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              VolunteerRegistration()));
+                                                },
                                                 style: ElevatedButton.styleFrom(
                                                     backgroundColor:
                                                         Colors.white),

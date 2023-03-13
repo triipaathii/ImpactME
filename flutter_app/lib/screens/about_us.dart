@@ -13,13 +13,16 @@ class AboutUs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          const SizedBox(
-            width: double.infinity,
-            height: 30,
+          SizedBox(
+            width: width,
+            height: height * 0.05,
           ),
           Text(
             "OUR VISION",
@@ -36,7 +39,7 @@ class AboutUs extends StatelessWidget {
               children: [
                 Container(
                   height: 3,
-                  width: 60,
+                  width: width * 0.175,
                   color: const Color(0xff243b55),
                 ),
                 const Text(
@@ -48,14 +51,14 @@ class AboutUs extends StatelessWidget {
                 ),
                 Container(
                   height: 3,
-                  width: 60,
+                  width: width * 0.175,
                   color: const Color(0xff243b55),
                 )
               ],
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 30),
+            padding: EdgeInsets.only(top: height * 0.03),
             child: Text(
               "\"ENDING POVERTY'S VICIOUS CYCLE\"",
               style: GoogleFonts.raleway(
@@ -67,10 +70,10 @@ class AboutUs extends StatelessWidget {
           ),
           Image.asset(
             "assets/images/community_growth.jpg",
-            
+            height: height * 0.4,
           ),
           Padding(
-            padding: const EdgeInsets.all(14.0),
+            padding: EdgeInsets.all(width * 0.06),
             child: RichText(
                 textAlign: TextAlign.justify,
                 text: TextSpan(
@@ -91,9 +94,12 @@ class AboutUs extends StatelessWidget {
                               " their socio-economic background.")
                     ])),
           ),
-          Image.asset("assets/images/community_learn.jpg"),
+          Image.asset(
+            "assets/images/community_learn.jpg",
+            height: height * 0.4,
+          ),
           Padding(
-            padding: const EdgeInsets.all(14.0),
+            padding: EdgeInsets.all(width * 0.06),
             child: RichText(
                 textAlign: TextAlign.justify,
                 text: TextSpan(
@@ -117,9 +123,12 @@ class AboutUs extends StatelessWidget {
                               " varying durations throughout the year.")
                     ])),
           ),
-          Image.asset("assets/images/community_earn.jpg"),
+          Image.asset(
+            "assets/images/community_earn.jpg",
+            height: height * 0.4,
+          ),
           Padding(
-            padding: const EdgeInsets.all(14.0),
+            padding: EdgeInsets.all(width * 0.06),
             child: RichText(
                 textAlign: TextAlign.justify,
                 text: TextSpan(

@@ -46,6 +46,8 @@ dependencies:
   flutter_launcher_icons: ^0.12.0
   carousel_slider: ^4.2.1
   dots_indicator: ^2.1.0
+  image_picker: ^0.8.7
+  country_state_city_pro: ^0.0.3
 
 dev_dependencies:
   flutter_test:
