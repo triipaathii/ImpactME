@@ -33,8 +33,32 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
   List<String> userSkills = [];
   List<String> userLanguages = [];
 
-  List<String> totalSkills = [];
+ 
   List<String> totalLanguages = [];
+  final totalLanguages = [
+    "Assamese",
+    "Bangla",
+    "Bodo",
+    "Dogri",
+    "English",
+    "Gujarati",
+    "Hindi",
+    "Kashmiri",
+    "Kannada",
+    "Konkani",
+    "Maithili",
+    "Malayalam",
+    "Manipuri",
+    "Marathi",
+    "Nepali",
+    "Oriya",
+    "Punjabi",
+    "Tamil",
+    "Telugu",
+    "Santali",
+    "Sindhi",
+    "Urdu"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -272,44 +296,167 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
                 "Tap on the skills you know or have interest",
                 style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
               ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: width * 0.1),
-                child: GridView.builder(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemCount: courses.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: height * 0.01,
-                        childAspectRatio: 2.5),
-                    itemBuilder: (context, index) {
-                      bool selected = false;
-                      return InkWell(
-                        onTap: () {
-                          setState(() {
-                            selected = !selected;
-                          });
-                        },
+              // Container(
+              //   padding: EdgeInsets.symmetric(horizontal: width * 0.1),
+              //   child: GridView.builder(
+              //       shrinkWrap: true,
+              //       physics: NeverScrollableScrollPhysics(),
+              //       itemCount: courses.length,
+              //       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              //           crossAxisCount: 2,
+              //           crossAxisSpacing: 10,
+              //           mainAxisSpacing: height * 0.01,
+              //           childAspectRatio: 2.5),
+              //       itemBuilder: (context, index) {
+              //         bool selected = false;
+              //         return InkWell(
+              //           onTap: () {
+              //             setState(() {
+              //               selected = !selected;
+              //             });
+              //           },
+              //           child: Container(
+              //             decoration: BoxDecoration(
+              //                 color:
+              //                     selected ? Color(0xff243b55) : Colors.white,
+              //                 border: Border.all(
+              //                     color: Color(0xff243b55), width: 2),
+              //                 borderRadius: BorderRadius.circular(20)),
+              //             child: Center(
+              //               child: Text(
+              //                 "${courses[index]['course_name']}",
+              //                 style:
+              //                     GoogleFonts.raleway(color: Color(0xff243b55)),
+              //               ),
+              //             ),
+              //           ),
+              //         );
+              //       }),
+              // ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: width * 0.1, vertical: height * 0.03),
+                child: GridView.count(
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  crossAxisCount: 2,
+                  childAspectRatio: 2.5,
+                  padding: EdgeInsets.zero,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: height * 0.01,
+                  children: [
+                    for (int i = 0; i < courses.length; i++) ...[
+                      InkWell(
+                        // onTap: () {
+                        //   setState(() {
+                        //     selected = !selected;
+                        //   });
+                        // },
                         child: Container(
                           decoration: BoxDecoration(
-                              color:
-                                  selected ? Color(0xff243b55) : Colors.white,
+                              color: Colors.white,
                               border: Border.all(
                                   color: Color(0xff243b55), width: 2),
                               borderRadius: BorderRadius.circular(20)),
                           child: Center(
                             child: Text(
-                              "${courses[index]['course_name']}",
+                              "${courses[i]['course_name']}",
                               style:
                                   GoogleFonts.raleway(color: Color(0xff243b55)),
                             ),
                           ),
                         ),
-                      );
-                    }),
+                      )
+                    ]
+                  ],
+                ),
               ),
+              SizedBox(
+                height: height * 0.02,
+              ),
+              Text(
+                "LANGUAGES",
+                style: GoogleFonts.raleway(
+                    color: const Color(0xff243b55),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    letterSpacing: 5),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: 3,
+                      width: width * 0.175,
+                      color: const Color(0xff243b55),
+                    ),
+                    const Text(
+                      "   X   ",
+                      style: TextStyle(
+                        color: Color(0xff243b55),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Container(
+                      height: 3,
+                      width: width * 0.175,
+                      color: const Color(0xff243b55),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: height * 0.01,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: width * 0.1),
+                child: Text(
+                  "Tap on the language in which you can communicate",
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: width * 0.1, vertical: height * 0.03),
+                child: GridView.count(
+                  padding: EdgeInsets.zero,
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  crossAxisCount: 2,
+                  childAspectRatio: 2.5,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: height * 0.01,
+                  children: [
+                    for (int i = 0; i < totalLanguages.length; i++) ...[
+                      InkWell(
+                        // onTap: () {
+                        //   setState(() {
+                        //     selected = !selected;
+                        //   });
+                        // },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(
+                                  color: Color(0xff243b55), width: 2),
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Center(
+                            child: Text(
+                              totalLanguages[i],
+                              style:
+                                  GoogleFonts.raleway(color: Color(0xff243b55)),
+                            ),
+                          ),
+                        ),
 
+                      )
+                    ]
+                  ],
+                ),
+              ),
               SizedBox(
                 height: height * 0.03,
               ),
