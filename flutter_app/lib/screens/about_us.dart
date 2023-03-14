@@ -321,7 +321,7 @@ class AboutUs extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           Text(
-            "ANUSHA SHARMA",
+            "COCONUT SHARMA",
             style: GoogleFonts.raleway(fontSize: 18),
           ),
           const SizedBox(height: 20),

@@ -270,7 +270,7 @@ class _HomeState extends State<Home> {
                         bottom: 0,
                         child: Hero(
                           tag: "${course['course_id']}",
-                          child: Image.asset(
+                          child: Image.network(
                             "${course['image_path']}",
                             height: height * 0.15,
                           ),
