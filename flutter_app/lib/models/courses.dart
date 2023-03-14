@@ -65,7 +65,6 @@ final courses = <Map<String, dynamic>>[
   {
     'course_id': 1003,
     'course_name': "Sewing",
-
     'description': "This sewing course is suitable for beginners who have little or no"
         "experience in sewing. The course will cover the basics of using a sewing machine,"
         "reading patterns, cutting and measuring fabrics, and sewing techniques. By the end of"
@@ -78,7 +77,6 @@ final courses = <Map<String, dynamic>>[
       "Reading and understanding patterns",
       "Making simple garments and accessories",
       "Finishing techniques such as pressing and ironing"
-
     ],
     'perks': [
       "Learn a valuable skill that can be used for personal or professional purposes",
@@ -120,33 +118,33 @@ final courses = <Map<String, dynamic>>[
     'color': Colors.tealAccent.shade400
   },
   {
-  'course_id': 1005,
-  'course_name': "Crafting(Gift Bags, Photo Frames, File Folders, etc. )",
-  'description':
-      "    TThis course is designed for individuals who enjoy crafting and want to learn how to create their own gift bags and photo frames. "
-          " Participants will be taught the techniques and skills needed to create unique and personalized gift bags and photo frames for any occasion."
-          " They will also learn how to use different materials and tools to create beautiful designs that will impress their friends and family.",
-  'course_content': [
-    "Introduction to crafting gift bags and photo frames",
-    "Materials and tools needed for crafting",
-    "Techniques for creating different types of gift bags and photo frames",
-    "Personalization and customization of designs",
-    "Embellishment and decoration techniques",
-    "Tips and tricks for successful crafting",
-  ],
-  'perks': [
-    "Opportunity to learn new crafting skills",
-    " Ability to create personalized and unique gift bags and photo frames",
-    "Access to expert instruction and guidance",
-    "Opportunity to socialize and meet new people who share a passion for crafting",
-    "All materials and tools provided",
-    "Ability to take home the finished products and use them for gifts or personal use",
-    "A fun and engaging learning experience",
-  ],
-  'image_path': "assets/images/pottery.png",
-  'color': Colors.redAccent.shade400
+    'course_id': 1005,
+    'course_name': "Crafting",
+    'description':
+        "    TThis course is designed for individuals who enjoy crafting and want to learn how to create their own gift bags and photo frames. "
+            " Participants will be taught the techniques and skills needed to create unique and personalized gift bags and photo frames for any occasion."
+            " They will also learn how to use different materials and tools to create beautiful designs that will impress their friends and family.",
+    'course_content': [
+      "Introduction to crafting gift bags and photo frames",
+      "Materials and tools needed for crafting",
+      "Techniques for creating different types of gift bags and photo frames",
+      "Personalization and customization of designs",
+      "Embellishment and decoration techniques",
+      "Tips and tricks for successful crafting",
+    ],
+    'perks': [
+      "Opportunity to learn new crafting skills",
+      " Ability to create personalized and unique gift bags and photo frames",
+      "Access to expert instruction and guidance",
+      "Opportunity to socialize and meet new people who share a passion for crafting",
+      "All materials and tools provided",
+      "Ability to take home the finished products and use them for gifts or personal use",
+      "A fun and engaging learning experience",
+    ],
+    'image_path': "assets/images/pottery.png",
+    'color': Colors.redAccent.shade400
   },
-    {
+  {
     'course_id': 1006,
     'course_name': "Hand looming",
     'description':
@@ -163,9 +161,7 @@ final courses = <Map<String, dynamic>>[
       "Finishing techniques: This section covers the different finishing techniques used to complete a hand loomed project, including washing, blocking, and hemming.",
     ],
     'perks': [
-      "Creativity: Handlooming allows students to express their creativity by designing
-and creating their own unique fabrics.
-",
+      "Creativity: Handlooming allows students to express their creativity by designing and creating their own unique fabrics.",
       "Traditional craft: Hand looming is a traditional craft that has been practiced for thousands of years, and learning this skill can be a fulfilling way to connect with history and culture.",
       "Sustainability: Handlooming is a sustainable alternative to mass-produced textiles, as it does not require the use of large machines or harmful chemicals.",
       "Therapeutic: Weaving can be a therapeutic and relaxing activity, providing a sense of accomplishment and reducing stress and anxiety.",
@@ -174,7 +170,7 @@ and creating their own unique fabrics.
     'image_path': "assets/images/pottery.png",
     'color': Colors.redAccent.shade400
   },
-    {
+  {
     'course_id': 1007,
     'course_name': "Carpet Making",
     'description':
@@ -199,9 +195,9 @@ and creating their own unique fabrics.
     'image_path': "assets/images/pottery.png",
     'color': Colors.redAccent.shade400
   },
-    {
+  {
     'course_id': 1008,
-    'course_name': "Silk Reeling And Spinning",
+    'course_name': "Silk Reeling & Spinning",
     'description':
         "    “ In a typical silk reeling and spinning course, students will learn how to handle raw silk fibers, clean and prepare them for spinning, and then use a spinning wheel or spindle to create the thread or yarn."
             "The course will cover the entire process from start to finish.",
@@ -227,9 +223,9 @@ and creating their own unique fabrics.
     'image_path': "assets/images/pottery.png",
     'color': Colors.redAccent.shade400
   },
-    {
+  {
     'course_id': 1009,
-    'course_name': "Modern Farm handling equipments",
+    'course_name': "Modern Farm Handling Equipments",
     'description':
         "    The modern farming handling equipment course is designed to provide students with the knowledge and skills needed to safely and effectively operate a range of equipment commonly used in modern agriculture."
             "The course covers topics such as equipment selection, maintenance, and repair, as well as safe operating procedures and regulations."
@@ -256,7 +252,7 @@ and creating their own unique fabrics.
     'image_path': "assets/images/pottery.png",
     'color': Colors.redAccent.shade400
   },
-    {
+  {
     'course_id': 1010,
     'course_name': "Organic Farming",
     'description':
@@ -284,7 +280,7 @@ and creating their own unique fabrics.
     'image_path': "assets/images/pottery.png",
     'color': Colors.redAccent.shade400
   },
-    {
+  {
     'course_id': 1011,
     'course_name': "Crop protection",
     'description':
@@ -314,47 +310,26 @@ and creating their own unique fabrics.
     'image_path': "assets/images/pottery.png",
     'color': Colors.redAccent.shade400
   },
-    {
+  {
     'course_id': 1012,
     'course_name': "Kite Production",
-    'description':
-        "   “ The Kite Production course is designed for anyone interested in
-learning how to produce high-quality kites."
-            "In this course, you will learn how to design
-and build kites, from the simplest single-line kites to more complex stunt kites."
-            "You will
-also learn how to choose the right materials, sew and cut fabric, assemble the frame,
-and test and adjust the finished kite for optimal performance."
-            "By the end of the course,
-you will have the skills and knowledge necessary to produce a variety of kites and
-create your own designs.",
+    'description': "   “ The Kite Production course is designed for anyone interested in learning how to produce high-quality kites."
+        "In this course, you will learn how to design and build kites, from the simplest single-line kites to more complex stunt kites."
+        "You will also learn how to choose the right materials, sew and cut fabric, assemble the frame, and test and adjust the finished kite for optimal performance."
+        "By the end of the course, you will have the skills and knowledge necessary to produce a variety of kites and create your own designs.",
     'course_content': [
-      "Introduction to kite production: In this module, you will learn about the different
-types of kites, their history, and the materials used in kite production.
-",
-      "Kite design: In this module, you will learn how to design kites, including choosing
-the right shape, size, and materials for your kite.",
-      "Fabric selection and cutting: In this module, you will learn how to select the right
-fabric for your kite, as well as how to cut and sew the fabric to create the kite
-body.
-",
-      "Frame assembly: In this module, you will learn how to assemble the frame of your
-kite, including choosing the right materials and constructing the frame.",
-      "Bridle and line attachment: In this module, you will learn how to attach the bridle
-and lines to your kite to ensure proper flight.",
-      "Testing and adjustment: In this module, you will learn how to test your finished
-kite and make adjustments to ensure optimal flight performance.",
+      "Introduction to kite production: In this module, you will learn about the different types of kites, their history, and the materials used in kite production.",
+      "Kite design: In this module, you will learn how to design kites, including choosing the right shape, size, and materials for your kite.",
+      "Fabric selection and cutting: In this module, you will learn how to select the right fabric for your kite, as well as how to cut and sew the fabric to create the kite body.",
+      "Frame assembly: In this module, you will learn how to assemble the frame of your kite, including choosing the right materials and constructing the frame.",
+      "Bridle and line attachment: In this module, you will learn how to attach the bridle and lines to your kite to ensure proper flight.",
+      "Testing and adjustment: In this module, you will learn how to test your finished kite and make adjustments to ensure optimal flight performance.",
     ],
     'perks': [
-      "Skills and knowledge: You will learn how to design and build high-quality kites
-from scratch, giving you a unique skill set and a new hobby.",
-      "Creativity: You will have the opportunity to design and create your own kite
-designs, giving you an outlet for creativity and self-expression.",
-      "Personal satisfaction: Producing a kite from scratch can be a rewarding
-experience, and you will have the satisfaction of seeing your creation take to the
-skies.",
-      "Career opportunities: The skills you learn in this course can lead to career
-opportunities in kite production, design, and manufacturing",
+      "Skills and knowledge: You will learn how to design and build high-quality kites from scratch, giving you a unique skill set and a new hobby.",
+      "Creativity: You will have the opportunity to design and create your own kite designs, giving you an outlet for creativity and self-expression.",
+      "Personal satisfaction: Producing a kite from scratch can be a rewarding experience, and you will have the satisfaction of seeing your creation take to the skies.",
+      "Career opportunities: The skills you learn in this course can lead to career opportunities in kite production, design, and manufacturing",
     ],
     'image_path': "assets/images/pottery.png",
     'color': Colors.redAccent.shade400
@@ -363,10 +338,7 @@ opportunities in kite production, design, and manufacturing",
     'course_id': 1013,
     'course_name': "Shoe Designing",
     'description':
-        "    This shoe designing course is designed to provide students with the
-knowledge and skills necessary to design and create their own shoes. The course will
-cover topics such as materials selection, shoe design principles, sketching and drawing
-techniques, prototyping and production, and branding and marketing.",
+        "    This shoe designing course is designed to provide students with the knowledge and skills necessary to design and create their own shoes. The course will cover topics such as materials selection, shoe design principles, sketching and drawing techniques, prototyping and production, and branding and marketing.",
     'course_content': [
       "Introduction to Shoe Designing",
       "Materials and Selection",
@@ -376,13 +348,12 @@ techniques, prototyping and production, and branding and marketing.",
     ],
     'perks': [
       "Access to industry-standard shoe designing software",
-"Expert guidance and feedback from experienced shoe designers",
-"Opportunity to network with other aspiring designers",
-"Showcase your designs at fashion shows and exhibitions",
-"Certificate of completion at the end of the course."
+      "Expert guidance and feedback from experienced shoe designers",
+      "Opportunity to network with other aspiring designers",
+      "Showcase your designs at fashion shows and exhibitions",
+      "Certificate of completion at the end of the course."
     ],
     'image_path': "assets/images/pottery.png",
     'color': Colors.redAccent.shade400
   },
-  
 ];

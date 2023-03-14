@@ -40,6 +40,7 @@ class CourseDescriptionPage extends StatelessWidget {
             ),
             Text(
               "${course['course_name']}".toUpperCase(),
+              textAlign: TextAlign.center,
               style: GoogleFonts.raleway(
                   color: const Color(0xff243b55),
                   fontWeight: FontWeight.bold,

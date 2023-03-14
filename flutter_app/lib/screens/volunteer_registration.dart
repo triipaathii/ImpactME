@@ -33,8 +33,6 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
   List<String> userSkills = [];
   List<String> userLanguages = [];
 
- 
-  List<String> totalLanguages = [];
   final totalLanguages = [
     "Assamese",
     "Bangla",
@@ -59,6 +57,42 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
     "Sindhi",
     "Urdu"
   ];
+
+  late List<bool> skillsSelected = [];
+  List<bool> languageSelected = [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ];
+
+  @override
+  void initState() {
+    for (var course in courses) {
+      skillsSelected.add(false);
+    }
+
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -347,22 +381,27 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
                   children: [
                     for (int i = 0; i < courses.length; i++) ...[
                       InkWell(
-                        // onTap: () {
-                        //   setState(() {
-                        //     selected = !selected;
-                        //   });
-                        // },
+                        onTap: () {
+                          setState(() {
+                            skillsSelected[i] = !skillsSelected[i];
+                          });
+                        },
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: skillsSelected[i]
+                                  ? Color(0xff243b55)
+                                  : Colors.white,
                               border: Border.all(
                                   color: Color(0xff243b55), width: 2),
                               borderRadius: BorderRadius.circular(20)),
                           child: Center(
                             child: Text(
                               "${courses[i]['course_name']}",
-                              style:
-                                  GoogleFonts.raleway(color: Color(0xff243b55)),
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.raleway(
+                                  color: !skillsSelected[i]
+                                      ? Color(0xff243b55)
+                                      : Colors.white),
                             ),
                           ),
                         ),
@@ -432,26 +471,29 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
                   children: [
                     for (int i = 0; i < totalLanguages.length; i++) ...[
                       InkWell(
-                        // onTap: () {
-                        //   setState(() {
-                        //     selected = !selected;
-                        //   });
-                        // },
+                        onTap: () {
+                          setState(() {
+                            languageSelected[i] = !languageSelected[i];
+                          });
+                        },
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: languageSelected[i]
+                                  ? Color(0xff243b55)
+                                  : Colors.white,
                               border: Border.all(
                                   color: Color(0xff243b55), width: 2),
                               borderRadius: BorderRadius.circular(20)),
                           child: Center(
                             child: Text(
                               totalLanguages[i],
-                              style:
-                                  GoogleFonts.raleway(color: Color(0xff243b55)),
+                              style: GoogleFonts.raleway(
+                                  color: languageSelected[i]
+                                      ? Colors.white
+                                      : Color(0xff243b55)),
                             ),
                           ),
                         ),
-
                       )
                     ]
                   ],

@@ -279,11 +279,15 @@ class _HomeState extends State<Home> {
                       Positioned(
                         right: width * 0.02,
                         top: width * 0.02,
-                        child: Text(
-                          "${course['course_name']}".toUpperCase(),
-                          style: GoogleFonts.raleway(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
+                        child: SizedBox(
+                          width: width * 0.3,
+                          child: Text(
+                            "${course['course_name']}".toUpperCase(),
+                            textAlign: TextAlign.end,
+                            style: GoogleFonts.raleway(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       )
