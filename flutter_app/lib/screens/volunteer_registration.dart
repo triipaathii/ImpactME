@@ -33,7 +33,8 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
   List<String> userSkills = [];
   List<String> userLanguages = [];
 
-  List<String> totalSkills = [];
+ 
+  List<String> totalLanguages = [];
   final totalLanguages = [
     "Assamese",
     "Bangla",
@@ -450,6 +451,7 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
                             ),
                           ),
                         ),
+
                       )
                     ]
                   ],
