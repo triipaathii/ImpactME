@@ -34,7 +34,7 @@ final courses = <Map<String, dynamic>>[
       "Sense of accomplishment",
       "Practical skills"
     ],
-    'image_path': "assets/images/pottery.png",
+    'image_path': "https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FCourse%20Images%2FPottery.png?alt=media&token=95bc6930-5e43-48d9-8f3c-e9917b24da31",
     'color': Colors.redAccent.shade400
   },
   {
@@ -59,7 +59,7 @@ final courses = <Map<String, dynamic>>[
       "Building a Community",
       "Allows you to produce practical accessories"
     ],
-    'image_path': "assets/images/knitting.png",
+    'image_path': "https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FCourse%20Images%2Fknitting.png?alt=media&token=64c4f109-f201-42db-9a47-b15bbf345c3e",
     'color': Colors.amberAccent.shade400
   },
   {
@@ -90,7 +90,7 @@ final courses = <Map<String, dynamic>>[
       "groups or in-person classes",
       "Gain a sense of accomplishment and pride in creating something from scratch."
     ],
-    'image_path': "assets/images/pottery.png",
+    'image_path': "https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FCourse%20Images%2FSewing.png?alt=media&token=4fa93e2d-364e-466b-97ac-c20b65975adc",
     'color': Colors.blueGrey.shade600
   },
   {
@@ -114,7 +114,7 @@ final courses = <Map<String, dynamic>>[
       "Social activity: Fishing can be a great social activity, and taking a course can be a great way to meet new people who share similar interests.",
       "Outdoor activity: Fishing is a great way to enjoy the outdoors and experience nature. Taking a course can help individuals develop a deeper appreciation for the natural environment.",
     ],
-    'image_path': "assets/images/pottery.png",
+    'image_path': "https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FCourse%20Images%2FFishing.png?alt=media&token=4dc3228f-b60a-4716-b9f2-ffae52096dd8",
     'color': Colors.tealAccent.shade400
   },
   {
@@ -141,7 +141,7 @@ final courses = <Map<String, dynamic>>[
       "Ability to take home the finished products and use them for gifts or personal use",
       "A fun and engaging learning experience",
     ],
-    'image_path': "assets/images/pottery.png",
+    'image_path': "https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FCourse%20Images%2FCrafting.png?alt=media&token=b3424ef4-2922-492b-a034-d143a6edf0d2",
     'color': Colors.redAccent.shade400
   },
   {
@@ -167,7 +167,7 @@ final courses = <Map<String, dynamic>>[
       "Therapeutic: Weaving can be a therapeutic and relaxing activity, providing a sense of accomplishment and reducing stress and anxiety.",
       "Career opportunities: Learning hand looming can lead to career opportunities in the fashion industry, textile design, or as an independent artisan selling their own handmade creations.",
     ],
-    'image_path': "assets/images/pottery.png",
+    'image_path': "https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FCourse%20Images%2FHand%20looming.png?alt=media&token=b5e53d73-757c-4b53-bd0c-0bad174ddc89",
     'color': Colors.redAccent.shade400
   },
   {
@@ -192,7 +192,7 @@ final courses = <Map<String, dynamic>>[
       "Social Connection: Carpets making courses often bring people with common interests together, so students have the opportunity to connect with others who share their passion.",
       "Personal Satisfaction: Creating a carpet from start to finish can be a rewarding experience, and students will have a tangible product that they can be proud of for years to come.",
     ],
-    'image_path': "assets/images/pottery.png",
+    'image_path': "https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FCourse%20Images%2FCarpet%20making.png?alt=media&token=5d87c29c-8a10-494c-bd26-650279d15b36",
     'color': Colors.redAccent.shade400
   },
   {
@@ -220,7 +220,7 @@ final courses = <Map<String, dynamic>>[
       "Connecting with history and cultural traditions",
       "Opportunities for further exploration of textile arts, such as knitting or weaving.",
     ],
-    'image_path': "assets/images/pottery.png",
+    'image_path': "https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FCourse%20Images%2FSilk_Reeling_And_Spinning.png?alt=media&token=d1846718-2edf-4b62-bab5-3dac08b41bf2",
     'color': Colors.redAccent.shade400
   },
   {
@@ -249,7 +249,7 @@ final courses = <Map<String, dynamic>>[
       "Improved efficiency and productivity in farming operations",
       "Enhanced career opportunities in agriculture and related fields.",
     ],
-    'image_path': "assets/images/pottery.png",
+    'image_path': "https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FCourse%20Images%2FMordern%20Farming.png?alt=media&token=2f1d9749-453c-490d-a8cb-115fbcfa1719",
     'color': Colors.redAccent.shade400
   },
   {
@@ -277,7 +277,7 @@ final courses = <Map<String, dynamic>>[
       "Enhanced marketability as an organic farmer or farm manager.",
       "The ability to contribute to sustainable agriculture and environmental conservation efforts.",
     ],
-    'image_path': "assets/images/pottery.png",
+    'image_path': "https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FCourse%20Images%2FOrganic_Farming.png?alt=media&token=297f9c9f-cf7b-423f-9446-77881216bd2f",
     'color': Colors.redAccent.shade400
   },
   {
@@ -307,7 +307,7 @@ final courses = <Map<String, dynamic>>[
       "Potential for increased earnings in the agricultural industry",
       "Opportunities for continued education and professional development in the field of crop protection.",
     ],
-    'image_path': "assets/images/pottery.png",
+    'image_path': "https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FCourse%20Images%2FCrop_protection.png?alt=media&token=0431adfc-5bac-4c34-a31e-d06d0ad99fe6",
     'color': Colors.redAccent.shade400
   },
   {
@@ -331,7 +331,7 @@ final courses = <Map<String, dynamic>>[
       "Personal satisfaction: Producing a kite from scratch can be a rewarding experience, and you will have the satisfaction of seeing your creation take to the skies.",
       "Career opportunities: The skills you learn in this course can lead to career opportunities in kite production, design, and manufacturing",
     ],
-    'image_path': "assets/images/pottery.png",
+    'image_path': "https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FCourse%20Images%2FKite_Production.png?alt=media&token=3fa327ff-1c56-4c50-9f86-45258cac48c7",
     'color': Colors.redAccent.shade400
   },
   {
@@ -353,7 +353,7 @@ final courses = <Map<String, dynamic>>[
       "Showcase your designs at fashion shows and exhibitions",
       "Certificate of completion at the end of the course."
     ],
-    'image_path': "assets/images/pottery.png",
+    'image_path': "https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FCourse%20Images%2FShoe_Designing.png?alt=media&token=491707f5-f4af-41dd-b3a0-2c0e39233f04",
     'color': Colors.redAccent.shade400
   },
 ];
