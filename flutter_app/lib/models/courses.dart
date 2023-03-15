@@ -315,7 +315,7 @@ final courses = <Map<String, dynamic>>[
       "Access to the latest research and developments in crop protection",
       "Improved job prospects in the agricultural industry",
       "Potential for increased earnings in the agricultural industry",
-      "Opportunities for continued education and professional development in the field of crop ",
+      "Opportunities for continued education and professional development in the field of crop protection.",
     ],
     'image_path':
         "https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FCourse%20Images%2FCrop_protection.png?alt=media&token=0431adfc-5bac-4c34-a31e-d06d0ad99fe6",
