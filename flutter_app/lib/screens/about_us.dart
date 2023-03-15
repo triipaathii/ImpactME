@@ -231,7 +231,7 @@ class AboutUs extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           Text(
-            "ANURAG TRIPATHI",
+            "KOI TO TRIPATHI",
             style: GoogleFonts.raleway(fontSize: 18),
           ),
           const SizedBox(height: 20),
@@ -321,7 +321,7 @@ class AboutUs extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           Text(
-            "COCONUT SHARMA",
+            "ANUSHA SHARMA",
             style: GoogleFonts.raleway(fontSize: 18),
           ),
           const SizedBox(height: 20),
@@ -366,7 +366,7 @@ class AboutUs extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           Text(
-            "TANISHA SHARMA",
+            "MANJULIKA SHARMA",
             style: GoogleFonts.raleway(fontSize: 18),
           ),
           Padding(
