@@ -242,79 +242,74 @@ class _HomeState extends State<Home> {
             style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
           ),
           SizedBox(
-            height: height * 0.08,
+            height: height * 0.03,
           ),
-          
-
-
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
                 for (var course in courses)
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: height * 0.05),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              CourseDescriptionPage(course: course)));
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                    // boxShadow: [BoxShadow(blurRadius: 10, color: const Color(0xff243b55), offset: Offset(1, 3))],
-                    border: Border.all(
-                      color: const Color(0xff243b55),
-                      width: 3,
-                    ),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  padding: EdgeInsets.all(10),
-                  height: height * 0.2,
-                  width: width * 0.5,
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        left: 0,
-                        bottom: 0,
-                        child: Hero(
-                          tag: "${course['course_id']}",
-                          child: Image.network(
-                            "${course['image_path']}",
-                            height: height * 0.13,
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.05),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    CourseDescriptionPage(course: course)));
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          // boxShadow: [BoxShadow(blurRadius: 10, color: const Color(0xff243b55), offset: Offset(1, 3))],
+                          border: Border.all(
+                            color: const Color(0xff243b55),
+                            width: 3,
                           ),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        padding: EdgeInsets.all(10),
+                        height: height * 0.25,
+                        width: width * 0.5,
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              left: 0,
+                              bottom: 0,
+                              child: Hero(
+                                tag: "${course['course_id']}",
+                                child: Image.asset(
+                                  "${course['image_path']}",
+                                  height: height * 0.13,
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              right: width * 0.02,
+                              top: width * 0.02,
+                              child: SizedBox(
+                                width: width * 0.3,
+                                child: Text(
+                                  "${course['course_name']}".toUpperCase(),
+                                  textAlign: TextAlign.end,
+                                  style: GoogleFonts.raleway(
+                                    color: const Color(0xff243b55),
+                                    fontWeight: FontWeight.w900,
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
                         ),
                       ),
-                      Positioned(
-                        right: width * 0.02,
-                        top: width * 0.02,
-                        child: SizedBox(
-                          width: width * 0.3,
-                          child: Text(
-                            "${course['course_name']}".toUpperCase(),
-                            textAlign: TextAlign.end,
-                            style: GoogleFonts.raleway(
-                              color: const Color(0xff243b55),
-                              fontWeight: FontWeight.w900,
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
+                    ),
                   ),
+                SizedBox(
+                  height: height * 0.02,
                 ),
-              ),
-            ),
-          SizedBox(
-            height: height * 0.02,
-          ),
-
               ],
             ),
           ),
-          
         ],
       ),
     );

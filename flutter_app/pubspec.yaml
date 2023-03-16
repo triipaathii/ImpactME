@@ -80,19 +80,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
-    - Course_Images/Carpet_making.png
-    - Course_Images/Crafting.png
-    - Course_Images/Crop_protection.png
-    - Course_Images/Fishing.png
-    - Course_Images/Hand_looming.png
-    - Course_Images/Kite_Production.png
-    - Course_Images/knitting.png
-    - Course_Images/Modern_Farming.png
-    - Course_Images/Organic_Farming.png
-    - Course_Images/Pottery.png
-    - Course_Images/Sewing.png
-    - Course_Images/Shoe_Designing.png
-    - Course_Images/Silk_Reeling_And_Spinning.png
+    - Course_Images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
