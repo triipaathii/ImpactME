@@ -199,7 +199,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           SizedBox(
-            height: height * 0.07,
+            height: height * 0.10,
           ),
           Text(
             "COURSES WE OFFER",
@@ -242,11 +242,18 @@ class _HomeState extends State<Home> {
             style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
           ),
           SizedBox(
-            height: height * 0.0275,
+            height: height * 0.08,
           ),
-          for (var course in courses)
+          
+
+
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                for (var course in courses)
             Padding(
-              padding: EdgeInsets.symmetric(vertical: height * 0.01),
+              padding: EdgeInsets.symmetric(horizontal: height * 0.05),
               child: GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -257,12 +264,16 @@ class _HomeState extends State<Home> {
                 },
                 child: Container(
                   decoration: BoxDecoration(
+                    // boxShadow: [BoxShadow(blurRadius: 10, color: const Color(0xff243b55), offset: Offset(1, 3))],
+                    border: Border.all(
+                      color: const Color(0xff243b55),
+                      width: 3,
+                    ),
                     borderRadius: BorderRadius.circular(20),
-                    color: course['color'],
                   ),
                   padding: EdgeInsets.all(10),
                   height: height * 0.2,
-                  width: width * 0.7,
+                  width: width * 0.5,
                   child: Stack(
                     children: [
                       Positioned(
@@ -272,7 +283,7 @@ class _HomeState extends State<Home> {
                           tag: "${course['course_id']}",
                           child: Image.network(
                             "${course['image_path']}",
-                            height: height * 0.15,
+                            height: height * 0.13,
                           ),
                         ),
                       ),
@@ -285,8 +296,8 @@ class _HomeState extends State<Home> {
                             "${course['course_name']}".toUpperCase(),
                             textAlign: TextAlign.end,
                             style: GoogleFonts.raleway(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
+                              color: const Color(0xff243b55),
+                              fontWeight: FontWeight.w900,
                             ),
                           ),
                         ),
@@ -299,34 +310,11 @@ class _HomeState extends State<Home> {
           SizedBox(
             height: height * 0.02,
           ),
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 3,
-                  width: width * 0.175,
-                  color: const Color(0xff243b55),
-                ),
-                const Text(
-                  "   X   ",
-                  style: TextStyle(
-                    color: Color(0xff243b55),
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Container(
-                  height: 3,
-                  width: width * 0.175,
-                  color: const Color(0xff243b55),
-                )
+
               ],
             ),
           ),
-          SizedBox(
-            height: height * 0.02,
-          ),
+          
         ],
       ),
     );
