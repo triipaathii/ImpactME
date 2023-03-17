@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
@@ -375,6 +373,60 @@ class _HomeState extends State<Home> {
                 )
               ],
             ),
+          ),
+          SizedBox(
+            height: height * 0.015,
+          ),
+          GridView.count(
+            crossAxisCount: 3,
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            padding: EdgeInsets.symmetric(horizontal: width * 0.03),
+            childAspectRatio: 1,
+            crossAxisSpacing: width * 0.03,
+            mainAxisSpacing: width * 0.03,
+            children: [
+              for (int i = 0; i < 12; i++) ...[
+                Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xff243b55),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: Color(0xff243b55)),
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 2),
+                        child: Text(
+                          months[i],
+                          style: GoogleFonts.raleway(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Flexible(
+                        fit: FlexFit.tight,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 2),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Center(
+                            child: Text(
+                              "${courses[i]['course_name']}",
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.raleway(),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ]
+            ],
+          ),
+          SizedBox(
+            height: height * 0.03,
           ),
         ],
       ),

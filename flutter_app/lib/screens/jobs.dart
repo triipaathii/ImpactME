@@ -25,7 +25,8 @@ class _JobsState extends State<Jobs> {
           ),
           for (var job in jobs) ...[
             Padding(
-              padding: EdgeInsets.symmetric(vertical: height * 0.01),
+              padding: EdgeInsets.symmetric(
+                  vertical: height * 0.01, horizontal: width * 0.01),
               child: Card(
                 elevation: 1,
                 shape: RoundedRectangleBorder(
@@ -48,7 +49,7 @@ class _JobsState extends State<Jobs> {
                                 radius: height * 0.05,
                               ),
                               SizedBox(
-                                width: width * 0.04,
+                                width: width * 0.03,
                               ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,7 +57,7 @@ class _JobsState extends State<Jobs> {
                                   Text(
                                     "${job['company_name']}",
                                     style: GoogleFonts.raleway(
-                                      fontSize: 16,
+                                        fontSize: 15,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   Text(

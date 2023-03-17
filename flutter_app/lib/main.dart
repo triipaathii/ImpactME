@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/screens/enter_user_details.dart';
-import 'package:flutter_app/screens/enter_user_number.dart';
 import 'firebase_options.dart';
 
 void main() async {
