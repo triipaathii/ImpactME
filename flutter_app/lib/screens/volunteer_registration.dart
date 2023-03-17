@@ -1,6 +1,7 @@
 import 'package:country_state_city_pro/country_state_city_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/models/courses.dart';
+import 'package:flutter_app/screens/volunteer_approval.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -507,7 +508,7 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => VolunteerRegistration()));
+                            builder: (context) => VolunteerApproval()));
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xff243b55)),
