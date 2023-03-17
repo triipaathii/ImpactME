@@ -362,7 +362,20 @@ final feeds = [
   {
     'image_path': "assets/images/anurag.jpg",
     'location': "Kanpur, Uttar Pradesh",
-    'description': "The workshop in Kanpur was executed successfully. People enjoyed learning and were eager to learn more. Also, they gave blessings to this wonderful program started by ImpactMe.",
+    'description':
+        "The workshop in Kanpur was executed successfully. People enjoyed learning and were eager to learn more. Also, they gave blessings to this wonderful program started by ImpactMe.",
+    'timestamp': "23rd Mar, 2022 | 12:03PM",
+    'user_name': "Anurag Tripathi",
+    'user_image': "assets/images/anurag.jpg",
+    'likes': 21,
+    'user_liked': true,
+    'comments': 5
+  },
+  {
+    'image_path': "assets/images/anurag.jpg",
+    'location': "Kanpur, Uttar Pradesh",
+    'description':
+        "The workshop in Kanpur was executed successfully. People enjoyed learning and were eager to learn more. Also, they gave blessings to this wonderful program started by ImpactMe.",
     'timestamp': "23rd Mar, 2022 | 12:03PM",
     'user_name': "Anurag Tripathi",
     'user_image': "assets/images/anurag.jpg",
@@ -372,31 +385,24 @@ final feeds = [
   {
     'image_path': "assets/images/anurag.jpg",
     'location': "Kanpur, Uttar Pradesh",
-    'description': "The workshop in Kanpur was executed successfully. People enjoyed learning and were eager to learn more. Also, they gave blessings to this wonderful program started by ImpactMe.",
+    'description':
+        "The workshop in Kanpur was executed successfully. People enjoyed learning and were eager to learn more. Also, they gave blessings to this wonderful program started by ImpactMe.",
     'timestamp': "23rd Mar, 2022 | 12:03PM",
     'user_name': "Anurag Tripathi",
     'user_image': "assets/images/anurag.jpg",
-    'likes': 21,
-    'comments': 5
+    'likes': 0,
+    'comments': 0
   },
   {
     'image_path': "assets/images/anurag.jpg",
     'location': "Kanpur, Uttar Pradesh",
-    'description': "The workshop in Kanpur was executed successfully. People enjoyed learning and were eager to learn more. Also, they gave blessings to this wonderful program started by ImpactMe.",
+    'description':
+        "The workshop in Kanpur was executed successfully. People enjoyed learning and were eager to learn more. Also, they gave blessings to this wonderful program started by ImpactMe.",
     'timestamp': "23rd Mar, 2022 | 12:03PM",
     'user_name': "Anurag Tripathi",
     'user_image': "assets/images/anurag.jpg",
-    'likes': 21,
-    'comments': 5
-  },
-  {
-    'image_path': "assets/images/anurag.jpg",
-    'location': "Kanpur, Uttar Pradesh",
-    'description': "The workshop in Kanpur was executed successfully. People enjoyed learning and were eager to learn more. Also, they gave blessings to this wonderful program started by ImpactMe.",
-    'timestamp': "23rd Mar, 2022 | 12:03PM",
-    'user_name': "Anurag Tripathi",
-    'user_image': "assets/images/anurag.jpg",
-    'likes': 21,
-    'comments': 5
+    'likes': 1,
+    'user_liked': true,
+    'comments': 2
   }
 ];

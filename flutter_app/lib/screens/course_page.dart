@@ -13,7 +13,7 @@ class CourseDescriptionPage extends StatelessWidget {
     // SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     //     statusBarColor: Colors.white,
     //     statusBarIconBrightness: Brightness.dark));
-    
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -26,12 +26,12 @@ class CourseDescriptionPage extends StatelessWidget {
             ),
             CircleAvatar(
               radius: height * 0.1,
-              backgroundColor: course['color'],
+              backgroundColor: Color(0xff243b55),
               child: Hero(
                 tag: "${course['course_id']}",
                 child: Image.asset(
                   "${course['image_path']}",
-                  height: height * 0.11,
+                  height: height * 0.09,
                 ),
               ),
             ),

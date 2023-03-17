@@ -15,6 +15,21 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final months = [
+    "JAN",
+    "FEB",
+    "MAR",
+    "APR",
+    "MAY",
+    "JUN",
+    "JUL",
+    "AUG",
+    "SEP",
+    "OCT",
+    "NOV",
+    "DEC"
+  ];
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -199,7 +214,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           SizedBox(
-            height: height * 0.10,
+            height: height * 0.05,
           ),
           Text(
             "COURSES WE OFFER",
@@ -304,11 +319,98 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                SizedBox(
-                  height: height * 0.02,
-                ),
               ],
             ),
+          ),
+          SizedBox(
+            height: height * 0.05,
+          ),
+          Text(
+            "CALENDAR",
+            style: GoogleFonts.raleway(
+                color: const Color(0xff243b55),
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                letterSpacing: 5),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 3,
+                  width: width * 0.175,
+                  color: const Color(0xff243b55),
+                ),
+                const Text(
+                  "   X   ",
+                  style: TextStyle(
+                    color: Color(0xff243b55),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Container(
+                  height: 3,
+                  width: width * 0.175,
+                  color: const Color(0xff243b55),
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: height * 0.015,
+          ),
+          GridView.count(
+            crossAxisCount: 3,
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            padding: EdgeInsets.symmetric(horizontal: width * 0.03),
+            childAspectRatio: 1,
+            crossAxisSpacing: width * 0.03,
+            mainAxisSpacing: width * 0.03,
+            children: [
+              for (int i = 0; i < 12; i++) ...[
+                Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xff243b55),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: Color(0xff243b55)),
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 2),
+                        child: Text(
+                          months[i],
+                          style: GoogleFonts.raleway(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Flexible(
+                        fit: FlexFit.tight,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 2),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Center(
+                            child: Text(
+                              "${courses[i]['course_name']}",
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.raleway(),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ]
+            ],
+          ),
+          SizedBox(
+            height: height * 0.05,
           ),
         ],
       ),
