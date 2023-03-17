@@ -13,7 +13,7 @@ class CourseDescriptionPage extends StatelessWidget {
     // SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     //     statusBarColor: Colors.white,
     //     statusBarIconBrightness: Brightness.dark));
-
+    
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
