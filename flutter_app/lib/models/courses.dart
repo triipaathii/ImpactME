@@ -421,4 +421,96 @@ final feeds = [
   },
 ];
 
+final jobs = [
+  {
+    'company_name': "abc",
+    'company_image': "assets/images/company1.jpg",
+    'location': "Kanpur, Uttar Pradesh",
+    'job_description': "",
+    'skills': "",
+    'preferred_gender': "Male, Female, All",
+    'salary': 5000,
+    'timestamp': "23rd Mar, 2022 | 12:03PM"
+  },
+
+  {
+    'company_name': "abc",
+    'company_image': "assets/images/company1.jpg",
+    'location': "Kanpur, Uttar Pradesh",
+    'job_description': "",
+    'skills': "",
+    'preferred_gender': "Male, Female, All",
+    'salary': 5000,
+    'timestamp': "23rd Mar, 2022 | 12:03PM"
+  },
+
+  {
+    'company_name': "abc",
+    'company_image': "assets/images/company1.jpg",
+    'location': "Kanpur, Uttar Pradesh",
+    'job_description': "",
+    'skills': "",
+    'preferred_gender': "Male, Female, All",
+    'salary': 5000,
+    'timestamp': "23rd Mar, 2022 | 12:03PM"
+  },
+
+  {
+    'company_name': "abc",
+    'company_image': "assets/images/company1.jpg",
+    'location': "Kanpur, Uttar Pradesh",
+    'job_description': "",
+    'skills': "",
+    'preferred_gender': "Male, Female, All",
+    'salary': 5000,
+    'timestamp': "23rd Mar, 2022 | 12:03PM"
+  },
+
+  {
+    'company_name': "abc",
+    'company_image': "assets/images/company1.jpg",
+    'location': "Kanpur, Uttar Pradesh",
+    'job_description': "",
+    'skills': "",
+    'preferred_gender': "Male, Female, All",
+    'salary': 5000,
+    'timestamp': "23rd Mar, 2022 | 12:03PM"
+  },
+
+  {
+    'company_name': "abc",
+    'company_image': "assets/images/company1.jpg",
+    'location': "Kanpur, Uttar Pradesh",
+    'job_description': "",
+    'skills': "",
+    'preferred_gender': "Male, Female, All",
+    'salary': 5000,
+    'timestamp': "23rd Mar, 2022 | 12:03PM"
+  },
+
+  {
+    'company_name': "abc",
+    'company_image': "assets/images/company1.jpg",
+    'location': "Kanpur, Uttar Pradesh",
+    'job_description': "",
+    'skills': "",
+    'preferred_gender': "Male, Female, All",
+    'salary': 5000,
+    'timestamp': "23rd Mar, 2022 | 12:03PM"
+  },
+
+  {
+    'company_name': "abc",
+    'company_image': "assets/images/company1.jpg",
+    'location': "Kanpur, Uttar Pradesh",
+    'job_description': "",
+    'skills': "",
+    'preferred_gender': "Male, Female, All",
+    'salary': 5000,
+    'timestamp': "23rd Mar, 2022 | 12:03PM"
+  },
+  
+];
+
+
 

@@ -1,8 +1,8 @@
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/models/courses.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:badges/badges.dart' as badges;
 
 class Feeds extends StatefulWidget {
   const Feeds({super.key});
@@ -84,12 +84,46 @@ class _FeedsState extends State<Feeds> {
                       ),
                       Row(
                         children: [
-                          IconButton(
-                              onPressed: () {},
-                              icon: Icon(CupertinoIcons.heart)),
-                          IconButton(
-                              onPressed: () {},
-                              icon: Icon(CupertinoIcons.text_bubble)),
+                          badges.Badge(
+                            badgeContent: Text(
+                              "${feed['likes']}",
+                              style: GoogleFonts.raleway(color: Colors.white),
+                            ),
+                            badgeStyle: badges.BadgeStyle(
+                              badgeColor: Color(0xff243b55),
+                            ),
+                            showBadge: int.parse(feed['likes']!.toString()) > 0
+                                ? true
+                                : false,
+                            position: badges.BadgePosition.topEnd(
+                                end: -width * 0.0075, top: -height * 0.005),
+                            child: IconButton(
+                                onPressed: () {},
+                                icon: feed['user_liked'] != null
+                                    ? Icon(
+                                        CupertinoIcons.heart_fill,
+                                        color: Colors.red,
+                                      )
+                                    : Icon(CupertinoIcons.heart)),
+                          ),
+                          badges.Badge(
+                            badgeContent: Text(
+                              "${feed['comments']}",
+                              style: GoogleFonts.raleway(color: Colors.white),
+                            ),
+                            showBadge:
+                                int.parse(feed['comments']!.toString()) > 0
+                                    ? true
+                                    : false,
+                            badgeStyle: badges.BadgeStyle(
+                                badgeColor: Color(0xff243b55),
+                                padding: EdgeInsets.all(6)),
+                            position: badges.BadgePosition.topEnd(
+                                end: -width * 0.0075, top: -height * 0.005),
+                            child: IconButton(
+                                onPressed: () {},
+                                icon: Icon(CupertinoIcons.text_bubble)),
+                          ),
                           Flexible(
                             fit: FlexFit.tight,
                             // child: DotsIndicator(
