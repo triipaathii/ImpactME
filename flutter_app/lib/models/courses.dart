@@ -192,7 +192,7 @@ final courses = <Map<String, dynamic>>[
       "Social Connection: Carpets making courses often bring people with common interests together, so students have the opportunity to connect with others who share their passion.",
       "Personal Satisfaction: Creating a carpet from start to finish can be a rewarding experience, and students will have a tangible product that they can be proud of for years to come.",
     ],
-    'image_path': "https://media.istockphoto.com/id/1309631417/vector/characters-weaving-carpet-on-handloom-and-selling-on-asian-bazaar-traditional-oriental-art.jpg?s=612x612&w=0&k=20&c=5vSrgOLKA49ZI6ipsVvoi2ycUibwWeVLL7Jvi8VK9zQ=",
+    'image_path': "Course_Images/Carpet_making.png",
     'color': Colors.redAccent.shade400
   },
   {
@@ -356,4 +356,47 @@ final courses = <Map<String, dynamic>>[
     'image_path': "Course_Images/Shoe_Designing.png",
     'color': Colors.redAccent.shade400
   },
+];
+
+final feeds = [
+  {
+    'image_path': "assets/images/anurag.jpg",
+    'location': "Kanpur, Uttar Pradesh",
+    'description': "The workshop in Kanpur was executed successfully. People enjoyed learning and were eager to learn more. Also, they gave blessings to this wonderful program started by ImpactMe.",
+    'timestamp': "23rd Mar, 2022 | 12:03PM",
+    'user_name': "Anurag Tripathi",
+    'user_image': "assets/images/anurag.jpg",
+    'likes': 21,
+    'comments': 5
+  },
+  {
+    'image_path': "assets/images/anurag.jpg",
+    'location': "Kanpur, Uttar Pradesh",
+    'description': "The workshop in Kanpur was executed successfully. People enjoyed learning and were eager to learn more. Also, they gave blessings to this wonderful program started by ImpactMe.",
+    'timestamp': "23rd Mar, 2022 | 12:03PM",
+    'user_name': "Anurag Tripathi",
+    'user_image': "assets/images/anurag.jpg",
+    'likes': 21,
+    'comments': 5
+  },
+  {
+    'image_path': "assets/images/anurag.jpg",
+    'location': "Kanpur, Uttar Pradesh",
+    'description': "The workshop in Kanpur was executed successfully. People enjoyed learning and were eager to learn more. Also, they gave blessings to this wonderful program started by ImpactMe.",
+    'timestamp': "23rd Mar, 2022 | 12:03PM",
+    'user_name': "Anurag Tripathi",
+    'user_image': "assets/images/anurag.jpg",
+    'likes': 21,
+    'comments': 5
+  },
+  {
+    'image_path': "assets/images/anurag.jpg",
+    'location': "Kanpur, Uttar Pradesh",
+    'description': "The workshop in Kanpur was executed successfully. People enjoyed learning and were eager to learn more. Also, they gave blessings to this wonderful program started by ImpactMe.",
+    'timestamp': "23rd Mar, 2022 | 12:03PM",
+    'user_name': "Anurag Tripathi",
+    'user_image': "assets/images/anurag.jpg",
+    'likes': 21,
+    'comments': 5
+  }
 ];

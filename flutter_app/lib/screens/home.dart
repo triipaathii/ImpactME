@@ -138,7 +138,7 @@ class _HomeState extends State<Home> {
                                             ),
                                             ElevatedButton(
                                                 onPressed: () {
-                                                  Navigator.push(
+                                                  Navigator.pushReplacement(
                                                       context,
                                                       MaterialPageRoute(
                                                           builder: (context) =>

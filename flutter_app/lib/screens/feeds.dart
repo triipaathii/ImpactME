@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/models/courses.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Feeds extends StatefulWidget {
@@ -22,7 +23,7 @@ class _FeedsState extends State<Feeds> {
           SizedBox(
             height: height * 0.02,
           ),
-          for (int i = 0; i < 5; i++) ...[
+          for (var feed in feeds) ...[
             Padding(
               padding: EdgeInsets.symmetric(vertical: height * 0.01),
               child: Card(
@@ -42,7 +43,7 @@ class _FeedsState extends State<Feeds> {
                             children: [
                               CircleAvatar(
                                 backgroundImage: AssetImage(
-                                  "assets/images/anurag.jpg",
+                                  "${feed['user_image']}",
                                 ),
                                 radius: height * 0.03,
                               ),
@@ -53,12 +54,12 @@ class _FeedsState extends State<Feeds> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "Anurag Tripathi",
+                                    "${feed['user_name']}",
                                     style: GoogleFonts.raleway(
                                         fontWeight: FontWeight.bold),
                                   ),
                                   Text(
-                                    "Kanpur, Uttar Pradesh",
+                                    "${feed['location']}",
                                     style: GoogleFonts.raleway(fontSize: 13),
                                   )
                                 ],
@@ -76,7 +77,7 @@ class _FeedsState extends State<Feeds> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: Image.asset(
-                          "assets/images/anurag.jpg",
+                          "${feed['image_path']}",
                           height: height * 0.3,
                           fit: BoxFit.cover,
                         ),
@@ -113,7 +114,7 @@ class _FeedsState extends State<Feeds> {
                         padding:
                             EdgeInsets.symmetric(horizontal: width * 0.015),
                         child: Text(
-                          "How to Add Icon in Flutter App? You can use Icon() widget to add icons to your Flutter App. You have to pass the icon data as an icon to this widget. You can use default available Material icons with Icons class.",
+                          "${feed['description']}",
                           style: GoogleFonts.raleway(),
                         ),
                       ),
@@ -122,7 +123,7 @@ class _FeedsState extends State<Feeds> {
                       ),
                       Center(
                         child: Text(
-                          "23rd Mar, 2022 | 12:03PM",
+                          "${feed['timestamp']}",
                           style: GoogleFonts.raleway(
                               fontWeight: FontWeight.bold, fontSize: 13),
                         ),
