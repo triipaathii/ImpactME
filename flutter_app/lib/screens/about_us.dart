@@ -193,11 +193,8 @@ class AboutUs extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 20),
             child: CircleAvatar(
-              radius: 70,
-              backgroundImage: NetworkImage(
-                'https://firebasestorage.googleapis.com/v0/b/gsc2k23.appspot.com/o/Course%20Images%2FProfile%20Pictures%2FAnurag.jpg?alt=media&token=79074c83-d864-4d20-bf84-d029e0917c05',
-              ),
-            ),
+                radius: 70,
+                backgroundImage: AssetImage("assets/images/anurag.jpg")),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -231,7 +228,7 @@ class AboutUs extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           Text(
-            "KOI TO TRIPATHI",
+            "ANURAG TRIPATHI",
             style: GoogleFonts.raleway(fontSize: 18),
           ),
           const SizedBox(height: 20),
@@ -366,7 +363,7 @@ class AboutUs extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           Text(
-            "MANJULIKA SHARMA",
+            "TANISHA SHARMA",
             style: GoogleFonts.raleway(fontSize: 18),
           ),
           Padding(

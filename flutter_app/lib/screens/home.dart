@@ -31,6 +31,8 @@ class _HomeState extends State<Home> {
     "DEC"
   ];
 
+  bool booked = false;
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -426,8 +428,165 @@ class _HomeState extends State<Home> {
             ],
           ),
           SizedBox(
-            height: height * 0.03,
+            height: height * 0.05,
           ),
+          Column(
+            children: [
+              Text(
+                "REGISTER NOW",
+                style: GoogleFonts.raleway(
+                    color: const Color(0xff243b55),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    letterSpacing: 5),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: 3,
+                      width: width * 0.175,
+                      color: const Color(0xff243b55),
+                    ),
+                    const Text(
+                      "   X   ",
+                      style: TextStyle(
+                        color: Color(0xff243b55),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Container(
+                      height: 3,
+                      width: width * 0.175,
+                      color: const Color(0xff243b55),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: height * 0.01,
+              ),
+              Text(
+                "Upcoming vocational course registration",
+                style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: height * 0.01,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.location_on_outlined,
+                    color: Color(0xff243b55),
+                  ),
+                  Text(
+                    "Kanpur, Uttar Pradesh",
+                    style: GoogleFonts.raleway(
+                        color: Color(0xff243b55),
+                        decoration: TextDecoration.underline),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: height * 0.02,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: Color(0xff243b55),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                margin: EdgeInsets.symmetric(horizontal: width * 0.05),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Text(
+                        "APRIL",
+                        style: GoogleFonts.raleway(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 18,
+                            letterSpacing: 3),
+                      ),
+                    ),
+                    Image.asset(
+                      "assets/images/fishing.jpg",
+                      width: double.infinity,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(12),
+                      child: Text(
+                        "FISHING",
+                        style: GoogleFonts.raleway(
+                          color: Colors.white,
+                          fontSize: 17,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: height * 0.03,
+              ),
+              ElevatedButton(
+                  onPressed: booked
+                      ? null
+                      : () {
+                          setState(() {
+                            booked = true;
+                          });
+                          showModalBottomSheet<void>(
+                              useSafeArea: true,
+                              backgroundColor: Color(0xff243b55),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(20),
+                                      topRight: Radius.circular(20))),
+                              context: context,
+                              builder: (BuildContext context) {
+                                return Column(
+                                  children: [
+                                    SizedBox(
+                                      height: height * 0.1,
+                                    ),
+                                    CircleAvatar(
+                                      backgroundImage: AssetImage(
+                                        "Course_Images/Congratulations.png",
+                                      ),
+                                      radius: height * 0.1,
+                                    ),
+                                    SizedBox(
+                                      height: height * 0.05,
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: width * 0.05),
+                                      child: Text(
+                                        "Yor are now registered to teach FISHING in KANPUR, UTTAR PRADESH",
+                                        textAlign: TextAlign.center,
+                                        style: GoogleFonts.raleway(
+                                            color: Colors.white, fontSize: 20),
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              });
+                        },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xff243b55)),
+                  child: Text(
+                    booked ? "REGISTERED" : "REGISTER",
+                    style: GoogleFonts.raleway(color: Colors.white),
+                  )),
+              SizedBox(
+                height: height * 0.05,
+              ),
+            ],
+          )
         ],
       ),
     );
