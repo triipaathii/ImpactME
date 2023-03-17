@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
@@ -313,8 +315,7 @@ class _HomeState extends State<Home> {
 
               ],
             ),
-          ),
-          
+          ),          
         ],
       ),
     );
