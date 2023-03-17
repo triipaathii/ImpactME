@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:flutter_app/screens/about_us.dart';
 import 'package:flutter_app/screens/feeds.dart';
+import 'package:flutter_app/screens/jobs.dart';
 import 'package:flutter_app/screens/profile.dart';
 import 'package:flutter_app/screens/settings.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -147,7 +148,7 @@ class _UserHomePageState extends State<UserHomePage> {
                       : Colors.white,
                 ),
                 title: Text(
-                  'Profile',
+                  'Jobs',
                   style: GoogleFonts.raleway(
                       color: pageIndex == 2
                           ? const Color.fromARGB(255, 43, 70, 100)
@@ -170,7 +171,7 @@ class _UserHomePageState extends State<UserHomePage> {
                       : Colors.white,
                 ),
                 title: Text(
-                  'Settings',
+                  'Profile',
                   style: GoogleFonts.raleway(
                       color: pageIndex == 3
                           ? const Color.fromARGB(255, 43, 70, 100)
@@ -230,7 +231,7 @@ class _UserHomePageState extends State<UserHomePage> {
                           ? <Widget>[
                               const Icon(Icons.account_circle_rounded),
                               Text(
-                                '  PROFILE',
+                                '  JOB DESCRIPTION',
                                 style: GoogleFonts.raleway(),
                               ),
                             ]
@@ -238,7 +239,7 @@ class _UserHomePageState extends State<UserHomePage> {
                               ? <Widget>[
                                   const Icon(Icons.settings),
                                   Text(
-                                    '  SETTINGS',
+                                    '  PROFILE',
                                     style: GoogleFonts.raleway(),
                                   ),
                                 ]
@@ -271,9 +272,9 @@ class _UserHomePageState extends State<UserHomePage> {
               : pageIndex == 1
                   ? const Feeds()
                   : pageIndex == 2
-                      ? const Profile()
+                      ? const Jobs()
                       : pageIndex == 3
-                          ? const Settings()
+                          ? const Profile()
                           : const AboutUs()),
     );
   }
