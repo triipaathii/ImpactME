@@ -1,3 +1,4 @@
+import 'package:country_state_city_pro/country_state_city_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/screens/homepage.dart';
@@ -14,6 +15,10 @@ class EnterUserBasicDetails extends StatefulWidget {
 class _EnterUserBasicDetailsState extends State<EnterUserBasicDetails> {
   final nameController = TextEditingController();
   final dobDatePicker = DateRangePickerController();
+  final userCityController = TextEditingController();
+  final userStateController = TextEditingController();
+  final userCountryController = TextEditingController();
+  final userPincodeController = TextEditingController();
   String _selectedGender = 'male';
 
   @override
@@ -24,7 +29,6 @@ class _EnterUserBasicDetailsState extends State<EnterUserBasicDetails> {
 
     return SafeArea(
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
         backgroundColor: const Color(0xff243b55),
         body: SingleChildScrollView(
           child: Column(
@@ -85,7 +89,6 @@ class _EnterUserBasicDetailsState extends State<EnterUserBasicDetails> {
                     controller: dobDatePicker,
                     rangeTextStyle: GoogleFonts.raleway(),
                     todayHighlightColor: const Color(0xff0ccda3),
-                    
                     monthCellStyle: DateRangePickerMonthCellStyle(
                         textStyle: GoogleFonts.raleway(
                           color: Colors.white,
@@ -187,12 +190,52 @@ class _EnterUserBasicDetailsState extends State<EnterUserBasicDetails> {
               const SizedBox(
                 height: 30,
               ),
+              Text(
+                "LOCATION",
+                style: GoogleFonts.raleway(color: Colors.white, fontSize: 19),
+              ),
+              const SizedBox(height: 10),
+              CountryStateCityPicker(
+                country: userCountryController,
+                state: userStateController,
+                city: userCityController,
+                textFieldInputBorder: OutlineInputBorder(
+                    borderSide:
+                        const BorderSide(color: Color(0xff243b55), width: 2)),
+              ),
+              const SizedBox(height: 30),
+              Text(
+                "ENTER YOUR PINCODE",
+                style: GoogleFonts.raleway(color: Colors.white, fontSize: 19),
+              ),
+              const SizedBox(height: 5),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                child: TextFormField(
+                  controller: userPincodeController,
+                  keyboardType: TextInputType.number,
+                  cursorColor: const Color(0xff0ccda3),
+                  textAlign: TextAlign.center,
+                  cursorHeight: 30,
+                  decoration: const InputDecoration(
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xff0ccda3))),
+                    disabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xff243b55))),
+                  ),
+                  style: GoogleFonts.raleway(
+                      color: Colors.white, fontSize: 20, letterSpacing: 2),
+                ),
+              ),
+              const SizedBox(height: 50),
               ElevatedButton(
                   onPressed: () {
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const UserHomePage()));
+                            builder: (context) => UserHomePage(
+                                  isVolunteer: false,
+                                )));
                   },
                   style: ElevatedButton.styleFrom(
                       elevation: 0, backgroundColor: const Color(0xff0ccda3)),

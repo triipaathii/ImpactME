@@ -8,7 +8,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../models/courses.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  bool isVolunteer;
+  Home({super.key, required this.isVolunteer});
 
   @override
   State<Home> createState() => _HomeState();
@@ -42,180 +43,195 @@ class _HomeState extends State<Home> {
             width: double.infinity,
             height: height * 0.04,
           ),
-          Container(
-            padding: EdgeInsets.all(width * 0.055),
-            decoration: BoxDecoration(
-                color: const Color(0xff243b55),
-                borderRadius: BorderRadius.circular(20)),
-            child: Column(
+          if (!widget.isVolunteer)
+            Column(
               children: [
-                Text(
-                  "Want to become a Volunteer?",
-                  style: GoogleFonts.raleway(color: Colors.white, fontSize: 20),
+                Container(
+                  padding: EdgeInsets.all(width * 0.055),
+                  decoration: BoxDecoration(
+                      color: const Color(0xff243b55),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Column(
+                    children: [
+                      Text(
+                        "Want to become a Volunteer?",
+                        style: GoogleFonts.raleway(
+                            color: Colors.white, fontSize: 20),
+                      ),
+                      SizedBox(
+                        height: height * 0.03,
+                      ),
+                      ElevatedButton(
+                          onPressed: () {
+                            showModalBottomSheet<void>(
+                                useSafeArea: true,
+                                backgroundColor: Color(0xff243b55),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(20),
+                                        topRight: Radius.circular(20))),
+                                context: context,
+                                builder: (BuildContext context) {
+                                  int currentPageIndex = 0;
+                                  return StatefulBuilder(
+                                    builder: (context, setState) => Column(
+                                      children: [
+                                        CarouselSlider(
+                                            items: [
+                                              Column(
+                                                children: [
+                                                  SizedBox(
+                                                    height: height * 0.05,
+                                                  ),
+                                                  Text(
+                                                    "AGE DOES NOT MATTER",
+                                                    style: GoogleFonts.raleway(
+                                                        color: Colors.white,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 18,
+                                                        letterSpacing: 5),
+                                                  ),
+                                                  SizedBox(
+                                                    height: height * 0.05,
+                                                  ),
+                                                  Image.asset(
+                                                    "assets/images/age_volunteer.png",
+                                                    height: height * 0.25,
+                                                  )
+                                                ],
+                                              ),
+                                              Column(
+                                                children: [
+                                                  SizedBox(
+                                                    height: height * 0.05,
+                                                  ),
+                                                  Text(
+                                                    "GET CERTIFIED",
+                                                    style: GoogleFonts.raleway(
+                                                        color: Colors.white,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 18,
+                                                        letterSpacing: 5),
+                                                  ),
+                                                  SizedBox(
+                                                    height: height * 0.05,
+                                                  ),
+                                                  Image.asset(
+                                                    "assets/images/certified_volunteer.png",
+                                                    height: height * 0.25,
+                                                  )
+                                                ],
+                                              ),
+                                              Column(
+                                                children: [
+                                                  SizedBox(
+                                                    height: height * 0.05,
+                                                  ),
+                                                  Text(
+                                                    "UPGRADE THE SOCIETY",
+                                                    style: GoogleFonts.raleway(
+                                                        color: Colors.white,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 18,
+                                                        letterSpacing: 5),
+                                                  ),
+                                                  SizedBox(
+                                                    height: height * 0.05,
+                                                  ),
+                                                  Image.asset(
+                                                    "assets/images/upgrade_volunteer.png",
+                                                    height: height * 0.25,
+                                                  )
+                                                ],
+                                              ),
+                                              Column(
+                                                children: [
+                                                  SizedBox(
+                                                    height: height * 0.05,
+                                                  ),
+                                                  Image.asset(
+                                                    "assets/images/happy_community.png",
+                                                    height: height * 0.25,
+                                                  ),
+                                                  SizedBox(
+                                                    height: height * 0.05,
+                                                  ),
+                                                  ElevatedButton(
+                                                      onPressed: () {
+                                                        Navigator.pushReplacement(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                                builder:
+                                                                    (context) =>
+                                                                        VolunteerRegistration()));
+                                                      },
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                              backgroundColor:
+                                                                  Colors.white),
+                                                      child: Text(
+                                                        "APPLY NOW",
+                                                        style: GoogleFonts.raleway(
+                                                            color: const Color(
+                                                                0xff243b55)),
+                                                      ))
+                                                ],
+                                              ),
+                                            ],
+                                            options: CarouselOptions(
+                                                height: height * 0.5,
+                                                autoPlayCurve:
+                                                    Curves.decelerate,
+                                                viewportFraction: 1,
+                                                enlargeCenterPage: true,
+                                                animateToClosest: false,
+                                                enableInfiniteScroll: false,
+                                                disableCenter: false,
+                                                enlargeStrategy:
+                                                    CenterPageEnlargeStrategy
+                                                        .scale,
+                                                onPageChanged: (index, _) {
+                                                  print(index);
+                                                  setState(() {
+                                                    currentPageIndex = index;
+                                                  });
+                                                })),
+                                        DotsIndicator(
+                                          dotsCount: 4,
+                                          position: double.parse(
+                                              currentPageIndex.toString()),
+                                          decorator: DotsDecorator(
+                                              color: Colors.grey.shade600,
+                                              activeColor: Colors.white,
+                                              spacing: EdgeInsets.all(3),
+                                              activeSize:
+                                                  Size.square(height * 0.01),
+                                              size:
+                                                  Size.square(height * 0.008)),
+                                        )
+                                      ],
+                                    ),
+                                  );
+                                });
+                          },
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white),
+                          child: Text(
+                            "EXPLORE NOW",
+                            style: GoogleFonts.raleway(
+                                color: const Color(0xff243b55)),
+                          ))
+                    ],
+                  ),
                 ),
                 SizedBox(
-                  height: height * 0.03,
+                  height: height * 0.05,
                 ),
-                ElevatedButton(
-                    onPressed: () {
-                      showModalBottomSheet<void>(
-                          useSafeArea: true,
-                          backgroundColor: Color(0xff243b55),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(20),
-                                  topRight: Radius.circular(20))),
-                          context: context,
-                          builder: (BuildContext context) {
-                            int currentPageIndex = 0;
-                            return StatefulBuilder(
-                              builder: (context, setState) => Column(
-                                children: [
-                                  CarouselSlider(
-                                      items: [
-                                        Column(
-                                          children: [
-                                            SizedBox(
-                                              height: height * 0.05,
-                                            ),
-                                            Text(
-                                              "AGE DOES NOT MATTER",
-                                              style: GoogleFonts.raleway(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 18,
-                                                  letterSpacing: 5),
-                                            ),
-                                            SizedBox(
-                                              height: height * 0.05,
-                                            ),
-                                            Image.asset(
-                                              "assets/images/age_volunteer.png",
-                                              height: height * 0.25,
-                                            )
-                                          ],
-                                        ),
-                                        Column(
-                                          children: [
-                                            SizedBox(
-                                              height: height * 0.05,
-                                            ),
-                                            Text(
-                                              "GET CERTIFIED",
-                                              style: GoogleFonts.raleway(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 18,
-                                                  letterSpacing: 5),
-                                            ),
-                                            SizedBox(
-                                              height: height * 0.05,
-                                            ),
-                                            Image.asset(
-                                              "assets/images/certified_volunteer.png",
-                                              height: height * 0.25,
-                                            )
-                                          ],
-                                        ),
-                                        Column(
-                                          children: [
-                                            SizedBox(
-                                              height: height * 0.05,
-                                            ),
-                                            Text(
-                                              "UPGRADE THE SOCIETY",
-                                              style: GoogleFonts.raleway(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 18,
-                                                  letterSpacing: 5),
-                                            ),
-                                            SizedBox(
-                                              height: height * 0.05,
-                                            ),
-                                            Image.asset(
-                                              "assets/images/upgrade_volunteer.png",
-                                              height: height * 0.25,
-                                            )
-                                          ],
-                                        ),
-                                        Column(
-                                          children: [
-                                            SizedBox(
-                                              height: height * 0.05,
-                                            ),
-                                            Image.asset(
-                                              "assets/images/happy_community.png",
-                                              height: height * 0.25,
-                                            ),
-                                            SizedBox(
-                                              height: height * 0.05,
-                                            ),
-                                            ElevatedButton(
-                                                onPressed: () {
-                                                  Navigator.pushReplacement(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              VolunteerRegistration()));
-                                                },
-                                                style: ElevatedButton.styleFrom(
-                                                    backgroundColor:
-                                                        Colors.white),
-                                                child: Text(
-                                                  "APPLY NOW",
-                                                  style: GoogleFonts.raleway(
-                                                      color: const Color(
-                                                          0xff243b55)),
-                                                ))
-                                          ],
-                                        ),
-                                      ],
-                                      options: CarouselOptions(
-                                          height: height * 0.5,
-                                          autoPlayCurve: Curves.decelerate,
-                                          viewportFraction: 1,
-                                          enlargeCenterPage: true,
-                                          animateToClosest: false,
-                                          enableInfiniteScroll: false,
-                                          disableCenter: false,
-                                          enlargeStrategy:
-                                              CenterPageEnlargeStrategy.scale,
-                                          onPageChanged: (index, _) {
-                                            print(index);
-                                            setState(() {
-                                              currentPageIndex = index;
-                                            });
-                                          })),
-                                  DotsIndicator(
-                                    dotsCount: 4,
-                                    position: double.parse(
-                                        currentPageIndex.toString()),
-                                    decorator: DotsDecorator(
-                                        color: Colors.grey.shade600,
-                                        activeColor: Colors.white,
-                                        spacing: EdgeInsets.all(3),
-                                        activeSize: Size.square(height * 0.01),
-                                        size: Size.square(height * 0.008)),
-                                  )
-                                ],
-                              ),
-                            );
-                          });
-                    },
-                    style:
-                        ElevatedButton.styleFrom(backgroundColor: Colors.white),
-                    child: Text(
-                      "EXPLORE NOW",
-                      style:
-                          GoogleFonts.raleway(color: const Color(0xff243b55)),
-                    ))
               ],
             ),
-          ),
-          SizedBox(
-            height: height * 0.05,
-          ),
           Text(
             "COURSES WE OFFER",
             style: GoogleFonts.raleway(

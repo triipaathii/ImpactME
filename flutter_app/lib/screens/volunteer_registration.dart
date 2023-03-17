@@ -24,10 +24,6 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
   }
 
   final userEmailAddressController = TextEditingController();
-  final userCityController = TextEditingController();
-  final userStateController = TextEditingController();
-  final userCountryController = TextEditingController();
-  final userPincodeController = TextEditingController();
   final userQualificationController = TextEditingController();
   final userOrganizationController = TextEditingController();
 
@@ -217,35 +213,28 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
                               color: Color(0xff243b55), width: 2))),
                 ),
               ),
-              CountryStateCityPicker(
-                country: userCountryController,
-                state: userStateController,
-                city: userCityController,
-                textFieldInputBorder: OutlineInputBorder(
-                    borderSide:
-                        const BorderSide(color: Color(0xff243b55), width: 2)),
-              ),
-              Container(
-                margin: const EdgeInsets.all(10),
-                width: width * 0.8,
-                child: TextFormField(
-                  controller: userPincodeController,
-                  style: GoogleFonts.raleway(fontSize: 18),
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                      labelText: "Pincode",
-                      labelStyle: GoogleFonts.raleway(fontSize: 17),
-                      floatingLabelStyle:
-                          GoogleFonts.raleway(color: Color(0xff243b55)),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide:
-                              const BorderSide(color: Colors.grey, width: 2)),
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                              color: Color(0xff243b55), width: 2))),
-                ),
-              ),
+              
+              // Container(
+              //   margin: const EdgeInsets.all(10),
+              //   width: width * 0.8,
+              //   child: TextFormField(
+              //     controller: userPincodeController,
+              //     style: GoogleFonts.raleway(fontSize: 18),
+              //     keyboardType: TextInputType.number,
+              //     textAlign: TextAlign.center,
+              //     decoration: InputDecoration(
+              //         labelText: "Pincode",
+              //         labelStyle: GoogleFonts.raleway(fontSize: 17),
+              //         floatingLabelStyle:
+              //             GoogleFonts.raleway(color: Color(0xff243b55)),
+              //         enabledBorder: OutlineInputBorder(
+              //             borderSide:
+              //                 const BorderSide(color: Colors.grey, width: 2)),
+              //         focusedBorder: OutlineInputBorder(
+              //             borderSide: const BorderSide(
+              //                 color: Color(0xff243b55), width: 2))),
+              //   ),
+              // ),
               Container(
                 margin: const EdgeInsets.all(10),
                 width: width * 0.8,

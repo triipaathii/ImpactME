@@ -10,7 +10,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'home.dart';
 
 class UserHomePage extends StatefulWidget {
-  const UserHomePage({super.key});
+  bool isVolunteer;
+  UserHomePage({super.key, required this.isVolunteer});
 
   @override
   State<UserHomePage> createState() => _UserHomePageState();
@@ -267,7 +268,7 @@ class _UserHomePageState extends State<UserHomePage> {
             ),
           ),
           body: pageIndex == 0
-              ? const Home()
+              ? Home(isVolunteer: widget.isVolunteer,)
               : pageIndex == 1
                   ? const Feeds()
                   : pageIndex == 2

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/screens/volunteer_homepage.dart';
+import 'package:flutter_app/screens/homepage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class VolunteerApproval extends StatelessWidget {
@@ -59,7 +59,7 @@ class VolunteerApproval extends StatelessWidget {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => VolunteerHomepage()));
+                        builder: (context) => UserHomePage(isVolunteer: true,)));
               },
               style:
                   ElevatedButton.styleFrom(backgroundColor: Color(0xff243b55)),
