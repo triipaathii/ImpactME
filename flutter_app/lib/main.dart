@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
       title: 'ImpactME',
       debugShowCheckedModeBanner: false,
       home: UserHomePage(isVolunteer: false),
+
     );
   }
 }
