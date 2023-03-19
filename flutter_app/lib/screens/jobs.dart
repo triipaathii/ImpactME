@@ -1,8 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/models/courses.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:badges/badges.dart' as badges;
 
 class Jobs extends StatefulWidget {
   const Jobs({super.key});
@@ -16,6 +16,13 @@ class _JobsState extends State<Jobs> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+
+    final db = FirebaseFirestore.instance;
+
+    for (var job in jobs) {
+      db.collection("jobs").add(job).then((DocumentReference doc) =>
+          print('DocumentSnapshot added with ID: ${doc.id}'));
+    }
 
     return SingleChildScrollView(
       child: Column(
