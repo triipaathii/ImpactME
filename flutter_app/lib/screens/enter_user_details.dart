@@ -1,12 +1,18 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:country_state_city_pro/country_state_city_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+// import 'package:flutter_app/models/users_models.dart';
+// import 'package:flutter_app/repositories/user_model_repository.dart';
 import 'package:flutter_app/screens/homepage.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 class EnterUserBasicDetails extends StatefulWidget {
-  const EnterUserBasicDetails({super.key});
+  var phone_number;
+  EnterUserBasicDetails({super.key, required this.phone_number});
 
   @override
   State<EnterUserBasicDetails> createState() => _EnterUserBasicDetailsState();
@@ -20,6 +26,9 @@ class _EnterUserBasicDetailsState extends State<EnterUserBasicDetails> {
   final userCountryController = TextEditingController();
   final userPincodeController = TextEditingController();
   String _selectedGender = 'male';
+  // final userRepo = Get.put(UserRepository());
+
+  final db = FirebaseFirestore.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -229,7 +238,35 @@ class _EnterUserBasicDetailsState extends State<EnterUserBasicDetails> {
               ),
               const SizedBox(height: 50),
               ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
+                    // final user = UserModel(
+                    //     phone_num: widget.phone_number,
+                    //     name: nameController.text,
+                    //     dob: dobDatePicker.toString(),
+                    //     gender: _selectedGender.toString(),
+                    //     country: userCountryController.text,
+                    //     city: userCityController.text,
+                    //     state: userStateController.text,
+                    //     pincode: userPincodeController.text);
+                    // await userRepo.createUser(user);
+
+                    // db.collection("users").add({
+                    //   'phone_number': widget.phone_number,
+                    //   'name': nameController.text,
+                    //     'dob': {
+                    //       'date': dobDatePicker.selectedDate?.day,
+                    //       'month': dobDatePicker.selectedDate?.month,
+                    //       'year':dobDatePicker.selectedDate?.year
+                    //     },
+                    //     'gender': _selectedGender.toString(),
+                    //     'country': userCountryController.text,
+                    //     'city': userCityController.text,
+                    //     'state': userStateController.text,
+                    //     'pincode': userPincodeController.text
+                    // }).then((DocumentReference doc) => print('DocumentSnapshot added with ID: ${doc.id}'));
+
+                    
+
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
