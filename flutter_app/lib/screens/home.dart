@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/course_page.dart';
 import 'package:flutter_app/screens/volunteer_registration.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/courses_provider.dart';
 
 class Home extends StatefulWidget {
   bool isVolunteer;
@@ -18,20 +21,28 @@ class _HomeState extends State<Home> {
   bool booked = false;
   bool isLoading = true;
   List<Map<String, dynamic>> courses = [];
+  List<Map<String, dynamic>> course_names = [];
 
   final db = FirebaseFirestore.instance;
 
   Future<void> _loadCourses() async {
     await db.collection("courses").get().then((event) {
       for (var doc in event.docs) {
+        context.read<CourseProvider>().addCourses(doc.data());
         setState(() {
           courses.add(doc.data());
+          course_names.add({
+            'course_id': doc.data()['course_id'],
+            'course_name': doc.data()['course_name'],
+          });
         });
       }
     });
     setState(() {
       isLoading = false;
     });
+    print("=================== COURSE PROVIDER =================");
+    print(Provider.of<CourseProvider>(context, listen: false).courses);
   }
 
   final months = [
@@ -208,9 +219,10 @@ class _HomeState extends State<Home> {
                                                               Navigator.pushReplacement(
                                                                   context,
                                                                   MaterialPageRoute(
-                                                                      builder:
-                                                                          (context) =>
-                                                                              VolunteerRegistration()));
+                                                                      builder: (context) => VolunteerRegistration(
+                                                                            courses:
+                                                                                course_names,
+                                                                          )));
                                                             },
                                                             style: ElevatedButton
                                                                 .styleFrom(
@@ -344,7 +356,6 @@ class _HomeState extends State<Home> {
                             },
                             child: Container(
                               decoration: BoxDecoration(
-                                // boxShadow: [BoxShadow(blurRadius: 10, color: const Color(0xff243b55), offset: Offset(1, 3))],
                                 border: Border.all(
                                   color: const Color(0xff243b55),
                                   width: 3,
@@ -394,91 +405,99 @@ class _HomeState extends State<Home> {
                 SizedBox(
                   height: height * 0.05,
                 ),
-                Text(
-                  "CALENDAR",
-                  style: GoogleFonts.raleway(
-                      color: const Color(0xff243b55),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      letterSpacing: 5),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                if (courses.length > 0)
+                  Column(
                     children: [
-                      Container(
-                        height: 3,
-                        width: width * 0.175,
-                        color: const Color(0xff243b55),
+                      Text(
+                        "CALENDAR",
+                        style: GoogleFonts.raleway(
+                            color: const Color(0xff243b55),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            letterSpacing: 5),
                       ),
-                      const Text(
-                        "   X   ",
-                        style: TextStyle(
-                          color: Color(0xff243b55),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Container(
-                        height: 3,
-                        width: width * 0.175,
-                        color: const Color(0xff243b55),
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: height * 0.015,
-                ),
-                GridView.count(
-                  crossAxisCount: 3,
-                  physics: NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  padding: EdgeInsets.symmetric(horizontal: width * 0.03),
-                  childAspectRatio: 1,
-                  crossAxisSpacing: width * 0.03,
-                  mainAxisSpacing: width * 0.03,
-                  children: [
-                    for (int i = 0; i < 12; i++) ...[
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Color(0xff243b55),
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Color(0xff243b55)),
-                        ),
-                        child: Column(
+                      Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 2),
-                              child: Text(
-                                months[i],
-                                style: GoogleFonts.raleway(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
+                            Container(
+                              height: 3,
+                              width: width * 0.175,
+                              color: const Color(0xff243b55),
+                            ),
+                            const Text(
+                              "   X   ",
+                              style: TextStyle(
+                                color: Color(0xff243b55),
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Flexible(
-                              fit: FlexFit.tight,
-                              child: Container(
-                                padding: EdgeInsets.symmetric(horizontal: 2),
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(20)),
-                                child: Center(
-                                  child: Text(
-                                    "${courses[i]['course_name']}",
-                                    textAlign: TextAlign.center,
-                                    style: GoogleFonts.raleway(),
-                                  ),
-                                ),
-                              ),
+                            Container(
+                              height: 3,
+                              width: width * 0.175,
+                              color: const Color(0xff243b55),
                             )
                           ],
                         ),
-                      )
-                    ]
-                  ],
-                ),
+                      ),
+                      SizedBox(
+                        height: height * 0.015,
+                      ),
+                      GridView.count(
+                        crossAxisCount: 3,
+                        physics: NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        padding: EdgeInsets.symmetric(horizontal: width * 0.03),
+                        childAspectRatio: 1,
+                        crossAxisSpacing: width * 0.03,
+                        mainAxisSpacing: width * 0.03,
+                        children: [
+                          for (int i = 0; i < 12; i++) ...[
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Color(0xff243b55),
+                                borderRadius: BorderRadius.circular(20),
+                                border: Border.all(color: Color(0xff243b55)),
+                              ),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.symmetric(vertical: 2),
+                                    child: Text(
+                                      months[i],
+                                      style: GoogleFonts.raleway(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                  Flexible(
+                                    fit: FlexFit.tight,
+                                    child: Container(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 2),
+                                      decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(20)),
+                                      child: Center(
+                                        child: Text(
+                                          "${courses[i]['course_name']}",
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.raleway(),
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            )
+                          ]
+                        ],
+                      ),
+                    ],
+                  ),
                 SizedBox(
                   height: height * 0.05,
                 ),

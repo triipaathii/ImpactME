@@ -1,12 +1,14 @@
-import 'package:country_state_city_pro/country_state_city_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/models/courses.dart';
+import 'package:flutter_app/providers/courses_provider.dart';
 import 'package:flutter_app/screens/volunteer_approval.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
 
 class VolunteerRegistration extends StatefulWidget {
-  const VolunteerRegistration({super.key});
+  final courses;
+  VolunteerRegistration({super.key, this.courses});
 
   @override
   State<VolunteerRegistration> createState() => _VolunteerRegistrationState();
@@ -82,19 +84,15 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
   ];
 
   @override
-  void initState() {
+  Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+    final courses = Provider.of<CourseProvider>(context, listen: false).courses;
+
     for (var course in courses) {
       skillsSelected.add(false);
     }
 
-    // TODO: implement initState
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
     return Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
@@ -213,7 +211,7 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
                               color: Color(0xff243b55), width: 2))),
                 ),
               ),
-              
+
               // Container(
               //   margin: const EdgeInsets.all(10),
               //   width: width * 0.8,
