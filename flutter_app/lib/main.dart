@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'ImpactME',
       debugShowCheckedModeBanner: false,
       // home: EnterUserNumber(),
-      home: EnterUserBasicDetails(),
+      home: EnterUserBasicDetails(phone_number: " "),
     );
   }
 }
