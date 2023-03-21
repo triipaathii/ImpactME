@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "965958270577",
+    "firebase_url": "https://gsc2k23-default-rtdb.firebaseio.com",
     "project_id": "gsc2k23",
     "storage_bucket": "gsc2k23.appspot.com"
   },
@@ -19,6 +20,14 @@
           "android_info": {
             "package_name": "com.example.flutter_app",
             "certificate_hash": "508650c0785d52bc9604db4c76f8778d7ce19dcd"
+          }
+        },
+        {
+          "client_id": "965958270577-gh236tgbu7a2a4gdadcvdgf3f3dqjl69.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_app",
+            "certificate_hash": "b6d79f7daac4e903f5d40cceed1af62c0b85aa18"
           }
         },
         {

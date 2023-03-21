@@ -49,6 +49,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '965958270577',
     projectId: 'gsc2k23',
     authDomain: 'gsc2k23.firebaseapp.com',
+    databaseURL: 'https://gsc2k23-default-rtdb.firebaseio.com',
     storageBucket: 'gsc2k23.appspot.com',
     measurementId: 'G-WEXM07VQYF',
   );
@@ -58,6 +59,7 @@ class DefaultFirebaseOptions {
     appId: '1:965958270577:android:de6114e572f1ca376b65d0',
     messagingSenderId: '965958270577',
     projectId: 'gsc2k23',
+    databaseURL: 'https://gsc2k23-default-rtdb.firebaseio.com',
     storageBucket: 'gsc2k23.appspot.com',
   );
 
@@ -66,6 +68,7 @@ class DefaultFirebaseOptions {
     appId: '1:965958270577:ios:453f0b01a75111546b65d0',
     messagingSenderId: '965958270577',
     projectId: 'gsc2k23',
+    databaseURL: 'https://gsc2k23-default-rtdb.firebaseio.com',
     storageBucket: 'gsc2k23.appspot.com',
     androidClientId: '965958270577-5b61qalqcucasnq74j7h3skiq3q63s65.apps.googleusercontent.com',
     iosClientId: '965958270577-b4dnqkbet84jbdg1bqkp56iv0vjar31t.apps.googleusercontent.com',
@@ -77,6 +80,7 @@ class DefaultFirebaseOptions {
     appId: '1:965958270577:ios:453f0b01a75111546b65d0',
     messagingSenderId: '965958270577',
     projectId: 'gsc2k23',
+    databaseURL: 'https://gsc2k23-default-rtdb.firebaseio.com',
     storageBucket: 'gsc2k23.appspot.com',
     androidClientId: '965958270577-5b61qalqcucasnq74j7h3skiq3q63s65.apps.googleusercontent.com',
     iosClientId: '965958270577-b4dnqkbet84jbdg1bqkp56iv0vjar31t.apps.googleusercontent.com',
