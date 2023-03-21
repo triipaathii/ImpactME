@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'ImpactME',
       debugShowCheckedModeBanner: false,
+
       home: UserHomePage(isVolunteer: false),
     );
   }

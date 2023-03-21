@@ -303,7 +303,7 @@ class _EnterUserNumberState extends State<EnterUserNumber> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const EnterUserBasicDetails()));
+                                               EnterUserBasicDetails(phone_number: phone,)));
                                 } catch (e) {
                                   print(e);
                                   showSnackBar("Invalid OTP", context);
