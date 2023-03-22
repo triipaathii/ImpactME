@@ -259,45 +259,46 @@ class _EnterUserBasicDetailsState extends State<EnterUserBasicDetails> {
                         onPressed: () {
                           if (nameController.text.isEmpty) {
                             showSnackBar("Enter your name", context);
-                          } else if(dobDatePicker.selectedDate == null){
+                          } else if (dobDatePicker.selectedDate == null) {
                             showSnackBar("Select your DOB", context);
-                          } else if (userPincodeController.text.isEmpty){
-                            showSnackBar("Enter your pincode", context);
-                          } else if(userCityController.text.isEmpty){
+                          } else if (userCityController.text.isEmpty) {
                             showSnackBar("Enter your city", context);
-                          }
-                          else {
-                            setState(() {
-                            isLoading = true;
-                          });
-                          db.collection("users").add({
-                            'phone_number': widget.phone_number,
-                            'name': nameController.text,
-                            'dob': {
-                              'date': dobDatePicker.selectedDate?.day,
-                              'month': dobDatePicker.selectedDate?.month,
-                              'year': dobDatePicker.selectedDate?.year
-                            },
-                            'gender': _selectedGender.toString(),
-                            'country': userCountryController.text,
-                            'city': userCityController.text,
-                            'state': userStateController.text,
-                            'pincode': userPincodeController.text,
-                            'isVolunteer': false
-                          }).then((DocumentReference doc) {
-                            print('DocumentSnapshot added with ID: ${doc.id}');
-                            Provider.of<UserIdProvider>(context, listen: false)
-                                .addUserId(doc.id);
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => UserHomePage(
-                                          isVolunteer: false,
-                                        )));
+                          } else if (userPincodeController.text.isEmpty) {
+                            showSnackBar("Enter your pincode", context);
+                          } else {
                             setState(() {
                               isLoading = true;
                             });
-                          });
+                            db.collection("users").add({
+                              'phone_number': widget.phone_number,
+                              'name': nameController.text,
+                              'dob': {
+                                'date': dobDatePicker.selectedDate?.day,
+                                'month': dobDatePicker.selectedDate?.month,
+                                'year': dobDatePicker.selectedDate?.year
+                              },
+                              'gender': _selectedGender.toString(),
+                              'country': userCountryController.text,
+                              'city': userCityController.text,
+                              'state': userStateController.text,
+                              'pincode': userPincodeController.text,
+                              'isVolunteer': false
+                            }).then((DocumentReference doc) {
+                              print(
+                                  'DocumentSnapshot added with ID: ${doc.id}');
+                              Provider.of<UserIdProvider>(context,
+                                      listen: false)
+                                  .addUserId(doc.id);
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => UserHomePage(
+                                            isVolunteer: false,
+                                          )));
+                              setState(() {
+                                isLoading = true;
+                              });
+                            });
                           }
                         },
                         style: ElevatedButton.styleFrom(

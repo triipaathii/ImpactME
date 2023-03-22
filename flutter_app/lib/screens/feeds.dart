@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_app/models/courses.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:badges/badges.dart' as badges;
 
@@ -12,7 +11,6 @@ class Feeds extends StatefulWidget {
 
   @override
   State<Feeds> createState() => _FeedsState();
-  
 }
 
 class _FeedsState extends State<Feeds> {
@@ -20,22 +18,23 @@ class _FeedsState extends State<Feeds> {
   List<Feed>? retrievedEmployeeList;
   @override
   initState() {
-    
     startAsyncInit();
-    super.initState();  
+    super.initState();
   }
+
   startAsyncInit() async {
     setState(() async {
-      retrievedEmployeeList = (await DatabaseService().retrieveFeeds) as List<Feed>?;
+      retrievedEmployeeList =
+          (await DatabaseService().retrieveFeeds) as List<Feed>?;
     });
+    return retrievedEmployeeList;
   }
-  
+
   Widget build(BuildContext context) {
-    
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
-     
-    final feeds=startAsyncInit();
+
+    final feeds = startAsyncInit();
     return SingleChildScrollView(
       child: Column(
         children: [

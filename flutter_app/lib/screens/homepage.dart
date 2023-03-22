@@ -5,7 +5,6 @@ import 'package:flutter_app/screens/about_us.dart';
 import 'package:flutter_app/screens/feeds.dart';
 import 'package:flutter_app/screens/jobs.dart';
 import 'package:flutter_app/screens/profile.dart';
-import 'package:flutter_app/screens/settings.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'home.dart';
@@ -269,7 +268,7 @@ class _UserHomePageState extends State<UserHomePage> {
             ),
           ),
           body: pageIndex == 0
-              ? Home(isVolunteer: widget.isVolunteer,)
+              ? Home()
               : pageIndex == 1
                   ? const Feeds()
                   : pageIndex == 2
