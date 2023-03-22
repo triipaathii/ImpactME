@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/providers/user_provider.dart';
 import 'package:flutter_app/screens/course_page.dart';
 import 'package:flutter_app/screens/volunteer_registration.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -43,6 +44,11 @@ class _HomeState extends State<Home> {
     });
     print("=================== COURSE PROVIDER =================");
     print(Provider.of<CourseProvider>(context, listen: false).courses);
+    // print('=================USER ID===============');
+    // print(Provider.of<UserIdProvider>(context, listen: false).userId);
+    // print(db
+    //     .collection("users")
+    //     .doc(Provider.of<UserIdProvider>(context, listen: false).userId));
   }
 
   final months = [

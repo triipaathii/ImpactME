@@ -135,21 +135,23 @@ class _CountryStateCityPickerState extends State<CountryStateCityPicker> {
               setState(() => _title = 'Country');
               _showDialog(context);
             },
-            style: GoogleFonts.raleway(fontSize: 18),
+            style: GoogleFonts.raleway(fontSize: 18, color: Colors.white),
             keyboardType: TextInputType.emailAddress,
             textAlign: TextAlign.center,
             readOnly: true,
             decoration: InputDecoration(
                 labelText: "Country",
                 suffixIcon: Icon(Icons.arrow_drop_down),
-                labelStyle: GoogleFonts.raleway(fontSize: 17),
+                labelStyle:
+                    GoogleFonts.raleway(fontSize: 17, color: Colors.white),
                 floatingLabelStyle:
-                    GoogleFonts.raleway(color: Color(0xff243b55)),
+                    GoogleFonts.raleway(color: Color(0xff0ccda3)),
                 enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.grey, width: 2)),
+                    borderSide:
+                        const BorderSide(color: Colors.white, width: 2)),
                 focusedBorder: OutlineInputBorder(
                     borderSide:
-                        const BorderSide(color: Color(0xff243b55), width: 2))),
+                        const BorderSide(color: Color(0xff0ccda3), width: 2))),
           ),
         ),
         // TextField(
@@ -165,7 +167,7 @@ class _CountryStateCityPickerState extends State<CountryStateCityPicker> {
         //       border: widget.textFieldInputBorder ?? OutlineInputBorder()),
         //   readOnly: true,
         // ),
-        SizedBox(height: 8.0),
+        SizedBox(height: 5.0),
 
         ///State TextField
         Container(
@@ -180,21 +182,23 @@ class _CountryStateCityPickerState extends State<CountryStateCityPicker> {
               else
                 _showSnackBar('Select Country first');
             },
-            style: GoogleFonts.raleway(fontSize: 18),
+            style: GoogleFonts.raleway(fontSize: 18, color: Colors.white),
             keyboardType: TextInputType.emailAddress,
             textAlign: TextAlign.center,
             readOnly: true,
             decoration: InputDecoration(
                 labelText: "State",
                 suffixIcon: Icon(Icons.arrow_drop_down),
-                labelStyle: GoogleFonts.raleway(fontSize: 17),
+                labelStyle:
+                    GoogleFonts.raleway(fontSize: 17, color: Colors.white),
                 floatingLabelStyle:
-                    GoogleFonts.raleway(color: Color(0xff243b55)),
+                    GoogleFonts.raleway(color: Color(0xff0ccda3)),
                 enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.grey, width: 2)),
+                    borderSide:
+                        const BorderSide(color: Colors.white, width: 2)),
                 focusedBorder: OutlineInputBorder(
                     borderSide:
-                        const BorderSide(color: Color(0xff243b55), width: 2))),
+                        const BorderSide(color: Color(0xff0ccda3), width: 2))),
           ),
         ),
         // TextField(
@@ -213,7 +217,7 @@ class _CountryStateCityPickerState extends State<CountryStateCityPicker> {
         //       border: widget.textFieldInputBorder ?? OutlineInputBorder()),
         //   readOnly: true,
         // ),
-        SizedBox(height: 8.0),
+        SizedBox(height: 5.0),
 
         ///City TextField
         Container(
@@ -226,23 +230,25 @@ class _CountryStateCityPickerState extends State<CountryStateCityPicker> {
               if (widget.state.text.isNotEmpty)
                 _showDialog(context);
               else
-                _showSnackBar('Select State fist');
+                _showSnackBar('Select State first');
             },
-            style: GoogleFonts.raleway(fontSize: 18),
+            style: GoogleFonts.raleway(fontSize: 18, color: Colors.white),
             keyboardType: TextInputType.emailAddress,
             textAlign: TextAlign.center,
             readOnly: true,
             decoration: InputDecoration(
                 labelText: "City",
                 suffixIcon: Icon(Icons.arrow_drop_down),
-                labelStyle: GoogleFonts.raleway(fontSize: 17),
+                labelStyle:
+                    GoogleFonts.raleway(fontSize: 17, color: Colors.white),
                 floatingLabelStyle:
-                    GoogleFonts.raleway(color: Color(0xff243b55)),
+                    GoogleFonts.raleway(color: Color(0xff0ccda3)),
                 enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.grey, width: 2)),
+                    borderSide:
+                        const BorderSide(color: Colors.white, width: 2)),
                 focusedBorder: OutlineInputBorder(
                     borderSide:
-                        const BorderSide(color: Color(0xff243b55), width: 2))),
+                        const BorderSide(color: Color(0xff0ccda3), width: 2))),
           ),
         ),
         // TextField(
@@ -445,4 +451,3 @@ class _CountryStateCityPickerState extends State<CountryStateCityPicker> {
             style: GoogleFonts.raleway(color: Colors.white, fontSize: 16.0))));
   }
 }
-=====================================================================================

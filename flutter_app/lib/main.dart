@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/providers/user_provider.dart';
-import 'package:flutter_app/screens/homepage.dart';
+import 'package:flutter_app/screens/enter_user_details.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 import 'providers/courses_provider.dart';
@@ -13,7 +13,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (context) => UserModel()),
+    ChangeNotifierProvider(create: (context) => UserIdProvider()),
     ChangeNotifierProvider(create: (context) => CourseProvider())
   ], child: const MyApp()));
 }
@@ -27,12 +27,11 @@ class MyApp extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       systemNavigationBarColor: Color(0xff243b55),
     ));
-    
+
     return MaterialApp(
       title: 'ImpactME',
       debugShowCheckedModeBanner: false,
-
-      home: UserHomePage(isVolunteer: false),
+      home: EnterUserBasicDetails(phone_number: "7985641865"),
     );
   }
 }
