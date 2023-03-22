@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/providers/courses_provider.dart';
 import 'package:flutter_app/screens/volunteer_approval.dart';
+import 'package:flutter_app/widgets/snackbar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
@@ -28,7 +29,7 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
   final userQualificationController = TextEditingController();
   final userOrganizationController = TextEditingController();
 
-  List<String> userSkills = [];
+  List<Map<String, dynamic>> userSkills = [];
   List<String> userLanguages = [];
 
   final totalLanguages = [
@@ -371,6 +372,20 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
                         onTap: () {
                           setState(() {
                             skillsSelected[i] = !skillsSelected[i];
+                            if (skillsSelected[i]) {
+                              userSkills.add({
+                                'course_id': courses[i]['course_id'],
+                                'course_name': courses[i]['course_name']
+                              });
+                            } else {
+                              userSkills.removeWhere((element) =>
+                                  element ==
+                                  {
+                                    'course_id': courses[i]['course_id'],
+                                    'course_name': courses[i]['course_name']
+                                  });
+                            }
+                            print(userSkills);
                           });
                         },
                         child: Container(
@@ -461,7 +476,13 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
                         onTap: () {
                           setState(() {
                             languageSelected[i] = !languageSelected[i];
+                            if (languageSelected[i]) {
+                              userLanguages.add(totalLanguages[i]);
+                            } else {
+                              userLanguages.remove(totalLanguages[i]);
+                            }
                           });
+                          print(userLanguages);
                         },
                         child: Container(
                           decoration: BoxDecoration(
@@ -491,10 +512,24 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
               ),
               ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => VolunteerApproval()));
+                    if (userEmailAddressController.text.isEmpty) {
+                      showSnackBar("Enter email address", context);
+                    } else if (userQualificationController.text.isEmpty) {
+                      showSnackBar("Enter your qualification", context);
+                    } else if (userOrganizationController.text.isEmpty) {
+                      showSnackBar("Enter your organization", context);
+                    } else if (userSkills.length == 0) {
+                      showSnackBar("Select atleast one skill", context);
+                    } else if (userSkills.length > 3) {
+                      showSnackBar("Select only 3 skills", context);
+                    } else if (languageSelected.length == 0) {
+                      showSnackBar("Select the language/s you know", context);
+                    } else {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => VolunteerApproval()));
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xff243b55)),
