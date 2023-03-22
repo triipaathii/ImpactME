@@ -250,20 +250,20 @@ class _EnterUserBasicDetailsState extends State<EnterUserBasicDetails> {
                     //     pincode: userPincodeController.text);
                     // await userRepo.createUser(user);
 
-                    // db.collection("users").add({
-                    //   'phone_number': widget.phone_number,
-                    //   'name': nameController.text,
-                    //     'dob': {
-                    //       'date': dobDatePicker.selectedDate?.day,
-                    //       'month': dobDatePicker.selectedDate?.month,
-                    //       'year':dobDatePicker.selectedDate?.year
-                    //     },
-                    //     'gender': _selectedGender.toString(),
-                    //     'country': userCountryController.text,
-                    //     'city': userCityController.text,
-                    //     'state': userStateController.text,
-                    //     'pincode': userPincodeController.text
-                    // }).then((DocumentReference doc) => print('DocumentSnapshot added with ID: ${doc.id}'));
+                    db.collection("users").add({
+                      'phone_number': widget.phone_number,
+                      'name': nameController.text,
+                        'dob': {
+                          'date': dobDatePicker.selectedDate?.day,
+                          'month': dobDatePicker.selectedDate?.month,
+                          'year':dobDatePicker.selectedDate?.year
+                        },
+                        'gender': _selectedGender.toString(),
+                        'country': userCountryController.text,
+                        'city': userCityController.text,
+                        'state': userStateController.text,
+                        'pincode': userPincodeController.text
+                    }).then((DocumentReference doc) => print('DocumentSnapshot added with ID: ${doc.id}'));
 
                     
 
