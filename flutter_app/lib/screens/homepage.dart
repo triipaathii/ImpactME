@@ -281,8 +281,6 @@ class _UserHomePageState extends State<UserHomePage> {
   }
 
   void _handleMenuButtonPressed() {
-    // NOTICE: Manage Advanced Drawer state through the Controller.
-    // _advancedDrawerController.value = AdvancedDrawerValue.visible();
     _advancedDrawerController.showDrawer();
   }
 }
