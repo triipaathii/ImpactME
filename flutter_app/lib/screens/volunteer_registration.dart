@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/models/courses.dart';
 import 'package:flutter_app/providers/courses_provider.dart';
 import 'package:flutter_app/screens/volunteer_approval.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,13 +16,13 @@ class VolunteerRegistration extends StatefulWidget {
 class _VolunteerRegistrationState extends State<VolunteerRegistration> {
   late final XFile? userImage;
 
-  _getPhoto(String medium) {
-    setState(() async {
-      userImage = await ImagePicker().pickImage(
-          source:
-              medium == "gallery" ? ImageSource.gallery : ImageSource.camera);
-    });
-  }
+  // _getPhoto(String medium) {
+  //   setState(() async {
+  //     userImage = await ImagePicker().pickImage(
+  //         source:
+  //             medium == "gallery" ? ImageSource.gallery : ImageSource.camera);
+  //   });
+  // }
 
   final userEmailAddressController = TextEditingController();
   final userQualificationController = TextEditingController();
