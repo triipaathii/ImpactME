@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_app/providers/user_provider.dart';
 import 'package:flutter_app/screens/homepage.dart';
 import 'package:flutter_app/widgets/snackbar.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';

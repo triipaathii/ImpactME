@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/providers/courses_provider.dart';
 import 'package:flutter_app/screens/volunteer_approval.dart';
@@ -5,6 +6,8 @@ import 'package:flutter_app/widgets/snackbar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
+
+import '../providers/user_provider.dart';
 
 class VolunteerRegistration extends StatefulWidget {
   final courses;
@@ -15,6 +18,8 @@ class VolunteerRegistration extends StatefulWidget {
 }
 
 class _VolunteerRegistrationState extends State<VolunteerRegistration> {
+  final db = FirebaseFirestore.instance;
+
   late final XFile? userImage;
 
   // _getPhoto(String medium) {
@@ -525,10 +530,9 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
                     } else if (languageSelected.length == 0) {
                       showSnackBar("Select the language/s you know", context);
                     } else {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => VolunteerApproval()));
+                      db.collection("users").doc(
+                          Provider.of<UserIdProvider>(context, listen: false)
+                              .userId);
                     }
                   },
                   style: ElevatedButton.styleFrom(
