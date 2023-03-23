@@ -292,9 +292,7 @@ class _EnterUserBasicDetailsState extends State<EnterUserBasicDetails> {
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => UserHomePage(
-                                            isVolunteer: false,
-                                          )));
+                                      builder: (context) => UserHomePage()));
                               setState(() {
                                 isLoading = true;
                               });

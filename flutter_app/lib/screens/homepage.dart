@@ -10,8 +10,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'home.dart';
 
 class UserHomePage extends StatefulWidget {
-  bool isVolunteer;
-  UserHomePage({super.key, required this.isVolunteer});
+
+  UserHomePage({super.key});
 
   @override
   State<UserHomePage> createState() => _UserHomePageState();
@@ -50,14 +50,7 @@ class _UserHomePageState extends State<UserHomePage> {
               const SizedBox(
                 height: 50,
               ),
-              // Padding(
-              //   padding: EdgeInsets.symmetric(vertical: 20),
-              //   child: Image.asset(
-              //     "assets/images/logo.png",
-              //     color: Colors.white,
-              //     height: 100,
-              //   ),
-              // ),
+          
 
               CircleAvatar(
                 child: Padding(

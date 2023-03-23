@@ -76,6 +76,8 @@ class _ProfileState extends State<Profile> {
           .then((value) {
         print("============== VALUE ================");
         print(value.data());
+        print("============== USER SKILLS ================");
+        print(value.data()!['skills']);
         userEmailAddressController.text = value.data()!['email_address'];
         userQualificationController.text = value.data()!['qualification'];
         userOrganizationController.text = value.data()!['organization'];

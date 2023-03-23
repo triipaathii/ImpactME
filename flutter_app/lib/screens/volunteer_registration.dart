@@ -511,7 +511,7 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
                             showSnackBar("Select atleast one skill", context);
                           } else if (userSkills.length > 3) {
                             showSnackBar("Select only 3 skills", context);
-                          } else if (languageSelected.length == 0) {
+                          } else if (userLanguages.length == 0) {
                             showSnackBar(
                                 "Select the language/s you know", context);
                           } else {

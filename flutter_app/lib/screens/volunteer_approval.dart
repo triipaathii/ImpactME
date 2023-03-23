@@ -59,7 +59,7 @@ class VolunteerApproval extends StatelessWidget {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => UserHomePage(isVolunteer: true,)));
+                        builder: (context) => UserHomePage()));
               },
               style:
                   ElevatedButton.styleFrom(backgroundColor: Color(0xff243b55)),
