@@ -108,7 +108,6 @@ class _EnterUserNumberState extends State<EnterUserNumber> {
     ));
 
     final mediaQueryHeight = MediaQuery.of(context).size.height;
-    //final mediaQueryWidth = MediaQuery.of(context).size.width;
     final minutes = (myDuration.inMinutes.remainder(60));
     final seconds = (myDuration.inSeconds.remainder(60));
 
@@ -311,7 +310,7 @@ class _EnterUserNumberState extends State<EnterUserNumber> {
                                       await auth
                                           .signInWithCredential(credential);
 
-                                      db
+                                      await db
                                           .collection("users")
                                           .get()
                                           .then((users) {
@@ -329,7 +328,7 @@ class _EnterUserNumberState extends State<EnterUserNumber> {
                                           }
                                         }
                                       });
-                                      if (isExistingUser) {
+                                      if (await isExistingUser) {
                                         print(
                                             "============= USER FOUND ==============");
                                         print(context
