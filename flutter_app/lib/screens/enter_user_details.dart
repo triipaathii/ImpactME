@@ -258,13 +258,13 @@ class _EnterUserBasicDetailsState extends State<EnterUserBasicDetails> {
                     ElevatedButton(
                         onPressed: () {
                           if (nameController.text.isEmpty) {
-                            showSnackBar("Enter your name", context);
+                            showSnackBar("Enter your name", context, Colors.redAccent.shade700);
                           } else if (dobDatePicker.selectedDate == null) {
-                            showSnackBar("Select your DOB", context);
+                            showSnackBar("Select your DOB", context, Colors.redAccent.shade700);
                           } else if (userCityController.text.isEmpty) {
-                            showSnackBar("Enter your city", context);
+                            showSnackBar("Enter your city", context, Colors.redAccent.shade700);
                           } else if (userPincodeController.text.isEmpty) {
-                            showSnackBar("Enter your pincode", context);
+                            showSnackBar("Enter your pincode", context, Colors.redAccent.shade700);
                           } else {
                             setState(() {
                               isLoading = true;

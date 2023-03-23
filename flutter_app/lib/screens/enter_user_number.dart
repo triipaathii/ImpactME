@@ -80,7 +80,7 @@ class _EnterUserNumberState extends State<EnterUserNumber> {
       verificationFailed: (FirebaseAuthException e) {
         if (e.code == 'invalid-phone-number') {
           print('The provided phone number is not valid.');
-          showSnackBar(e.code.toString(), context);
+          showSnackBar(e.code.toString(), context, Colors.redAccent.shade700);
         }
       },
       codeSent: (String verificationId, int? resendToken) async {
@@ -356,7 +356,7 @@ class _EnterUserNumberState extends State<EnterUserNumber> {
                                       setState(() {
                                         isLoading = false;
                                       });
-                                      showSnackBar("Invalid OTP", context);
+                                      showSnackBar("Invalid OTP", context, Colors.redAccent.shade700);
                                     }
                                   },
                                   style: ElevatedButton.styleFrom(

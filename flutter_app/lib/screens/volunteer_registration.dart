@@ -310,43 +310,7 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
                       "Tap on the skills you know or have interest",
                       style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
                     ),
-                    // Container(
-                    //   padding: EdgeInsets.symmetric(horizontal: width * 0.1),
-                    //   child: GridView.builder(
-                    //       shrinkWrap: true,
-                    //       physics: NeverScrollableScrollPhysics(),
-                    //       itemCount: courses.length,
-                    //       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    //           crossAxisCount: 2,
-                    //           crossAxisSpacing: 10,
-                    //           mainAxisSpacing: height * 0.01,
-                    //           childAspectRatio: 2.5),
-                    //       itemBuilder: (context, index) {
-                    //         bool selected = false;
-                    //         return InkWell(
-                    //           onTap: () {
-                    //             setState(() {
-                    //               selected = !selected;
-                    //             });
-                    //           },
-                    //           child: Container(
-                    //             decoration: BoxDecoration(
-                    //                 color:
-                    //                     selected ? Color(0xff243b55) : Colors.white,
-                    //                 border: Border.all(
-                    //                     color: Color(0xff243b55), width: 2),
-                    //                 borderRadius: BorderRadius.circular(20)),
-                    //             child: Center(
-                    //               child: Text(
-                    //                 "${courses[index]['course_name']}",
-                    //                 style:
-                    //                     GoogleFonts.raleway(color: Color(0xff243b55)),
-                    //               ),
-                    //             ),
-                    //           ),
-                    //         );
-                    //       }),
-                    // ),
+                    
                     Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: width * 0.1, vertical: height * 0.03),
@@ -501,19 +465,20 @@ class _VolunteerRegistrationState extends State<VolunteerRegistration> {
                     ),
                     ElevatedButton(
                         onPressed: () {
+                          
                           if (userEmailAddressController.text.isEmpty) {
-                            showSnackBar("Enter email address", context);
+                            showSnackBar("Enter email address", context, Colors.redAccent.shade700);
                           } else if (userQualificationController.text.isEmpty) {
-                            showSnackBar("Enter your qualification", context);
+                            showSnackBar("Enter your qualification", context, Colors.redAccent.shade700);
                           } else if (userOrganizationController.text.isEmpty) {
-                            showSnackBar("Enter your organization", context);
+                            showSnackBar("Enter your organization", context, Colors.redAccent.shade700);
                           } else if (userSkills.length == 0) {
-                            showSnackBar("Select atleast one skill", context);
+                            showSnackBar("Select atleast one skill", context, Colors.redAccent.shade700);
                           } else if (userSkills.length > 3) {
-                            showSnackBar("Select only 3 skills", context);
+                            showSnackBar("Select only 3 skills", context, Colors.redAccent.shade700);
                           } else if (userLanguages.length == 0) {
                             showSnackBar(
-                                "Select the language/s you know", context);
+                                "Select the language/s you know", context, Colors.redAccent.shade700);
                           } else {
                             setState(() {
                               isLoading = true;

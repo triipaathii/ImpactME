@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 import '../providers/courses_provider.dart';
+import '../widgets/snackbar.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -35,6 +36,7 @@ class _ProfileState extends State<Profile> {
   final db = FirebaseFirestore.instance;
 
   bool isLoading = true;
+  bool isUpdating = false;
   bool? isVolunteer;
 
   final totalLanguages = [
@@ -64,23 +66,20 @@ class _ProfileState extends State<Profile> {
 
   final courses = [];
 
-  @override
-  void initState() {
-    setState(() {
-      isVolunteer =
-          Provider.of<UserIdProvider>(context, listen: false).isVolunteer;
-      db
-          .collection("users")
-          .doc(Provider.of<UserIdProvider>(context, listen: false).userId)
-          .get()
-          .then((value) {
-        print("============== VALUE ================");
-        print(value.data());
-        print("============== USER SKILLS ================");
-        print(value.data()!['skills']);
-        userEmailAddressController.text = value.data()!['email_address'];
-        userQualificationController.text = value.data()!['qualification'];
-        userOrganizationController.text = value.data()!['organization'];
+  Future<void> fetchUserData() async {
+    await db
+        .collection("users")
+        .doc(Provider.of<UserIdProvider>(context, listen: false).userId)
+        .get()
+        .then((value) {
+      print("============== VALUE ================");
+      print(value.data());
+      print("============== USER SKILLS ================");
+      print(value.data()!['skills']);
+      setState(() {
+        isVolunteer =
+            Provider.of<UserIdProvider>(context, listen: false).isVolunteer;
+
         nameController.text = value.data()!['name'];
         mobileNumberController.text = value.data()!['phone_number'];
         // dobDatePicker = DateRangePickerController();
@@ -89,22 +88,50 @@ class _ProfileState extends State<Profile> {
         userCountryController.text = value.data()!['country'];
         userPincodeController.text = value.data()!['pincode'];
         genderController.text = value.data()!['gender'];
-        userSkills.addAll(value.data()!['skills']);
-        userLanguages.addAll(value.data()!['languages']);
-      });
-      for (var course
-          in Provider.of<CourseProvider>(context, listen: false).courses) {
-        skillsSelected.add(userSkills.contains(course));
-        courses.add(course);
-      }
 
-      for (var language in totalLanguages) {
-        languageSelected.add(userLanguages.contains(language));
-      }
+        if (isVolunteer!) {
+          userEmailAddressController.text = value.data()!['email_address'];
+          userQualificationController.text = value.data()!['qualification'];
+          userOrganizationController.text = value.data()!['organization'];
+          userSkills.addAll(value.data()!['skills']);
+          userLanguages.addAll(value.data()!['languages']);
+        }
+      });
+    });
+
+    setState(() {
       isLoading = false;
     });
-    print("============== USER SKILLS ==============");
-    print(userSkills);
+  }
+
+  @override
+  void initState() {
+    fetchUserData().then((_) {
+      for (var course
+          in Provider.of<CourseProvider>(context, listen: false).courses) {
+        bool haveSkill = false;
+        for (var skill in userSkills) {
+          if (skill['course_id'] == course['course_id']) {
+            haveSkill = true;
+          }
+        }
+        skillsSelected.add(haveSkill);
+        courses.add(course);
+      }
+      print(skillsSelected);
+
+      for (var language in totalLanguages) {
+        // languageSelected.add(userLanguages.contains(language));
+        bool haveLanguage = false;
+        for (var item in userLanguages) {
+          if (item == language) {
+            haveLanguage = true;
+          }
+        }
+        languageSelected.add(haveLanguage);
+      }
+    });
+
     super.initState();
   }
 
@@ -258,27 +285,28 @@ class _ProfileState extends State<Profile> {
                                     color: Color(0xff243b55), width: 2))),
                       ),
                     ),
-                    Container(
-                      margin: const EdgeInsets.all(10),
-                      width: width * 0.8,
-                      child: TextFormField(
-                        controller: userEmailAddressController,
-                        style: GoogleFonts.raleway(fontSize: 18),
-                        keyboardType: TextInputType.emailAddress,
-                        textAlign: TextAlign.center,
-                        decoration: InputDecoration(
-                            labelText: "Email Address",
-                            labelStyle: GoogleFonts.raleway(fontSize: 17),
-                            floatingLabelStyle:
-                                GoogleFonts.raleway(color: Color(0xff243b55)),
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: Colors.grey, width: 2)),
-                            focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: Color(0xff243b55), width: 2))),
+                    if (isVolunteer!)
+                      Container(
+                        margin: const EdgeInsets.all(10),
+                        width: width * 0.8,
+                        child: TextFormField(
+                          controller: userEmailAddressController,
+                          style: GoogleFonts.raleway(fontSize: 18),
+                          keyboardType: TextInputType.emailAddress,
+                          textAlign: TextAlign.center,
+                          decoration: InputDecoration(
+                              labelText: "Email Address",
+                              labelStyle: GoogleFonts.raleway(fontSize: 17),
+                              floatingLabelStyle:
+                                  GoogleFonts.raleway(color: Color(0xff243b55)),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Colors.grey, width: 2)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Color(0xff243b55), width: 2))),
+                        ),
                       ),
-                    ),
                     Container(
                       margin: const EdgeInsets.all(10),
                       width: width * 0.8,
@@ -558,18 +586,131 @@ class _ProfileState extends State<Profile> {
                       height: height * 0.03,
                     ),
                     ElevatedButton(
-                        onPressed: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => VolunteerApproval()));
-                        },
+                        onPressed: isUpdating
+                            ? null
+                            : () async {
+                                setState(() {
+                                  isUpdating = true;
+                                });
+                                if (isVolunteer!) {
+                                  if (nameController.text.isEmpty) {
+                                    showSnackBar("Enter your name", context,
+                                        Colors.redAccent.shade700);
+                                  } else if (mobileNumberController
+                                      .text.isEmpty) {
+                                    showSnackBar("Enter your mobile number",
+                                        context, Colors.redAccent.shade700);
+                                  } else if (userEmailAddressController
+                                      .text.isEmpty) {
+                                    showSnackBar("Enter email address", context,
+                                        Colors.redAccent.shade700);
+                                  } else if (genderController.text.isEmpty) {
+                                    showSnackBar("Enter your gender", context,
+                                        Colors.redAccent.shade700);
+                                  } else if (userQualificationController
+                                      .text.isEmpty) {
+                                    showSnackBar("Enter your qualification",
+                                        context, Colors.redAccent.shade700);
+                                  } else if (userOrganizationController
+                                      .text.isEmpty) {
+                                    showSnackBar("Enter your organization",
+                                        context, Colors.redAccent.shade700);
+                                  } else if (userSkills.length == 0) {
+                                    showSnackBar("Select atleast one skill",
+                                        context, Colors.redAccent.shade700);
+                                  } else if (userSkills.length > 3) {
+                                    showSnackBar("Select only 3 skills",
+                                        context, Colors.redAccent.shade700);
+                                  } else if (userLanguages.length == 0) {
+                                    showSnackBar(
+                                        "Select the language/s you know",
+                                        context,
+                                        Colors.redAccent.shade700);
+                                  } else {
+                                    try {
+                                      await db
+                                          .collection("users")
+                                          .doc(Provider.of<UserIdProvider>(
+                                                  context,
+                                                  listen: false)
+                                              .userId)
+                                          .update({
+                                        'phone_number':
+                                            mobileNumberController.text,
+                                        'name': nameController.text,
+                                        'gender': genderController.text,
+                                        "email_address":
+                                            userEmailAddressController.text,
+                                        "organization":
+                                            userOrganizationController.text,
+                                        "qualification":
+                                            userQualificationController.text,
+                                        "skills": userSkills,
+                                        "languages": userLanguages
+                                      }).then((value) {
+                                        showSnackBar(
+                                            "Profile updated successfully!",
+                                            context,
+                                            Colors.green.shade900);
+                                      });
+                                    } catch (e) {
+                                      showSnackBar("Error updating in profile",
+                                          context, Colors.redAccent.shade700);
+                                    }
+                                  }
+                                  setState(() {
+                                    isUpdating = false;
+                                  });
+                                } else {
+                                  if (nameController.text.isEmpty) {
+                                    showSnackBar("Enter your name", context,
+                                        Colors.redAccent.shade700);
+                                  } else if (mobileNumberController
+                                      .text.isEmpty) {
+                                    showSnackBar("Enter your mobile number",
+                                        context, Colors.redAccent.shade700);
+                                  } else if (genderController.text.isEmpty) {
+                                    showSnackBar("Enter your gender", context,
+                                        Colors.redAccent.shade700);
+                                  } else {
+                                    try {
+                                      await db
+                                          .collection("users")
+                                          .doc(Provider.of<UserIdProvider>(
+                                                  context,
+                                                  listen: false)
+                                              .userId)
+                                          .update({
+                                        'phone_number':
+                                            mobileNumberController.text,
+                                        'name': nameController.text,
+                                        'gender': genderController.text,
+                                      }).then((value) {
+                                        showSnackBar(
+                                            "Profile updated successfully!",
+                                            context,
+                                            Colors.green.shade900);
+                                      });
+                                    } catch (e) {
+                                      showSnackBar("Error updating in profile",
+                                          context, Colors.redAccent.shade700);
+                                    }
+                                  }
+                                  setState(() {
+                                    isUpdating = false;
+                                  });
+                                }
+                              },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Color(0xff243b55)),
-                        child: Text(
-                          "SAVE",
-                          style: GoogleFonts.raleway(color: Colors.white),
-                        )),
+                        child: isUpdating
+                            ? CircularProgressIndicator(
+                                color: Colors.white,
+                              )
+                            : Text(
+                                "SAVE",
+                                style: GoogleFonts.raleway(color: Colors.white),
+                              )),
                     SizedBox(height: height * 0.025),
                   ],
                 ),
