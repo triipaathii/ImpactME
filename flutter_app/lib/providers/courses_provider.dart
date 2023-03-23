@@ -8,4 +8,9 @@ class CourseProvider extends ChangeNotifier {
     courses.add(course);
     notifyListeners();
   }
+
+  void removeCourses() {
+    courses.clear();
+    notifyListeners();
+  }
 }

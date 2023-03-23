@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/providers/user_provider.dart';
-import 'package:flutter_app/screens/enter_user_details.dart';
+import 'package:flutter_app/screens/enter_user_number.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 import 'providers/courses_provider.dart';
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'ImpactME',
       debugShowCheckedModeBanner: false,
-      home: EnterUserBasicDetails(phone_number: "7985641865"),
+      home: EnterUserNumber(),
     );
   }
 }

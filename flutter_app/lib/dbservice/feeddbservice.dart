@@ -1,4 +1,4 @@
-  import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../models/feeds.dart';
 
@@ -8,12 +8,12 @@ final FirebaseFirestore _db = FirebaseFirestore.instance;
 //     await _db.collection("Employees").add(employeeData.toMap());
 //   }
 
- class DatabaseService{  
-  Future<List<Feed>?> retrieveFeeds() async {
+class DatabaseService {
+  Future retrieveFeeds() async {
     QuerySnapshot<Map<String, dynamic>> snapshot =
         await _db.collection("Feeds").get();
     return snapshot.docs
         .map((docSnapshot) => Feed.fromDocumentSnapshot(docSnapshot))
         .toList();
   }
- }
+}

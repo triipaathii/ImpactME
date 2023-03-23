@@ -5,14 +5,13 @@ import 'package:flutter_app/screens/about_us.dart';
 import 'package:flutter_app/screens/feeds.dart';
 import 'package:flutter_app/screens/jobs.dart';
 import 'package:flutter_app/screens/profile.dart';
-import 'package:flutter_app/screens/settings.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'home.dart';
 
 class UserHomePage extends StatefulWidget {
-  bool isVolunteer;
-  UserHomePage({super.key, required this.isVolunteer});
+
+  UserHomePage({super.key});
 
   @override
   State<UserHomePage> createState() => _UserHomePageState();
@@ -51,14 +50,7 @@ class _UserHomePageState extends State<UserHomePage> {
               const SizedBox(
                 height: 50,
               ),
-              // Padding(
-              //   padding: EdgeInsets.symmetric(vertical: 20),
-              //   child: Image.asset(
-              //     "assets/images/logo.png",
-              //     color: Colors.white,
-              //     height: 100,
-              //   ),
-              // ),
+          
 
               CircleAvatar(
                 child: Padding(
@@ -269,7 +261,7 @@ class _UserHomePageState extends State<UserHomePage> {
             ),
           ),
           body: pageIndex == 0
-              ? Home(isVolunteer: widget.isVolunteer,)
+              ? Home()
               : pageIndex == 1
                   ? const Feeds()
                   : pageIndex == 2
