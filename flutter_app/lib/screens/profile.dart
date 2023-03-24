@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/providers/user_provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 import '../providers/courses_provider.dart';
@@ -37,6 +37,7 @@ class _ProfileState extends State<Profile> {
 
   bool isLoading = true;
   bool isUpdating = false;
+  String? userId;
   bool? isVolunteer;
 
   final totalLanguages = [
@@ -66,10 +67,18 @@ class _ProfileState extends State<Profile> {
 
   final courses = [];
 
+  Future<void> _fetchUserId() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      userId = (prefs.getString('userId') ?? null);
+      isVolunteer = (prefs.getBool('isVolunteer') ?? null);
+    });
+  }
+
   Future<void> fetchUserData() async {
     await db
         .collection("users")
-        .doc(Provider.of<UserIdProvider>(context, listen: false).userId)
+        .doc(userId)
         .get()
         .then((value) {
       print("============== VALUE ================");
@@ -77,9 +86,6 @@ class _ProfileState extends State<Profile> {
       print("============== USER SKILLS ================");
       print(value.data()!['skills']);
       setState(() {
-        isVolunteer =
-            Provider.of<UserIdProvider>(context, listen: false).isVolunteer;
-
         nameController.text = value.data()!['name'];
         mobileNumberController.text = value.data()!['phone_number'];
         // dobDatePicker = DateRangePickerController();
@@ -106,6 +112,7 @@ class _ProfileState extends State<Profile> {
 
   @override
   void initState() {
+    _fetchUserId();
     fetchUserData().then((_) {
       for (var course
           in Provider.of<CourseProvider>(context, listen: false).courses) {
@@ -630,10 +637,7 @@ class _ProfileState extends State<Profile> {
                                     try {
                                       await db
                                           .collection("users")
-                                          .doc(Provider.of<UserIdProvider>(
-                                                  context,
-                                                  listen: false)
-                                              .userId)
+                                          .doc(userId)
                                           .update({
                                         'phone_number':
                                             mobileNumberController.text,
@@ -676,10 +680,7 @@ class _ProfileState extends State<Profile> {
                                     try {
                                       await db
                                           .collection("users")
-                                          .doc(Provider.of<UserIdProvider>(
-                                                  context,
-                                                  listen: false)
-                                              .userId)
+                                          .doc(userId)
                                           .update({
                                         'phone_number':
                                             mobileNumberController.text,

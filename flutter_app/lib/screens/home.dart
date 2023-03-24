@@ -2,11 +2,11 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/providers/user_provider.dart';
 import 'package:flutter_app/screens/course_page.dart';
 import 'package:flutter_app/screens/volunteer_registration.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../providers/courses_provider.dart';
 
@@ -20,6 +20,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  bool? isVolunteer;
   bool booked = false;
   bool isLoading = true;
   List<Map<String, dynamic>> courses = [];
@@ -41,13 +42,19 @@ class _HomeState extends State<Home> {
         });
       }
     });
-
     print("=================== COURSE PROVIDER =================");
     print(Provider.of<CourseProvider>(context, listen: false).courses);
-    print('================= USER VOLUNTEER ===============');
-    print(Provider.of<UserIdProvider>(context, listen: false).isVolunteer);
+    // print('================= USER VOLUNTEER ===============');
+    // print(Provider.of<UserIdProvider>(context, listen: false).isVolunteer);
     setState(() {
       isLoading = false;
+    });
+  }
+
+  Future<void> _loadVolunteerStatus() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      isVolunteer = (prefs.getBool('isVolunteer') ?? false);
     });
   }
 
@@ -71,14 +78,13 @@ class _HomeState extends State<Home> {
     _loadCourses();
 
     super.initState();
+    _loadVolunteerStatus();
   }
 
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
-    bool isVolunteer =
-        Provider.of<UserIdProvider>(context, listen: false).isVolunteer;
 
     return isLoading
         ? Center(
@@ -94,7 +100,7 @@ class _HomeState extends State<Home> {
                   width: double.infinity,
                   height: height * 0.04,
                 ),
-                if (!isVolunteer)
+                if (!isVolunteer!)
                   Column(
                     children: [
                       Container(
@@ -510,7 +516,7 @@ class _HomeState extends State<Home> {
                 SizedBox(
                   height: height * 0.05,
                 ),
-                if (isVolunteer)
+                if (isVolunteer!)
                   Column(
                     children: [
                       Column(

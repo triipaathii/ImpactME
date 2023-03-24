@@ -2,11 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:country_state_city_pro/country_state_city_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_app/providers/user_provider.dart';
 import 'package:flutter_app/screens/homepage.dart';
 import 'package:flutter_app/widgets/snackbar.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 class EnterUserBasicDetails extends StatefulWidget {
@@ -256,20 +255,24 @@ class _EnterUserBasicDetailsState extends State<EnterUserBasicDetails> {
                     ),
                     const SizedBox(height: 50),
                     ElevatedButton(
-                        onPressed: () {
+                        onPressed: () async {
                           if (nameController.text.isEmpty) {
-                            showSnackBar("Enter your name", context, Colors.redAccent.shade700);
+                            showSnackBar("Enter your name", context,
+                                Colors.redAccent.shade700);
                           } else if (dobDatePicker.selectedDate == null) {
-                            showSnackBar("Select your DOB", context, Colors.redAccent.shade700);
+                            showSnackBar("Select your DOB", context,
+                                Colors.redAccent.shade700);
                           } else if (userCityController.text.isEmpty) {
-                            showSnackBar("Enter your city", context, Colors.redAccent.shade700);
+                            showSnackBar("Enter your city", context,
+                                Colors.redAccent.shade700);
                           } else if (userPincodeController.text.isEmpty) {
-                            showSnackBar("Enter your pincode", context, Colors.redAccent.shade700);
+                            showSnackBar("Enter your pincode", context,
+                                Colors.redAccent.shade700);
                           } else {
                             setState(() {
                               isLoading = true;
                             });
-                            db.collection("users").add({
+                            await db.collection("users").add({
                               'phone_number': widget.phone_number,
                               'name': nameController.text,
                               'dob': {
@@ -283,12 +286,16 @@ class _EnterUserBasicDetailsState extends State<EnterUserBasicDetails> {
                               'state': userStateController.text,
                               'pincode': userPincodeController.text,
                               'isVolunteer': false
-                            }).then((DocumentReference doc) {
+                            }).then((DocumentReference doc) async {
                               print(
                                   'DocumentSnapshot added with ID: ${doc.id}');
-                              Provider.of<UserIdProvider>(context,
-                                      listen: false)
-                                  .addUserId(doc.id);
+                              final prefs =
+                                  await SharedPreferences.getInstance();
+                              await prefs.setString('userId', doc.id);
+                              await prefs.setBool('isVolunteer', false);
+                              // Provider.of<UserIdProvider>(context,
+                              //         listen: false)
+                              //     .addUserId(doc.id);
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
