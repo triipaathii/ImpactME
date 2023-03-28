@@ -6,12 +6,10 @@ import 'package:flutter_app/screens/feeds.dart';
 import 'package:flutter_app/screens/jobs.dart';
 import 'package:flutter_app/screens/profile.dart';
 import 'package:flutter_app/screens/business.dart';
-import 'package:flutter_app/screens/settings.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'home.dart';
 
 class UserHomePage extends StatefulWidget {
-
   UserHomePage({super.key});
 
   @override
@@ -51,7 +49,6 @@ class _UserHomePageState extends State<UserHomePage> {
               const SizedBox(
                 height: 50,
               ),
-          
 
               CircleAvatar(
                 child: Padding(
@@ -136,7 +133,7 @@ class _UserHomePageState extends State<UserHomePage> {
                 },
                 tileColor: pageIndex == 2 ? Colors.white : Colors.transparent,
                 leading: Icon(
-                  Icons.account_circle_rounded,
+                  Icons.public_sharp,
                   color: pageIndex == 2
                       ? const Color.fromARGB(255, 43, 70, 100)
                       : Colors.white,
@@ -159,7 +156,7 @@ class _UserHomePageState extends State<UserHomePage> {
                 },
                 tileColor: pageIndex == 3 ? Colors.white : Colors.transparent,
                 leading: Icon(
-                  Icons.account_circle_rounded,
+                  Icons.campaign_rounded,
                   color: pageIndex == 3
                       ? const Color.fromARGB(255, 43, 70, 100)
                       : Colors.white,
@@ -182,7 +179,7 @@ class _UserHomePageState extends State<UserHomePage> {
                 },
                 tileColor: pageIndex == 4 ? Colors.white : Colors.transparent,
                 leading: Icon(
-                  Icons.settings,
+                  Icons.account_circle_rounded,
                   color: pageIndex == 4
                       ? const Color.fromARGB(255, 43, 70, 100)
                       : Colors.white,
@@ -213,7 +210,7 @@ class _UserHomePageState extends State<UserHomePage> {
                 title: Text(
                   'About Us',
                   style: GoogleFonts.raleway(
-                      color: pageIndex ==5
+                      color: pageIndex == 5
                           ? const Color.fromARGB(255, 43, 70, 100)
                           : Colors.white),
                 ),
@@ -246,35 +243,35 @@ class _UserHomePageState extends State<UserHomePage> {
                         ]
                       : pageIndex == 2
                           ? <Widget>[
-                              const Icon(Icons.account_circle_rounded),
+                              const Icon(Icons.public_sharp),
                               Text(
                                 '  JOB DESCRIPTION',
                                 style: GoogleFonts.raleway(),
                               ),
                             ]
-                      : pageIndex == 3
-                          ?<Widget>[
-                            const Icon(Icons.account_circle_rounded),
-                            Text(
-                              '  BUSINESS PROMOTION',
-                              style: GoogleFonts.raleway(),
-                            ),
-                          ]
-                          : pageIndex == 4
+                          : pageIndex == 3
                               ? <Widget>[
-                                  const Icon(Icons.settings),
+                                  const Icon(Icons.campaign_rounded),
                                   Text(
-                                    '  PROFILE',
+                                    '  BUSINESS PROMOTION',
                                     style: GoogleFonts.raleway(),
                                   ),
                                 ]
-                              : <Widget>[
-                                  const Icon(Icons.info_rounded),
-                                  Text(
-                                    '  ABOUT US',
-                                    style: GoogleFonts.raleway(),
-                                  ),
-                                ],
+                              : pageIndex == 4
+                                  ? <Widget>[
+                                      const Icon(Icons.account_circle_rounded),
+                                      Text(
+                                        '  PROFILE',
+                                        style: GoogleFonts.raleway(),
+                                      ),
+                                    ]
+                                  : <Widget>[
+                                      const Icon(Icons.info_rounded),
+                                      Text(
+                                        '  ABOUT US',
+                                        style: GoogleFonts.raleway(),
+                                      ),
+                                    ],
             ),
             leading: IconButton(
               onPressed: _handleMenuButtonPressed,
@@ -298,11 +295,11 @@ class _UserHomePageState extends State<UserHomePage> {
                   ? const Feeds()
                   : pageIndex == 2
                       ? const Jobs()
-                  : pageIndex == 3
-                      ? const Business()
-                      : pageIndex == 4
-                          ? const Profile()
-                          : const AboutUs()),
+                      : pageIndex == 3
+                          ? const Business()
+                          : pageIndex == 4
+                              ? const Profile()
+                              : const AboutUs()),
     );
   }
 

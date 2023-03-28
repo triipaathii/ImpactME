@@ -8,10 +8,7 @@ import 'package:flutter_app/screens/enter_user_details.dart';
 import 'package:flutter_app/widgets/snackbar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
-import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../providers/user_provider.dart';
 import '../widgets/toast.dart';
 import 'homepage.dart';
 

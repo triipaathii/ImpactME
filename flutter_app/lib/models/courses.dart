@@ -198,7 +198,7 @@ final promotions = [
     'location': "Anu, Hamirpur, Himachal Pradesh",
     'description':
         "This is a small road-side shop of Mr. Anand, who sells sweets and refreshments there. His warm hospitality is something to be there for and on the top of that his Sweets are adding some extra stars to that. You must go there atleast once not only for taste but to see how people are eager to help depite of them having difficulties in life. He is willing to teach people the skill as he believes that he may or may not be there but skills must be immortal.",
-    'timestamp': "23rd Mar, 2022 | 6:00PM",
+    'contact_number': "+911111111111",
     'user_name': "Anand Sweets",
   },
   {
@@ -206,7 +206,7 @@ final promotions = [
     'location': "Bharodi, Hamirpur, Himachal Pradesh",
     'description':
         "A small pickle business started by the women of a small village Bharodi. They learnt the skill of making pickles and now they have transformed it into a business. Be their client to taste the pureness of not only pckle but their love too.",
-    'timestamp': "20th Mar, 2022 | 4:00PM",
+    'contact_number': "+912222222222",
     'user_name': "Aachaar",
   },
   {
@@ -214,7 +214,7 @@ final promotions = [
     'location': "Chamba, Himachal Pradesh",
     'description':
         "This women has lightened the houses of several other women by making a business out of the pottery skill she had. Let's all be her clients to support her extraordinary spirit of doing something new.",
-    'timestamp': "18th Mar, 2022 | 6:00PM",
+    'contact_number': "+913333333333",
     'user_name': "Ghadoli",
   },
   {
@@ -222,7 +222,7 @@ final promotions = [
     'location': "Spiti, Himachal Pradesh",
     'description':
         "These women have started their crafting business in small town of spiti. We should support them as the things are handmade and the craft work is quite delicate.",
-    'timestamp': "15th Mar, 2022 | 2:00PM",
+    'contact_number': "+914444444444",
     'user_name': "Crafted With Love",
   },
   {
@@ -230,7 +230,7 @@ final promotions = [
     'location': "Kangra, Himachal Pradesh",
     'description':
         "This is a small shop in kangra, Himachal Pradesh where this person makes kites and sells them. You should surely try his kites as he also does personalised work on kites on very reasonable prices.",
-    'timestamp': "12th Feb, 2022 | 2:00PM",
+    'contact_number': "+915555555555",
     'user_name': "Patangein",
   },
   {
@@ -238,7 +238,7 @@ final promotions = [
     'location': "Kullu, Himachal Pradesh",
     'description':
         "He learned the shoe designing and now he is not even creating an earning for himselfbut also ",
-    'timestamp': "20th Feb, 2022 | 8:00PM",
+    'contact_number': "+916666666666",
     'user_name': "Raj Shoes",
   },
   {
@@ -246,8 +246,7 @@ final promotions = [
     'location': "Mandi, Himachal Pradesh",
     'description':
         "These women make spices in the village without any industrial machines. They make all the spices with their indegenous hometools. So let's try the taste of pureness.",
-    'timestamp': "17th Mar, 2022 | 11:00AM",
+    'contact_number': "+917777777777",
     'user_name': "Spice of love",
   }
 ];
-
