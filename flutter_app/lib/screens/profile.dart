@@ -1,9 +1,14 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
+import 'package:badges/badges.dart' as badges;
 
 import '../providers/courses_provider.dart';
 import '../widgets/snackbar.dart';
@@ -33,12 +38,14 @@ class _ProfileState extends State<Profile> {
   late List<bool> skillsSelected = [];
   late List<bool> languageSelected = [];
 
-  final db = FirebaseFirestore.instance;
+  final db = FirebaseFirestore.instance.collection("users");
 
   bool isLoading = true;
   bool isUpdating = false;
+
   String? userId;
   bool? isVolunteer;
+  String? profilePhotoPath;
 
   final totalLanguages = [
     "Assamese",
@@ -73,18 +80,22 @@ class _ProfileState extends State<Profile> {
       userId = (prefs.getString('userId') ?? null);
       isVolunteer = (prefs.getBool('isVolunteer') ?? null);
     });
+    print(userId);
+    print(isVolunteer);
   }
 
-  Future<void> fetchUserData() async {
-    await db
-        .collection("users")
-        .doc(userId)
-        .get()
-        .then((value) {
+  Future<void> _fetchUserData() async {
+    final sample = await db.doc(userId);
+    print(sample.firestore);
+    print(sample.snapshots());
+    print(sample.parent);
+    print(sample.id);
+    await db.doc(userId).get().then((value) {
       print("============== VALUE ================");
+      print(value);
       print(value.data());
-      print("============== USER SKILLS ================");
-      print(value.data()!['skills']);
+      // print("============== USER SKILLS ================");
+      // print(value.data()!['skills']);
       setState(() {
         nameController.text = value.data()!['name'];
         mobileNumberController.text = value.data()!['phone_number'];
@@ -94,6 +105,7 @@ class _ProfileState extends State<Profile> {
         userCountryController.text = value.data()!['country'];
         userPincodeController.text = value.data()!['pincode'];
         genderController.text = value.data()!['gender'];
+        profilePhotoPath = value.data()!['profile_picture_path'];
 
         if (isVolunteer!) {
           userEmailAddressController.text = value.data()!['email_address'];
@@ -110,10 +122,47 @@ class _ProfileState extends State<Profile> {
     });
   }
 
+  XFile? userImage;
+  final ImagePicker _picker = ImagePicker();
+
+  Future<void> _getImage(ImageSource source) async {
+    try {
+      final XFile? pickedFile = await _picker.pickImage(
+        source: source,
+      );
+      if (pickedFile != null) {
+        setState(() {
+          userImage = pickedFile;
+        });
+      }
+    } catch (e) {
+      showSnackBar(e.toString(), context, Colors.redAccent.shade400);
+    }
+  }
+
+  Future<void> _uploadProfilePhoto() async {
+    late String phoneNumber;
+    await db.doc(userId).get().then((value) {
+      print(value.data());
+      phoneNumber = value.data()!['phone_number'];
+    });
+    final storage = FirebaseStorage.instance.ref("profile photo/$phoneNumber");
+    try {
+      await storage.putFile(File(userImage!.path));
+      final getUrl = await storage.getDownloadURL();
+      setState(() {
+        profilePhotoPath = getUrl;
+      });
+      print(profilePhotoPath);
+    } catch (e) {
+      showSnackBar(e.toString(), context, Colors.redAccent.shade400);
+    }
+  }
+
   @override
   void initState() {
     _fetchUserId();
-    fetchUserData().then((_) {
+    _fetchUserData().then((_) {
       for (var course
           in Provider.of<CourseProvider>(context, listen: false).courses) {
         bool haveSkill = false;
@@ -163,12 +212,36 @@ class _ProfileState extends State<Profile> {
                       width: width,
                     ),
                     Center(
+                        child: badges.Badge(
+                      showBadge: userImage == null && profilePhotoPath == null
+                          ? false
+                          : true,
+                      badgeStyle: badges.BadgeStyle(
+                        badgeColor: Colors.redAccent.shade400,
+                        padding: EdgeInsets.all(2),
+                      ),
+                      badgeContent: Icon(
+                        Icons.cancel_outlined,
+                        color: Colors.white,
+                      ),
+                      position: badges.BadgePosition.topEnd(end: width * 0.05),
+                      onTap: () {
+                        setState(() {
+                          userImage = null;
+                          profilePhotoPath = null;
+                        });
+                      },
                       child: CircleAvatar(
                         radius: height * 0.1,
                         backgroundColor: Color(0xff243b55),
-                        backgroundImage: AssetImage("assets/images/man.png"),
+                        backgroundImage: userImage != null
+                            ? FileImage(File(userImage!.path))
+                            : profilePhotoPath != null
+                                ? NetworkImage(profilePhotoPath!)
+                                    as ImageProvider
+                                : AssetImage("assets/images/man.png"),
                       ),
-                    ),
+                    )),
                     SizedBox(
                       height: height * 0.03,
                     ),
@@ -189,7 +262,9 @@ class _ProfileState extends State<Profile> {
                               color: Color(0xff243b55),
                               borderRadius: BorderRadius.circular(5)),
                           child: IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                _getImage(ImageSource.camera);
+                              },
                               icon: Icon(
                                 Icons.camera_alt_rounded,
                                 color: Colors.white,
@@ -203,7 +278,9 @@ class _ProfileState extends State<Profile> {
                               color: Color(0xff243b55),
                               borderRadius: BorderRadius.circular(5)),
                           child: IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                _getImage(ImageSource.gallery);
+                              },
                               icon: Icon(
                                 Icons.image_rounded,
                                 color: Colors.white,
@@ -635,28 +712,55 @@ class _ProfileState extends State<Profile> {
                                         Colors.redAccent.shade700);
                                   } else {
                                     try {
-                                      await db
-                                          .collection("users")
-                                          .doc(userId)
-                                          .update({
-                                        'phone_number':
-                                            mobileNumberController.text,
-                                        'name': nameController.text,
-                                        'gender': genderController.text,
-                                        "email_address":
-                                            userEmailAddressController.text,
-                                        "organization":
-                                            userOrganizationController.text,
-                                        "qualification":
-                                            userQualificationController.text,
-                                        "skills": userSkills,
-                                        "languages": userLanguages
-                                      }).then((value) {
-                                        showSnackBar(
-                                            "Profile updated successfully!",
-                                            context,
-                                            Colors.green.shade900);
-                                      });
+                                      if (userImage != null) {
+                                        await _uploadProfilePhoto()
+                                            .then((_) async {
+                                          await db.doc(userId).update({
+                                            'phone_number':
+                                                mobileNumberController.text,
+                                            'name': nameController.text,
+                                            'gender': genderController.text,
+                                            "email_address":
+                                                userEmailAddressController.text,
+                                            "organization":
+                                                userOrganizationController.text,
+                                            "qualification":
+                                                userQualificationController
+                                                    .text,
+                                            "skills": userSkills,
+                                            "languages": userLanguages,
+                                            "profile_picture_path":
+                                                profilePhotoPath
+                                          }).then((_) {
+                                            showSnackBar(
+                                                "Profile updated successfully!",
+                                                context,
+                                                Colors.green.shade900);
+                                          });
+                                        });
+                                      } else {
+                                        await db.doc(userId).update({
+                                          'phone_number':
+                                              mobileNumberController.text,
+                                          'name': nameController.text,
+                                          'gender': genderController.text,
+                                          "email_address":
+                                              userEmailAddressController.text,
+                                          "organization":
+                                              userOrganizationController.text,
+                                          "qualification":
+                                              userQualificationController.text,
+                                          "skills": userSkills,
+                                          "languages": userLanguages,
+                                          "profile_picture_path":
+                                              profilePhotoPath
+                                        }).then((_) {
+                                          showSnackBar(
+                                              "Profile updated successfully!",
+                                              context,
+                                              Colors.green.shade900);
+                                        });
+                                      }
                                     } catch (e) {
                                       showSnackBar("Error updating in profile",
                                           context, Colors.redAccent.shade700);
@@ -678,20 +782,38 @@ class _ProfileState extends State<Profile> {
                                         Colors.redAccent.shade700);
                                   } else {
                                     try {
-                                      await db
-                                          .collection("users")
-                                          .doc(userId)
-                                          .update({
-                                        'phone_number':
-                                            mobileNumberController.text,
-                                        'name': nameController.text,
-                                        'gender': genderController.text,
-                                      }).then((value) {
-                                        showSnackBar(
-                                            "Profile updated successfully!",
-                                            context,
-                                            Colors.green.shade900);
-                                      });
+                                      if (userImage != null) {
+                                        await _uploadProfilePhoto()
+                                            .then((_) async {
+                                          await db.doc(userId).update({
+                                            'phone_number':
+                                                mobileNumberController.text,
+                                            'name': nameController.text,
+                                            'gender': genderController.text,
+                                            'profile_picture_path':
+                                                profilePhotoPath
+                                          }).then((value) {
+                                            showSnackBar(
+                                                "Profile updated successfully!",
+                                                context,
+                                                Colors.green.shade900);
+                                          });
+                                        });
+                                      } else {
+                                        await db.doc(userId).update({
+                                          'phone_number':
+                                              mobileNumberController.text,
+                                          'name': nameController.text,
+                                          'gender': genderController.text,
+                                          "profile_picture_path":
+                                              profilePhotoPath
+                                        }).then((value) {
+                                          showSnackBar(
+                                              "Profile updated successfully!",
+                                              context,
+                                              Colors.green.shade900);
+                                        });
+                                      }
                                     } catch (e) {
                                       showSnackBar("Error updating in profile",
                                           context, Colors.redAccent.shade700);

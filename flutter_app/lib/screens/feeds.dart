@@ -2,10 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:badges/badges.dart' as badges;
-
-import '../dbservice/feeddbservice.dart';
 import '../models/courses.dart';
-import '../models/feeds.dart';
 
 class Feeds extends StatefulWidget {
   const Feeds({super.key});

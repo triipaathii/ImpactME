@@ -1,12 +1,17 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:country_state_city_pro/country_state_city_pro.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/screens/homepage.dart';
 import 'package:flutter_app/widgets/snackbar.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
+import 'package:badges/badges.dart' as badges;
 
 class EnterUserBasicDetails extends StatefulWidget {
   var phone_number;
@@ -29,11 +34,48 @@ class _EnterUserBasicDetailsState extends State<EnterUserBasicDetails> {
 
   bool isLoading = false;
 
+  XFile? userImage;
+  String? profilePhotoPath;
+  final ImagePicker _picker = ImagePicker();
+
+  Future<void> _getImage(ImageSource source) async {
+    try {
+      final XFile? pickedFile = await _picker.pickImage(
+        source: source,
+      );
+      if (pickedFile != null) {
+        setState(() {
+          userImage = pickedFile;
+        });
+      }
+    } catch (e) {
+      showSnackBar(e.toString(), context, Colors.redAccent.shade400);
+    }
+  }
+
+  Future<void> _uploadProfilePhoto() async {
+    final storage =
+        FirebaseStorage.instance.ref("profile photo/${widget.phone_number}");
+    try {
+      await storage.putFile(File(userImage!.path));
+      final getUrl = await storage.getDownloadURL();
+      setState(() {
+        profilePhotoPath = getUrl;
+      });
+      print(profilePhotoPath);
+    } catch (e) {
+      showSnackBar(e.toString(), context, Colors.redAccent.shade400);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       systemNavigationBarColor: Color(0xff243b55),
     ));
+
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
 
     return SafeArea(
       child: Scaffold(
@@ -66,7 +108,87 @@ class _EnterUserBasicDetailsState extends State<EnterUserBasicDetails> {
                           fontSize: 18,
                           letterSpacing: 7),
                     ),
-                    const SizedBox(height: 50),
+                    SizedBox(height: height * 0.05),
+                    Center(
+                        child: badges.Badge(
+                      showBadge: userImage == null && profilePhotoPath == null
+                          ? false
+                          : true,
+                      badgeStyle: badges.BadgeStyle(
+                        badgeColor: Colors.redAccent.shade400,
+                        padding: EdgeInsets.all(2),
+                      ),
+                      badgeContent: Icon(
+                        Icons.cancel_outlined,
+                        color: Colors.white,
+                      ),
+                      position: badges.BadgePosition.topEnd(end: width * 0.05),
+                      onTap: () {
+                        setState(() {
+                          userImage = null;
+                          profilePhotoPath = null;
+                        });
+                      },
+                      child: CircleAvatar(
+                        radius: height * 0.1,
+                        backgroundColor: Colors.white,
+                        backgroundImage: userImage == null
+                            ? AssetImage("assets/images/man.png")
+                            : FileImage(File(userImage!.path)) as ImageProvider,
+                      ),
+                    )),
+                    // if (userImage != null) Image.file(File(userImage!.path)),
+
+                    SizedBox(
+                      height: height * 0.03,
+                    ),
+
+                    Center(
+                      child: Text(
+                        "SELECT FROM",
+                        style: GoogleFonts.raleway(color: Colors.white),
+                      ),
+                    ),
+                    SizedBox(
+                      height: height * 0.015,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(5)),
+                          child: IconButton(
+                              onPressed: () {
+                                _getImage(ImageSource.camera);
+                              },
+                              icon: Icon(
+                                Icons.camera_alt_rounded,
+                                color: Color(0xff243b55),
+                              )),
+                        ),
+                        SizedBox(
+                          width: width * 0.02,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(5)),
+                          child: IconButton(
+                              onPressed: () {
+                                _getImage(ImageSource.gallery);
+                              },
+                              icon: Icon(
+                                Icons.image_rounded,
+                                color: Color(0xff243b55),
+                              )),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: height * 0.05,
+                    ),
                     Text(
                       "ENTER YOUR NAME",
                       style: GoogleFonts.raleway(
@@ -272,38 +394,78 @@ class _EnterUserBasicDetailsState extends State<EnterUserBasicDetails> {
                             setState(() {
                               isLoading = true;
                             });
-                            await db.collection("users").add({
-                              'phone_number': widget.phone_number,
-                              'name': nameController.text,
-                              'dob': {
-                                'date': dobDatePicker.selectedDate?.day,
-                                'month': dobDatePicker.selectedDate?.month,
-                                'year': dobDatePicker.selectedDate?.year
-                              },
-                              'gender': _selectedGender.toString(),
-                              'country': userCountryController.text,
-                              'city': userCityController.text,
-                              'state': userStateController.text,
-                              'pincode': userPincodeController.text,
-                              'isVolunteer': false
-                            }).then((DocumentReference doc) async {
-                              print(
-                                  'DocumentSnapshot added with ID: ${doc.id}');
-                              final prefs =
-                                  await SharedPreferences.getInstance();
-                              await prefs.setString('userId', doc.id);
-                              await prefs.setBool('isVolunteer', false);
-                              // Provider.of<UserIdProvider>(context,
-                              //         listen: false)
-                              //     .addUserId(doc.id);
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => UserHomePage()));
-                              setState(() {
-                                isLoading = true;
+                            if (userImage == null) {
+                              await db.collection("users").add({
+                                'phone_number': widget.phone_number,
+                                'name': nameController.text,
+                                'dob': {
+                                  'date': dobDatePicker.selectedDate?.day,
+                                  'month': dobDatePicker.selectedDate?.month,
+                                  'year': dobDatePicker.selectedDate?.year
+                                },
+                                'gender': _selectedGender.toString(),
+                                'country': userCountryController.text,
+                                'city': userCityController.text,
+                                'state': userStateController.text,
+                                'pincode': userPincodeController.text,
+                                'isVolunteer': false,
+                                'profile_picture_path': profilePhotoPath
+                              }).then((DocumentReference doc) async {
+                                print(
+                                    'DocumentSnapshot added with ID: ${doc.id}');
+                                final prefs =
+                                    await SharedPreferences.getInstance();
+                                await prefs.setString('userId', doc.id);
+                                await prefs.setBool('isVolunteer', false);
+                                // Provider.of<UserIdProvider>(context,
+                                //         listen: false)
+                                //     .addUserId(doc.id);
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => UserHomePage()));
+                                setState(() {
+                                  isLoading = true;
+                                });
                               });
-                            });
+                            } else {
+                              _uploadProfilePhoto().then((_) async {
+                                await db.collection("users").add({
+                                  'phone_number': widget.phone_number,
+                                  'name': nameController.text,
+                                  'dob': {
+                                    'date': dobDatePicker.selectedDate?.day,
+                                    'month': dobDatePicker.selectedDate?.month,
+                                    'year': dobDatePicker.selectedDate?.year
+                                  },
+                                  'gender': _selectedGender.toString(),
+                                  'country': userCountryController.text,
+                                  'city': userCityController.text,
+                                  'state': userStateController.text,
+                                  'pincode': userPincodeController.text,
+                                  'isVolunteer': false,
+                                  'profile_picture_path': profilePhotoPath
+                                }).then((DocumentReference doc) async {
+                                  print(
+                                      'DocumentSnapshot added with ID: ${doc.id}');
+                                  final prefs =
+                                      await SharedPreferences.getInstance();
+                                  await prefs.setString('userId', doc.id);
+                                  await prefs.setBool('isVolunteer', false);
+                                  // Provider.of<UserIdProvider>(context,
+                                  //         listen: false)
+                                  //     .addUserId(doc.id);
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              UserHomePage()));
+                                  setState(() {
+                                    isLoading = true;
+                                  });
+                                });
+                              });
+                            }
                           }
                         },
                         style: ElevatedButton.styleFrom(
