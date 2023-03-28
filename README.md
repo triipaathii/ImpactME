@@ -1,14 +1,25 @@
-# Feed The Need <img src="https://user-images.githubusercontent.com/77115663/158368440-a79498b8-e879-4149-b53b-15842a3e4bea.png" width=50dp align="left">
-## Spread | Serve | Connect | Educate
-# Accenture Innovation Challenge 2022
+# ImpactMe <img src="https://user-images.githubusercontent.com/98155526/228358148-1df139a3-8ee4-47cd-bceb-2d469c03fd4f.png" width=150dp align="left">
+## Ending Povert's Vicious Cycle
 
-In our quest to harness the wellness of society by enriching the value of charity, we devised our concept of Feed The Need. This concept addresses the food, clothing, education, and healthcare needs of poverty-stricken people. It offers hope beyond bleak reality to reach a world beyond the confines of poverty. By helping the needy and teaching the next generation about generosity, Feed The Need will light a lamp of a bright future not only by helping the poor but by augmenting the legacy of kindness.
+
+
+# Google Solution Challenge 2023
+
+
+<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228362061-31238fcd-f464-4103-b668-342d24ef929d.jpg" width=300 height=250 align="center"></p>
+
+
+At ImpactMe, we envision a world where no individual is deprivedof access to education and the opportunity to earn a livelihood. We believe that education is the most powerful tool that can be used to break the cycle of poverty, and our mission is to make it accessible to all, regardless of their socio-economic background.
 
 ## About Project
-Feed The Need establishes a transparent link between donors and volunteers by expressing concerns for groups deprived of basic amenities and bridging the gap between rich and poor. It transcends the liberty for donors to lend materialistic help to poverty-stricken people in any way they desire. Volunteers promise to engage in the ethical course of charity by acting as a link between the donors and the needy. Volunteers will deliver donations directly to the right person, from food chains, primary health centres, or local shops. Furthermore, regular education will offer them a solid foundation for a better life. Historically, physically challenged people have been excluded from charity work. Quest will allow them to contribute in any way they can, which will inspire others around the world to get involved.
+
+
+<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228359958-adb2a077-769f-4444-8c59-d8ebf4598c98.png" width=350 height=350 align="center"></p>
+
+
+With our cutting-edge app, we aim to provide a gateway to vocational courses for the underprivileged residing in cities, remote areas, and slums. We understand that the lack of access to quality education and skill-building opportunities often leads to unemployment, poverty, and social exclusion. Hence, we have developed a platform that connects volunteers possessing various skills to work in different regions, teaching different skills for varying durations throughout the year. In addition to providing vocational courses, we also aim to offer other essential resources such as, donated books, food, and other necessities to individuals in need. We envision a world where every individual has access to quality vocational education and the opportunity to pursue their dreams. Join us in making a positive impact and realizing our shared vision through the ImpactMe app.
 
 <h4> The Video Demonstration for app in use can be seen <a href="https://www.youtube.com/watch?v=NZfIVm1ALNc">here</a></h4>
-<h4> Here is the website that contains all the details of the project <a href="https://feedtheneed.info/">FeedTheNeed.info</a></h4>
 
 <h2>Installation :</h2>
 <ul>
@@ -19,40 +30,40 @@ Feed The Need establishes a transparent link between donors and volunteers by ex
 # Sustainable Development Goals targeted by us
 </br>
 
-<b> 1. Zero Hunger </b>
+<b> 1. No Poverty </b>
 
-* Starvation and rising inflation have resulted from the inefficient management of food. Globally, poverty is one of the most critical factors contributing to the prevailing hunger crisis.</br>
+* With the existential recurrence of poverty around the world, we aimed to bridge the gaps of opportunities and resources that are prevalent within the society</br>
 
-* We develop a unique strategy for food donation to address this root cause of poverty. By contributing a small share of his meal, the common man can step up the ladder of charity, increasing the numbers of meals donated and quenching the hunger of those in need.</br>
+* The ambition of the young minds and their desire to reestablish their position in the society certainly inspired us.</br>
 
-* Since donations will come from recognized food chains, the food will not just be provided, but also reviewed for nutrition and quality. The strong relationship between volunteers and food chains will ensure that people's donations reach the needy on time.</br>
-
-
-
-<b> 2. Good Health and Wellbeing </b>
-
-* Those who are marginalized or vulnerable are often the worst affected. They are deprived of the information, money, or access to healthcare that would help them to prevent and treat disease. Lack of nutrition deteriorates the menstrual and reproductive health of women due to poverty.
-
-* Many generous donors, government agencies and primary healthcare centres are involved in our application. As a result, health aids like medicine, sanitary pads, and other healthcare resources will be accessible to those who need them. 
-
-* Quests raised by volunteers will make them aware of various health schemes launched for their benefit and spread awareness about health and hygiene. This will lay a strong foundation for the healthcare of the underprivileged section of society.
+* We are targeting No Poverty by providing them a vocational training platform by which they learn something new and supplement their present incomes or come up with good business plans.</br>
 
 
 
-<b> 3. No Poverty </b>
+<b> 2. Zero Hunger </b>
 
-* Abject poverty perpetuates a disproportionate level of poverty, leading to ignorance. Especially, in a developing country like India factors like overpopulation, lack of awareness in rural areas and disparity in the availability of resources contribute to exacerbating poverty.
+* The direct linkage of poverty with hunger is well understood and we felt that addressing such issues is the need of the hour to provide their families with basic amenities for living.
 
-* Our application is one of a kind solution for eradicating poverty. The resources we intend to provide will not only improve their miserable plight but also make their lives more secure. It will ensure that basic amenities are provided free of charge and conveniently at their location. Aids in the form of food, clothing and essentials for survival will allow them to work for their betterment
+* The direct linkage of poverty with hunger is well understood and we felt that addressing such issues is the need of the hour to provide their families with basic amenities for living.
 
 
-<b> 4. Quality Education </b>
 
-* There are hundreds of millions of children around the world who do not have access to basic education. The majority of poor households spend their income on necessities like food and fuel, and education is marginalized. Moreover, parents who have not received a proper education tend to underestimate the value of education and hesitate to spend money on schools.
+<b> 3. Quality Education </b>
 
-* As a result of incorporating education quests in our application we developed an idea for educating those in need. In quest, we strive to enlighten the deprived section's future in a positive manner. They will be able to shape their identities as confident, literate individuals if they are educated and provided with the requisite resources. 
+* Seeing their willingness to learn something new certainly inspired us to cater their desires and fulfill their dreams by means of education.
 
-* Volunteers can contribute in this way regardless of any obstacles they have faced for a long time like being physically handicapped. Along with imparting basic education to the young generation and children, quests will also escalate about serious issues that are in dire need of being addressed. 
+* Educating a person would help in rebuilding the personality and equipping the individual with problem solving capabilities.
+
+* Providing them with the right education so that they can create a stable livelihood for their families was something that drove us in building this application.
+
+
+<b> 4. Gender Equality and Women’s Empowerment </b>
+
+* Gender inequality is a prevalent issue that has been ingrained into our societies and hence addressing these issues becomes a priority.
+
+* Promotional content of locally grown businesses will be advertised on our platform and women can take up training to enhance their present skillset and start a new small scale business.  
+
+* Moreover, we would assist them in connecting them to the rightful authorities to help them grow their business. Thus, enabling them with a strong source of income and directly contributing to their family’s income. 
 
 
 
@@ -62,14 +73,20 @@ Feed The Need establishes a transparent link between donors and volunteers by ex
 
 * With our application, we will assist those in need while preserving existing resources. In addition, instilling hope in them by informing them about the various schemes and opportunities offered by the government will encourage them to lead a better life. Participation in quests will also enliven social inequality. Having them publicly indulged will disintegrate the intersection of poverty and inequality.
 
-## Women's Health and Hygiene
 
-* According to the World Health Organization, around 2 billion people still lack access to proper sanitation facilities. Additionally, the Coronavirus outbreak has caused an unfortunate shortage of sanitary pads in India, making the lives of poor women difficult and their health worse. Women and fetuses in the womb are both negatively affected by the lack of nutrition and health aids during pregnancy. In addition to menstrual health and maternity, it is crucial to make people aware of girls' education.
 
-* In light of all of this, we developed our application that will benefit women in many ways. Associating our application with organizations that provide healthcare and basic aids, along with opportunities that raise awareness, will help to uplift women living in poverty today. As well as providing medical care and nutritional support through our application, it will increase awareness about health and hygiene, both of which are in dire need of strengthening. We will reach the right women in the shortest period of time with the facilities provided by the government.
+<b> 6. Decent Work And Economic Growth </b>
+
+* In our mission, we are supporting small businesses as well as training people so that they are capable of employment in different strata of societies and increase their net income. Thus, we are contributing to the goal of decent work and economic growth.
+
+
+<b> 7. Partnerships </b>
+
+* We aim to partner with the locally ingrown businesses by providing them a platform for promotion and also advertising different job opportunities within the market so that young minds that are trained via our application can be employed and make gains in their net income significantly.
+
 
 ## 🛠️ Techstack
-<p align="left"> <a href="https://developer.android.com" target="_blank" rel="noreferrer"> <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/android-logo.png" alt="android" width="40" height="40"/> &nbsp <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">  <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a> &nbsp <a href="https://cloud.google.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="gcp" width="40" height="40"/> </a> &nbsp <a href="https://kotlinlang.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.freebiesupply.com/logos/large/2x/kotlin-1-logo-png-transparent.png" alt="gcp" width="40" height="40"/> </a> &nbsp <a href="https://cloud.google.com/compute" target="_blank" rel="noreferrer"> <img src="https://media.datacenterdynamics.com/media/images/Google_Compute_Engine_logo2.width-358.png" alt="gcp" width="40" height="40"/> </a> &nbsp <a href="https://en.wikipedia.org/wiki/XML" target="_blank" rel="noreferrer"> <img src="https://cdn.iconscout.com/icon/free/png-256/xml-file-2330558-1950399.png" alt="gcp" width="40" height="40"/> </a>
+<p align="left"> <a href="https://developer.android.com" target="_blank" rel="noreferrer"> <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/android-logo.png" alt="android" width="40" height="40"/> &nbsp <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">  <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a> &nbsp <a href="https://flutter.dev/" target="_blank" rel="noreferrer"> <img src="https://user-images.githubusercontent.com/98155526/228361804-00091d7a-89bd-4e6e-955c-33daac2902c0.jpg" alt="flutter" width="40" height="40"/> </a> 
 
 ## 🌟Features of our Application
 
