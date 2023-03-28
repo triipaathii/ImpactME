@@ -112,123 +112,71 @@ With our cutting-edge app, we aim to provide a gateway to vocational courses for
  
 
 ## 🎯 Usuage and Functionality of Feed The Need
-### 1. Splash Screen and Permission Activity 
-After installing the application the first screen that is encountered is a splash screen with a logo and tagline. Following it is the permission activity for camera and storage permissions.
+### 1. Splash Screen and Login Activity 
+After installing the application the first screen that is encountered is a splash screen with the logo. After that the user will be asked to fill the mobile number. Then an OTP (One Time Password) will be send to the registered mobile number through an SMS.
 
 <p align="center"><img src="https://user-images.githubusercontent.com/77115663/159822292-6325a7d7-2983-4fb5-ad2f-253f6731a4b2.jpeg" width=250 height=500 align="center">&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/77115663/159822482-6fe9ef6f-3be3-4cf8-83fe-e6982f675eac.jpeg" width=250 height=500 align="center">&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/77115663/159822755-cb5058c2-c221-4713-a51d-a532d922fd57.jpeg" width=250 height=500 align="center"></p>
 
-### 2. Login Activity
-Users will be able to login using credentials. In addition, a Google login has been provided so that users can log in directly using their Google account. The same pipeline will automatically register a newly registered user without further Dialog if he or she is not already registered.
+### 2. Home Screen
+On the home screen user will mainly see four things i.e. Become a volunteer option, courses we offer, calander and lastly a side drawer.
 
 <p align="center"><img src="https://user-images.githubusercontent.com/77115663/159062109-78455aa9-6a43-4a26-959b-ad726838bc48.jpeg" width=250 height=500 align="center"></p>
 
-### 3. User Details Activity
-During authentication, each user must enter his/her details and role assignment. This activity will ask about the user's location and contact information.
+### 3. Calander
+In this we will have a calander kind of schedule on home page. It will show that what course is going on in which village and for what time span.
 
 <p align="center"><img src="https://user-images.githubusercontent.com/77115663/159777749-c350a554-328a-4fc2-aa65-d7177aa2dd45.jpeg" width=300 height=700 align="center">&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159883237-5c353021-a321-4f57-a9b5-f5d0dc26962c.jpeg" width=300 height=700 align="center"></p>
-
-✏️ At this stage, activities will be split according to the role assigned i.e. Volunteer, Food Chains, and Individual donors.
  
-### 4. Profile Activity
-This activity displays all the necessary details of a user, including their name, contact information, location, and role. As part of the volunteer profile, volunteer points have also been added to reward volunteers with happy meals. 
+### 4. Course description Page
+As we click on any course on the home page in the section COURSES WE OFFER, we will directly land to the course description page in which we will have the details such as: Course Description, Contents we will cover in the course and perks of completing the course. 
 
 <p align="center"><img src="https://user-images.githubusercontent.com/77115663/159899948-202ba555-0470-48c5-98aa-48f7d19305bf.jpeg" width=250 height=500>&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/77115663/159899312-b2f869fd-4f85-496a-a138-8bb7046d14f8.jpeg" width=250 height=500>&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/77115663/159904959-f7110fea-955c-4b47-b63a-71397ab491af.jpeg" width=250 height=500></p>
 
-### 5. Feed Activity
-The activity will allow users to view contributions made by themselves and other members of the community. Additionally, it will highlight other quests and donations near their location. The button of praise has been added so that people can show appreciation for their efforts. Furthermore, volunteers can also showcase their donations on various social media platforms.
+### 5. Volunteer Introduction
+If the user will click on EXPLORE NOW button on home page he will see all the information about being a volunteer such as: age is not a critera to volunteer, they will get certificates and much more.
 
 <p align="center"><img src="https://user-images.githubusercontent.com/77115663/159064807-3892af5d-3e05-4a18-a9c3-9664031db522.jpeg" width=250 height=500>
 &nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159864286-3e44fc31-ac0a-43d6-bd9d-192819aa87d1.jpeg" width=250 height=500></p>
 
+ ### 6. Volunteer Registration
+In this section the user will regiter himself as a volunteer by filling in the appropriate details that are: Name, E-mail, Qualifications, Organizations, Skills and preferred language to communicate in.
 
-✏️ These activities will be common for all three roles, apart from these other essential activities in the application based on the role have been mentioned below: 
-
-## 📌  Individual Donors 
-### I) Add Donation 
-The donor can add items they wish to donate. Donors need to provide a description, a title, and an image of the item they are donating along with a suitable pick-up time.
-
-<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159823398-525b9bb3-3559-4485-88cd-9355d4ac6e43.jpeg" width=250 height=500>&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159884507-d104b892-ad66-44cf-a7d0-5ff28ad774cb.jpeg" width=250 height=500></p>
-
-
-### II) Donation Status
-Donors have the option to oversee donations made by them via status - booked, posted, and distributed. In this activity, they can view the card views of volunteers and their information. 
-
-<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159823646-94e45e9c-f167-469c-8c1f-1af2eb57e758.jpeg" width=250 height=500></p>
-
-
-## 📌 Food Chains
-### I)Meal Information
-Food chains are supposed to add descriptions and images of meals they wish to provide. Booking meals through POS is only possible once the meal details have been added.
-
-<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159895220-e6ecb84c-b7f0-4797-a1c3-27ef2dbce76c.jpeg" width=250 height=500 align="center"></p>
-
-### II) Point of Sale(exclusively for users)
-The interface allows the public to order a meal for the needy from the food chain. The number of meals they can book is not limited; additionally, their name and contact information is required for records. This interface will also reflect the donation meal provided by the restaurant.
-
-<p  align="center"><img src="https://user-images.githubusercontent.com/77115663/159894081-4a754bd9-95ee-475d-8689-109902631005.jpeg" width=250 height=500 align="center">&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/77115663/159823875-ff27ca6c-35fb-4095-a3f9-ff2295acb531.jpeg" width=250 height=500 align="center"></p>
-
-✏️To make the process of food donation more transparent, we designed POS so that donors can see the description of meals they are donating at food chains. 
-
-### III) Status of Donation
-As a way of ensuring donations reach the right people, restaurant/food chains will keep a record of volunteers in the form of card views and information until the donation is completely verified.
-
-<p  align="center"><img src="https://user-images.githubusercontent.com/77115663/159824259-8bd3c99f-44ea-485a-8124-e460998f087b.jpeg" width=250 height=500></p>
-
-## 📌 Volunteers
-### I) Advertisement for Individual Donations
-The goal of this activity is to bring to their attention all the donations (clothes, household items, etc.) that are available near them and should be donated as soon as possible. A volunteer may choose to donate at pickup time.
-
-<p  align="center"><img src="https://user-images.githubusercontent.com/77115663/159827085-2a8d0974-6e5a-4ab1-8a85-74c6ef51b52c.jpeg" width=250 height=500 align="center"></p>
-
-
-
-### II) Information to book Meals
-From booking to verification, this activity will be a complete food donation activity. Foremost volunteers are supposed to click on an additional component at the bottom right corner of the activity page.
-
-✏️ This part of the application is divided majorly into four parts- <br>
-
-<b> 1. List of Food Chains </b><br>
-In this section, volunteers can access a list of food chains in the form of card views and choose any chain that best meets their needs, such as segveral meals and nearby locations.
-
-<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159892828-b89d4a8b-39c5-41d3-8c02-ae1d4d366330.jpeg" width=250 height=500></p>
-
-
-<b> 2. Booking of Meal </b><br>
-Volunteers need to book meals by specifying the number of meals they require and the pickup time. Volunteers must always order fewer meals than the total available through the food chain.
+<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159064807-3892af5d-3e05-4a18-a9c3-9664031db522.jpeg" width=250 height=500>
+&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159864286-3e44fc31-ac0a-43d6-bd9d-192819aa87d1.jpeg" width=250 height=500></p>
  
-<p  align="center"><img src="https://user-images.githubusercontent.com/77115663/159824635-f75ce7c2-d567-44b6-888f-defcca8f9f54.jpeg" width=250 height=500>&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/77115663/159824705-d8452be0-657a-4d34-b695-050d1f6f0c07.jpeg" width=250 height=500></p>
+ ### 7. Side Drawer Section Home Page
+The user will see a side drawer on the home page that contains the following pages:
+ * Home
+ * Feeds
+ * Jobs
+ * Business Promotions
+ * Profile
+ * About Us
 
-<b> 3. Staus of Meal </b><br>
-This activity will specify the status of the meal from the time of Pick Up until it is verified. Four associated statuses include-
-* Booked: Meal is booked but not picked from the food chain
-* Picked: Time-span from Pick Up time to verify
-* Verified: Complete successful donation
-* Cancelled: Due to some cause meal is cancelled from the food chain.
+<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159064807-3892af5d-3e05-4a18-a9c3-9664031db522.jpeg" width=250 height=500>
+&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159864286-3e44fc31-ac0a-43d6-bd9d-192819aa87d1.jpeg" width=250 height=500></p>
 
-<p  align="center"><img src="https://user-images.githubusercontent.com/77115663/159064468-2f561013-d698-463a-99cf-cba27fad8536.jpeg" width=250 height=500></p>
-
-<b> 4. Verification </b><br>
-Authentication takes place at this point in the application. A volunteer has to upload a picture that has both a donation and a needy person in one frame, and face recognition will be done by machine learning (ML). The number of donations uploaded must match the number of images uploaded. Volunteers can also share and flaunt their donations on social media handles.
-
-<p  align="center"><img src="https://user-images.githubusercontent.com/57085508/159866023-f4d51ef9-bd78-465c-9079-4c5c42c36968.jpeg" width=250 height=500>&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159864152-c9a558e7-3d10-4e49-8a02-5d10af91d25b.jpeg" width=250 height=500></p>
  
-### III) Quest Activity
-This is an initiative raised by volunteers for extra-social activities that involve educating children, distributing items, or bringing awareness to social issues. Volunteers can raise a quest anytime through a quest fragment in navigation.
+ ### 5. Feeds Section
+Once the volunteer has taught, he/she can share their experience in the feeds section by providing details such as user name, location, experience and a picture of the teaching session.
 
-✏️ Quest activity is divided into 3 subparts - <br>
+<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159064807-3892af5d-3e05-4a18-a9c3-9664031db522.jpeg" width=250 height=500>
+&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159864286-3e44fc31-ac0a-43d6-bd9d-192819aa87d1.jpeg" width=250 height=500></p>
+ 
+ ### 5. Jobs Section
+The job providers can give an advertisement of the job roles for which they need workers in the jobs section of the app. They just have to provide details such as company name, job description, location of job, salary, skills required and preferred gender.
 
-<b> 1. Add Quest Activity </b><br>
-By adding details like the date and location of the quest, the number of volunteers required with aim of the quest they can post a quest. The volunteer who raises a quest directly is posted as a lead volunteer.
+<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159064807-3892af5d-3e05-4a18-a9c3-9664031db522.jpeg" width=250 height=500>
+&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159864286-3e44fc31-ac0a-43d6-bd9d-192819aa87d1.jpeg" width=250 height=500></p>
+ 
+ ### 5. Business Promotion Section
+We want that our every student dreams something and gathers the courage to do so too. So we want to promote their dreams in the form of small business they set up by learning something from the courses. 
 
-<p  align="center"><img src="https://user-images.githubusercontent.com/77115663/159828106-7c43ec87-d713-4903-bbb8-8171ad150473.jpeg" width=250 height=500 align=></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159064807-3892af5d-3e05-4a18-a9c3-9664031db522.jpeg" width=250 height=500>
+&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159864286-3e44fc31-ac0a-43d6-bd9d-192819aa87d1.jpeg" width=250 height=500></p>
+ 
+ ### 5. Profile Section
+Here the user can change his/her details that he/she has filled during the registration, if needed.
 
-<b> 2. Lead Volunteer Activity </b><br>
-When a volunteer posts a quest, details such as its location, goal, and date will appear in their quest activity. Note that a volunteer can raise only one quest at a time.
-
-<p  align="center"><img src="https://user-images.githubusercontent.com/77115663/170709241-08d06522-39aa-4c75-b82f-9b80fc4912a3.jpeg" width=250 height=500></p>
-
-
-<b> 3. Participating Volunteer </b><br>
-If volunteers do not raise a quest, the advertisement for other quests will be displayed here as a card view, and volunteers can choose to participate in any quest. They have to comment on their aim of participation to be part of the quest.
-
-<p  align="center"><img src="https://user-images.githubusercontent.com/77115663/170711518-e3cf718d-49f7-4597-8c77-849d4ff69856.jpeg" width=250 height=500>&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/77115663/159830110-ebea58f9-efe5-4d09-be33-474bc1c57122.jpeg" width=250 height=500>&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/77115663/159830238-437d14e3-7a4a-4283-96ee-0759c4d9ace3.jpeg"  width=250 height=500></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159064807-3892af5d-3e05-4a18-a9c3-9664031db522.jpeg" width=250 height=500>
+&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159864286-3e44fc31-ac0a-43d6-bd9d-192819aa87d1.jpeg" width=250 height=500></p>
