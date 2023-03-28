@@ -5,8 +5,9 @@ import 'package:flutter_app/screens/about_us.dart';
 import 'package:flutter_app/screens/feeds.dart';
 import 'package:flutter_app/screens/jobs.dart';
 import 'package:flutter_app/screens/profile.dart';
+import 'package:flutter_app/screens/business.dart';
+import 'package:flutter_app/screens/settings.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'home.dart';
 
 class UserHomePage extends StatefulWidget {
@@ -126,7 +127,7 @@ class _UserHomePageState extends State<UserHomePage> {
                 ),
               ),
 
-              // PROFILE Tile
+              // JOBS Title
               ListTile(
                 onTap: () {
                   setState(() {
@@ -149,7 +150,7 @@ class _UserHomePageState extends State<UserHomePage> {
                 ),
               ),
 
-              // SETTINGS Tile
+              // BUSINESS PROMOTION Title
               ListTile(
                 onTap: () {
                   setState(() {
@@ -158,15 +159,38 @@ class _UserHomePageState extends State<UserHomePage> {
                 },
                 tileColor: pageIndex == 3 ? Colors.white : Colors.transparent,
                 leading: Icon(
-                  Icons.settings,
+                  Icons.account_circle_rounded,
                   color: pageIndex == 3
+                      ? const Color.fromARGB(255, 43, 70, 100)
+                      : Colors.white,
+                ),
+                title: Text(
+                  'Promotions',
+                  style: GoogleFonts.raleway(
+                      color: pageIndex == 3
+                          ? const Color.fromARGB(255, 43, 70, 100)
+                          : Colors.white),
+                ),
+              ),
+
+              // SETTINGS Tile
+              ListTile(
+                onTap: () {
+                  setState(() {
+                    pageIndex = 4;
+                  });
+                },
+                tileColor: pageIndex == 4 ? Colors.white : Colors.transparent,
+                leading: Icon(
+                  Icons.settings,
+                  color: pageIndex == 4
                       ? const Color.fromARGB(255, 43, 70, 100)
                       : Colors.white,
                 ),
                 title: Text(
                   'Profile',
                   style: GoogleFonts.raleway(
-                      color: pageIndex == 3
+                      color: pageIndex == 4
                           ? const Color.fromARGB(255, 43, 70, 100)
                           : Colors.white),
                 ),
@@ -176,20 +200,20 @@ class _UserHomePageState extends State<UserHomePage> {
               ListTile(
                 onTap: () {
                   setState(() {
-                    pageIndex = 4;
+                    pageIndex = 5;
                   });
                 },
-                tileColor: pageIndex == 4 ? Colors.white : Colors.transparent,
+                tileColor: pageIndex == 5 ? Colors.white : Colors.transparent,
                 leading: Icon(
                   Icons.info_rounded,
-                  color: pageIndex == 4
+                  color: pageIndex == 5
                       ? const Color.fromARGB(255, 43, 70, 100)
                       : Colors.white,
                 ),
                 title: Text(
                   'About Us',
                   style: GoogleFonts.raleway(
-                      color: pageIndex == 4
+                      color: pageIndex ==5
                           ? const Color.fromARGB(255, 43, 70, 100)
                           : Colors.white),
                 ),
@@ -228,7 +252,15 @@ class _UserHomePageState extends State<UserHomePage> {
                                 style: GoogleFonts.raleway(),
                               ),
                             ]
-                          : pageIndex == 3
+                      : pageIndex == 3
+                          ?<Widget>[
+                            const Icon(Icons.account_circle_rounded),
+                            Text(
+                              '  BUSINESS PROMOTION',
+                              style: GoogleFonts.raleway(),
+                            ),
+                          ]
+                          : pageIndex == 4
                               ? <Widget>[
                                   const Icon(Icons.settings),
                                   Text(
@@ -266,7 +298,9 @@ class _UserHomePageState extends State<UserHomePage> {
                   ? const Feeds()
                   : pageIndex == 2
                       ? const Jobs()
-                      : pageIndex == 3
+                  : pageIndex == 3
+                      ? const Business()
+                      : pageIndex == 4
                           ? const Profile()
                           : const AboutUs()),
     );
