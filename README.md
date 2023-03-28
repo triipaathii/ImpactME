@@ -88,7 +88,8 @@ With our cutting-edge app, we aim to provide a gateway to vocational courses for
 ## 🛠️ Techstack
 <p align="left"> <a href="https://developer.android.com" target="_blank" rel="noreferrer"> <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/android-logo.png" alt="android" width="40" height="40"/> &nbsp <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">  <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a> &nbsp <a href="https://flutter.dev/" target="_blank" rel="noreferrer"> <img src="https://user-images.githubusercontent.com/98155526/228361804-00091d7a-89bd-4e6e-955c-33daac2902c0.jpg" alt="flutter" width="40" height="40"/> </a> 
 
-## 🌟Features of our Application
+## 🌟Feature
+s of our Application
 
 1. Unique verification code for donations made.
 
@@ -111,38 +112,38 @@ With our cutting-edge app, we aim to provide a gateway to vocational courses for
 10. Volunteers can also share their experience by posting them on feeds section.
  
 
-## 🎯 Usuage and Functionality of Feed The Need
+## 🎯 Usuage and Functionality of ImpactMe App
 ### 1. Splash Screen and Login Activity 
 After installing the application the first screen that is encountered is a splash screen with the logo. After that the user will be asked to fill the mobile number. Then an OTP (One Time Password) will be send to the registered mobile number through an SMS.
 
-<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159822292-6325a7d7-2983-4fb5-ad2f-253f6731a4b2.jpeg" width=250 height=500 align="center">&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/77115663/159822482-6fe9ef6f-3be3-4cf8-83fe-e6982f675eac.jpeg" width=250 height=500 align="center">&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/77115663/159822755-cb5058c2-c221-4713-a51d-a532d922fd57.jpeg" width=250 height=500 align="center"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228376749-8c0ba2d4-149f-489b-a5dc-275e212d2493.jpeg" width=250 height=500 align="center">&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/98155526/228374361-d505d945-3f8c-4d91-9a4a-ac8fd69d2c46.jpeg" width=250 height=500 align="center"></p>
 
 ### 2. Home Screen
 On the home screen user will mainly see four things i.e. Become a volunteer option, courses we offer, calander and lastly a side drawer.
 
-<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159062109-78455aa9-6a43-4a26-959b-ad726838bc48.jpeg" width=250 height=500 align="center"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228374547-81dced06-ddb8-4aac-8a3d-3f2fd2a288d8.jpeg" width=250 height=500 align="center"></p>
 
 ### 3. Calander
 In this we will have a calander kind of schedule on home page. It will show that what course is going on in which village and for what time span.
 
-<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159777749-c350a554-328a-4fc2-aa65-d7177aa2dd45.jpeg" width=300 height=700 align="center">&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159883237-5c353021-a321-4f57-a9b5-f5d0dc26962c.jpeg" width=300 height=700 align="center"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228374688-f66677e7-555d-42f4-8915-5c65967e3f93.jpeg" width=300 height=700 align="center"></p>
  
 ### 4. Course description Page
 As we click on any course on the home page in the section COURSES WE OFFER, we will directly land to the course description page in which we will have the details such as: Course Description, Contents we will cover in the course and perks of completing the course. 
 
-<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159899948-202ba555-0470-48c5-98aa-48f7d19305bf.jpeg" width=250 height=500>&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/77115663/159899312-b2f869fd-4f85-496a-a138-8bb7046d14f8.jpeg" width=250 height=500>&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/77115663/159904959-f7110fea-955c-4b47-b63a-71397ab491af.jpeg" width=250 height=500></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228374841-06fd8a73-97e3-4c23-8037-1b45488c65d1.jpeg" width=250 height=500>&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/98155526/228374894-b316d47e-845a-488f-ac37-ad583d364649.jpeg" width=250 height=500>&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/98155526/228374919-5f6d20d9-ed80-4a15-be05-47c4285906a5.jpeg" width=250 height=500></p>
 
 ### 5. Volunteer Introduction
 If the user will click on EXPLORE NOW button on home page he will see all the information about being a volunteer such as: age is not a critera to volunteer, they will get certificates and much more.
 
-<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159064807-3892af5d-3e05-4a18-a9c3-9664031db522.jpeg" width=250 height=500>
-&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159864286-3e44fc31-ac0a-43d6-bd9d-192819aa87d1.jpeg" width=250 height=500></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228375108-6663b406-c952-4fad-a875-8de3a53cd588.jpeg" width=250 height=500>&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/98155526/228375120-7e10ab05-5708-48a1-937b-9608faa37b98.jpeg" width=250 height=500>&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/98155526/228375130-6291d70c-48b6-43b9-89c1-555306a5743d.jpeg" width=250 height=500>&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/98155526/228375166-a4005377-b2de-4004-a54e-a77fb128a297.jpeg" width=250 height=500></p>
 
  ### 6. Volunteer Registration
 In this section the user will regiter himself as a volunteer by filling in the appropriate details that are: Name, E-mail, Qualifications, Organizations, Skills and preferred language to communicate in.
 
-<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159064807-3892af5d-3e05-4a18-a9c3-9664031db522.jpeg" width=250 height=500>
-&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159864286-3e44fc31-ac0a-43d6-bd9d-192819aa87d1.jpeg" width=250 height=500></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228375526-21bd94ab-a926-497e-a25d-79e09d784946.jpeg" width=250 height=500>
+&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/98155526/228375538-1684de52-65a1-4de2-a70b-7a637a14dd2a.jpeg" width=250 height=500>
+ &nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/98155526/228375548-72edb79c-fbf2-40f1-9e47-3a6afe63db9c.jpeg" width=250 height=500></p>
  
  ### 7. Side Drawer Section Home Page
 The user will see a side drawer on the home page that contains the following pages:
@@ -153,30 +154,32 @@ The user will see a side drawer on the home page that contains the following pag
  * Profile
  * About Us
 
-<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159064807-3892af5d-3e05-4a18-a9c3-9664031db522.jpeg" width=250 height=500>
-&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159864286-3e44fc31-ac0a-43d6-bd9d-192819aa87d1.jpeg" width=250 height=500></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228375797-4bee8acf-d2b8-41b8-b631-74306b88110b.jpeg" width=250 height=500>
+</p>
 
- 
- ### 5. Feeds Section
+ ### 8. Feeds Section
 Once the volunteer has taught, he/she can share their experience in the feeds section by providing details such as user name, location, experience and a picture of the teaching session.
-
-<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159064807-3892af5d-3e05-4a18-a9c3-9664031db522.jpeg" width=250 height=500>
-&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159864286-3e44fc31-ac0a-43d6-bd9d-192819aa87d1.jpeg" width=250 height=500></p>
  
- ### 5. Jobs Section
+<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228376509-4e7cbcb7-bc8d-46d9-be88-bce34d30bbf6.jpg" width=250 height=500>
+&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/98155526/228376520-c721f381-218c-4b1f-97cb-4c5cb805b9e2.jpg" width=250 height=500>
+ &nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/98155526/228376525-e78a236d-7aa3-44e6-8181-c2ed22529ed8.jpg" width=250 height=500></p>
+ 
+ ### 9. Jobs Section
 The job providers can give an advertisement of the job roles for which they need workers in the jobs section of the app. They just have to provide details such as company name, job description, location of job, salary, skills required and preferred gender.
 
-<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159064807-3892af5d-3e05-4a18-a9c3-9664031db522.jpeg" width=250 height=500>
-&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159864286-3e44fc31-ac0a-43d6-bd9d-192819aa87d1.jpeg" width=250 height=500></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228376315-fc2d6434-be82-477a-b192-da7474adc8c3.jpeg" width=250 height=500>
+&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/98155526/228376321-4910438a-ef0b-4c2a-99bb-8bbdcd746095.jpeg" width=250 height=500>
+&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/98155526/228376328-2b64c012-30eb-408f-8b7c-e302f32fbe50.jpeg" width=250 height=500></p>
  
- ### 5. Business Promotion Section
+ ### 10. Business Promotion Section
 We want that our every student dreams something and gathers the courage to do so too. So we want to promote their dreams in the form of small business they set up by learning something from the courses. 
 
-<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159064807-3892af5d-3e05-4a18-a9c3-9664031db522.jpeg" width=250 height=500>
-&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159864286-3e44fc31-ac0a-43d6-bd9d-192819aa87d1.jpeg" width=250 height=500></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228376082-26fa9fe3-ffae-42f5-98c3-f4038729c85f.jpeg" width=250 height=500>
+&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/98155526/228376089-0b40acf8-34b6-4d25-983c-7dac619d6887.jpeg" width=250 height=500>
+&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/98155526/228376098-dbaece0e-ab9d-4cd3-a2b0-c539bd9e10de.jpeg" width=250 height=500></p>
  
- ### 5. Profile Section
+ ### 11. Profile Section
 Here the user can change his/her details that he/she has filled during the registration, if needed.
-
-<p align="center"><img src="https://user-images.githubusercontent.com/77115663/159064807-3892af5d-3e05-4a18-a9c3-9664031db522.jpeg" width=250 height=500>
+ 
+<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228375932-a4b5aee4-e885-46b4-b4e5-cb46ba7addbd.jpeg" width=250 height=500>
 &nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159864286-3e44fc31-ac0a-43d6-bd9d-192819aa87d1.jpeg" width=250 height=500></p>
