@@ -9,6 +9,7 @@ import 'package:flutter_app/widgets/snackbar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../providers/user_provider.dart';
 import '../widgets/toast.dart';
@@ -313,13 +314,17 @@ class _EnterUserNumberState extends State<EnterUserNumber> {
                                       await db
                                           .collection("users")
                                           .get()
-                                          .then((users) {
+                                          .then((users) async {
                                         for (var user in users.docs) {
                                           if (user.data()['phone_number'] ==
                                               mobileNumerController.text) {
-                                            Provider.of<UserIdProvider>(context,
-                                                    listen: false)
-                                                .addUserId(user.id);
+                                            final prefs =
+                                                await SharedPreferences
+                                                    .getInstance();
+                                            await prefs.setString(
+                                                'userId', user.id);
+                                            await prefs.setBool('isVolunteer',
+                                                user.data()['isVolunteer']);
                                             setState(() {
                                               isExistingUser = true;
                                               isLoading = false;
@@ -331,9 +336,9 @@ class _EnterUserNumberState extends State<EnterUserNumber> {
                                       if (await isExistingUser) {
                                         print(
                                             "============= USER FOUND ==============");
-                                        print(context
-                                            .read<UserIdProvider>()
-                                            .userId);
+                                        // print(context
+                                        //     .read<UserIdProvider>()
+                                        //     .userId);
                                         Navigator.pushReplacement(
                                             context,
                                             MaterialPageRoute(
@@ -356,7 +361,8 @@ class _EnterUserNumberState extends State<EnterUserNumber> {
                                       setState(() {
                                         isLoading = false;
                                       });
-                                      showSnackBar("Invalid OTP", context, Colors.redAccent.shade700);
+                                      showSnackBar("Invalid OTP", context,
+                                          Colors.redAccent.shade700);
                                     }
                                   },
                                   style: ElevatedButton.styleFrom(
