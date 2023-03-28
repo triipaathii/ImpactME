@@ -90,37 +90,26 @@ With our cutting-edge app, we aim to provide a gateway to vocational courses for
 
 ## 🌟Features of our Application
 
-1. Face Recognition and feature matching for verification of meal donations.
+1. Unique verification code for donations made.
 
-2. Unique verification code for donations made.
+2. Indication of nearby locations by tracking location of the volunteer. 
 
-3. Indication of nearby donations by tracking location.
+3. Provide Certificates to the volunteers as a recognization of their work.
 
-4. Cumulative addition of food donations, which will be used when needed.
+4. A special calander will be displayed on the home page that will show the schedule that what courses are taught at what time in which location.
 
-5. Food Donations, as well as Individual donations, will be booked in advance by volunteers.
+5. The location, course and time span for which they want to teach, will be booked in advance by volunteers.
 
-6. Flexibility in Pick Up time for both the donors and volunteers.
+6. Flexibility in the teaching time for volunteers.
 
-7. The Lead Volunteer will have the authority to add the number of volunteers he/she wants to be part of the quest.
+7. Provides 20+ languages from which the volunteer can choose in which he/she is comfortable to communicate.
 
-8. The data stored can be used by government organizations, NGOs, and health care centres to donate to the needy.
+8. The job providers can give an advertisement of the job roles for which they need workers in the jobs section of the app.
 
-9. Special segments of points have been introduced to reward and motivate volunteers based on their performance.
+9. Small businesses will be promoted in the business promotion section of the application.
 
-10. Volunteers can also share their donations by posting them on applications and other social media platforms.
+10. Volunteers can also share their experience by posting them on feeds section.
  
-## 📌 Workflow
-The application works on three profile roles namely volunteer, food chains and individual donations. Each part is interrelated and dependent on the other for attaining the goals of the project.</br>
-
-<b> 1. Volunteer </b> </br>
-Volunteers play an important role in facilitating donations, in the sense that they transfer donations from donors and food chains to those in need. It is their responsibility to reserve meals and donation items, pick them up at a specific time, and donate them to the needy. In addition, they can organize a campaign named quest to raise awareness, and educate marginalized groups.
-
-<b> 2. Food Chains(organisations) </b> </br>
-Many restaurants, hotels, and food chains in the city will be taking care of food donations. Through our application, customers at food chains can order a meal suited to their budget along with their meals. The database of restaurants will be updated with meals and the addition of meals will take place cumulatively. When volunteers book meals, restaurants have to make meals available at the time specified. In addition to this, government organizations and healthcare centres are also able to donate healthcare aids and other necessities through this application by registering as Individual Donors.
-
-<b> 3. Individual Donors </b> </br>
-They are groups of generous donors who wish to donate items such as books and clothes.Donor need only to post a donation with a description and an image of the item, set up a pickup time, and the volunteer will pick up donation at their doorstep. 
 
 ## 🎯 Usuage and Functionality of Feed The Need
 ### 1. Splash Screen and Permission Activity 
