@@ -6,7 +6,7 @@
 # Google Solution Challenge 2023
 
 
-<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228362061-31238fcd-f464-4103-b668-342d24ef929d.jpg" width=300 height=250 align="center"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228425245-568ebcfc-b1ec-46a3-8b09-e9103a968072.jpg" width=300 height=250 align="center"></p>
 
 
 At ImpactMe, we envision a world where no individual is deprivedof access to education and the opportunity to earn a livelihood. We believe that education is the most powerful tool that can be used to break the cycle of poverty, and our mission is to make it accessible to all, regardless of their socio-economic background.
@@ -14,7 +14,7 @@ At ImpactMe, we envision a world where no individual is deprivedof access to edu
 ## About Project
 
 
-<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228359958-adb2a077-769f-4444-8c59-d8ebf4598c98.png" width=350 height=350 align="center"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228359958-adb2a077-769f-4444-8c59-d8ebf4598c98.png" width=300 height=250 align="center"></p>
 
 
 With our cutting-edge app, we aim to provide a gateway to vocational courses for the underprivileged residing in cities, remote areas, and slums. We understand that the lack of access to quality education and skill-building opportunities often leads to unemployment, poverty, and social exclusion. Hence, we have developed a platform that connects volunteers possessing various skills to work in different regions, teaching different skills for varying durations throughout the year. In addition to providing vocational courses, we also aim to offer other essential resources such as, donated books, food, and other necessities to individuals in need. We envision a world where every individual has access to quality vocational education and the opportunity to pursue their dreams. Join us in making a positive impact and realizing our shared vision through the ImpactMe app.
@@ -29,6 +29,12 @@ With our cutting-edge app, we aim to provide a gateway to vocational courses for
 
 # Sustainable Development Goals targeted by us
 </br>
+
+# Sustainable Development Goals targeted by us
+</br>
+
+
+<p align="left"> <img src="https://user-images.githubusercontent.com/98155526/228425642-7039abc5-3c94-4138-a936-1ae6f24b8ce2.png" width="50" height="50"/> &nbsp <img src="https://user-images.githubusercontent.com/98155526/228425662-a0e93f6d-a832-4669-b4b3-808c0d479ddf.png" width="50" height="50"/> &nbsp <img src="https://user-images.githubusercontent.com/98155526/228425685-e70d8926-2938-4e0f-be4c-f808f29bc180.png" width="50" height="50"/> &nbsp <img src="https://user-images.githubusercontent.com/98155526/228425736-0f4af619-3afc-4fbd-9e79-189f06981f9e.png" width="50" height="50"/> &nbsp <img src="https://user-images.githubusercontent.com/98155526/228425751-4b8fc644-6d7d-4ee1-9e10-e4dfba4526d3.png" width="50" height="50"/> &nbsp <img src="https://user-images.githubusercontent.com/98155526/228425784-bc0bb024-531c-4c31-9112-caade90bc20b.png" width="50" height="50"/> &nbsp <img src="https://user-images.githubusercontent.com/98155526/228425793-60c3914b-e5cf-47a5-b56e-214ea4c92a20.png" width="50" height="50"/> 
 
 <b> 1. No Poverty </b>
 
