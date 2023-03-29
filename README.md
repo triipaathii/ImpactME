@@ -188,5 +188,5 @@ We want that our every student dreams something and gathers the courage to do so
 Here the user can change his/her details that he/she has filled during the registration, if needed.
  
 <p align="center"><img src="https://user-images.githubusercontent.com/98155526/228375932-a4b5aee4-e885-46b4-b4e5-cb46ba7addbd.jpeg" width=250 height=500>
-&nbsp&nbsp&nbsp&nbsp&nbsp<img src="https://user-images.githubusercontent.com/57085508/159864286-3e44fc31-ac0a-43d6-bd9d-192819aa87d1.jpeg" width=250 height=500></p>
+
 
