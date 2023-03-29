@@ -92,25 +92,25 @@ With our cutting-edge app, we aim to provide a gateway to vocational courses for
 
 ## 🌟Features of our Application
 
-1. Unique verification code for donations made.
+1. **Unique verification** code for donations made.
 
-2. Indication of nearby locations by tracking location of the volunteer. 
+2. Indication of nearby locations by **tracking location** of the volunteer. 
 
-3. Provide Certificates to the volunteers as a recognization of their work.
+3. Provide **Certificates to the volunteers** as a recognization of their work.
 
-4. A special calander will be displayed on the home page that will show the schedule that what courses are taught at what time in which location.
+4. A special **calander** will be displayed on the home page that will show the schedule that what courses are taught at what time in which location.
 
-5. The location, course and time span for which they want to teach, will be booked in advance by volunteers.
+5. The location, course and time span for which they want to teach, will be **booked in advance** by volunteers.
 
-6. Flexibility in the teaching time for volunteers.
+6. **Flexibility** in the **teaching time** for volunteers.
 
-7. Provides 20+ languages from which the volunteer can choose in which he/she is comfortable to communicate.
+7. Provides **20+ languages** from which the volunteer can choose in which he/she is comfortable to communicate.
 
-8. The job providers can give an advertisement of the job roles for which they need workers in the jobs section of the app.
+8. The **job providers** can give an advertisement of the job roles for which they need workers in the jobs section of the app.
 
-9. Small businesses will be promoted in the business promotion section of the application.
+9. Small businesses will be promoted in the **business promotion** section of the application.
 
-10. Volunteers can also share their experience by posting them on feeds section.
+10. Volunteers can also share their experience by posting them on **feeds section.**
  
 
 ## 🎯 Usuage and Functionality of ImpactMe App
