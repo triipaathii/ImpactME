@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
+import 'package:flutter_app/main.dart';
 import 'package:flutter_app/screens/about_us.dart';
+import 'package:flutter_app/screens/add_feed.dart';
+import 'package:flutter_app/screens/enter_user_number.dart';
 import 'package:flutter_app/screens/feeds.dart';
 import 'package:flutter_app/screens/jobs.dart';
 import 'package:flutter_app/screens/profile.dart';
 import 'package:flutter_app/screens/business.dart';
+import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'home.dart';
 
 class UserHomePage extends StatefulWidget {
@@ -20,6 +25,25 @@ class _UserHomePageState extends State<UserHomePage> {
   final _advancedDrawerController = AdvancedDrawerController();
   int pageIndex = 0;
 
+  String? userId;
+  bool? isVolunteer;
+
+  Future<void> _fetchUserId() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      userId = (prefs.getString('userId') ?? null);
+      isVolunteer = (prefs.getBool('isVolunteer') ?? null);
+    });
+    print(userId);
+    print(isVolunteer);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchUserId();
+  }
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -27,6 +51,9 @@ class _UserHomePageState extends State<UserHomePage> {
         statusBarIconBrightness: Brightness.light,
         systemNavigationBarColor: Color(0xff243b55),
         systemNavigationBarIconBrightness: Brightness.light));
+
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
 
     return AdvancedDrawer(
       backdropColor: const Color.fromARGB(255, 43, 70, 100),
@@ -215,6 +242,24 @@ class _UserHomePageState extends State<UserHomePage> {
                           : Colors.white),
                 ),
               ),
+
+              SizedBox(
+                height: height * 0.05,
+              ),
+
+              ElevatedButton(
+                  onPressed: () async {
+                    final prefs = await SharedPreferences.getInstance();
+                    prefs.remove("userId");
+                    prefs.remove("isVolunteer");
+                    Get.offAll(() => EnterUserNumber());
+                  },
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.white),
+                  child: Text(
+                    "LOG OUT",
+                    style: GoogleFonts.raleway(color: const Color(0xff243b55)),
+                  )),
               const Spacer(),
             ],
           ),
@@ -222,6 +267,19 @@ class _UserHomePageState extends State<UserHomePage> {
       ),
       child: Scaffold(
           backgroundColor: Colors.white,
+          floatingActionButton: !isVolunteer! && pageIndex == 1
+              ? FloatingActionButton(
+                  onPressed: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AddFeed())),
+                  elevation: 10,
+                  child: Icon(
+                    Icons.add_a_photo_rounded,
+                    color: Colors.white,
+                    semanticLabel: "Add a new feed",
+                  ),
+                  backgroundColor: Color(0xff243b55),
+                )
+              : Container(),
           appBar: AppBar(
             backgroundColor: const Color(0xff243b55),
             title: Row(

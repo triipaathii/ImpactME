@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/screens/enter_user_details.dart';
 import 'package:flutter_app/widgets/snackbar.dart';
+import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -336,11 +337,7 @@ class _EnterUserNumberState extends State<EnterUserNumber> {
                                         // print(context
                                         //     .read<UserIdProvider>()
                                         //     .userId);
-                                        Navigator.pushReplacement(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    UserHomePage()));
+                                        Get.offAll(() => UserHomePage());
                                       } else {
                                         print(
                                             "============= USER NOT FOUND ==============");

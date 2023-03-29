@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/screens/enter_user_number.dart';
 import 'package:flutter_app/screens/homepage.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'firebase_options.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
+  bool isLoading = true;
 
   String? _userId;
 
@@ -34,13 +36,14 @@ class _MyAppState extends State<MyApp> {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
       _userId = (prefs.getString('userId') ?? null);
+      isLoading = false;
     });
   }
 
   @override
   void initState() {
-    super.initState();
     _loadUserId();
+    super.initState();
   }
 
   @override
@@ -49,10 +52,18 @@ class _MyAppState extends State<MyApp> {
       systemNavigationBarColor: Color(0xff243b55),
     ));
 
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'ImpactME',
       debugShowCheckedModeBanner: false,
-      home: _userId == null ? EnterUserNumber() : UserHomePage(),
+      home: isLoading
+          ? Center(
+              child: CircularProgressIndicator(
+                color: Color(0xff243b55),
+              ),
+            )
+          : _userId == null
+              ? EnterUserNumber()
+              : UserHomePage(),
     );
   }
 }
