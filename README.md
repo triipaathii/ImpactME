@@ -23,7 +23,7 @@ With our cutting-edge app, we aim to provide a gateway to vocational courses for
 
 <h2>Installation :</h2>
 <ul>
-<li>The app can be installed by directly <b>downloading the Android Application</b> Package (APK) File located at : "Demonstration and results/app-debug.apk" into the <b>Mobile phone device with Android OS</b>.
+<li>The app can be installed by directly <b>downloading the Android Application</b> Package (APK) File located at : "Demonstration and results/app-release.apk" into the <b>Mobile phone device with Android OS</b>.
 <li>For <b>building the project on your local machine</b>, clone the repo and Open it with Android Studio.
 </ul>
 
