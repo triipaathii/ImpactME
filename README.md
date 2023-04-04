@@ -1,12 +1,12 @@
 # ImpactMe <img src="https://user-images.githubusercontent.com/98155526/228358148-1df139a3-8ee4-47cd-bceb-2d469c03fd4f.png" width=150dp align="left">
-## Ending Povert's Vicious Cycle
+## *"Ending Poverty's Vicious Cycle"*
 
 
 
 # Google Solution Challenge 2023
 
 
-<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228425245-568ebcfc-b1ec-46a3-8b09-e9103a968072.jpg" width=300 height=250 align="center"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228425245-568ebcfc-b1ec-46a3-8b09-e9103a968072.jpg" align="center"></p>
 
 
 At ImpactMe, we envision a world where no individual is deprivedof access to education and the opportunity to earn a livelihood. We believe that education is the most powerful tool that can be used to break the cycle of poverty, and our mission is to make it accessible to all, regardless of their socio-economic background.
@@ -30,11 +30,7 @@ With our cutting-edge app, we aim to provide a gateway to vocational courses for
 # Sustainable Development Goals targeted by us
 </br>
 
-# Sustainable Development Goals targeted by us
-</br>
-
-
-<p align="left"> <img src="https://user-images.githubusercontent.com/98155526/228425642-7039abc5-3c94-4138-a936-1ae6f24b8ce2.png" width="50" height="50"/> &nbsp <img src="https://user-images.githubusercontent.com/98155526/228425662-a0e93f6d-a832-4669-b4b3-808c0d479ddf.png" width="50" height="50"/> &nbsp <img src="https://user-images.githubusercontent.com/98155526/228425685-e70d8926-2938-4e0f-be4c-f808f29bc180.png" width="50" height="50"/> &nbsp <img src="https://user-images.githubusercontent.com/98155526/228425736-0f4af619-3afc-4fbd-9e79-189f06981f9e.png" width="50" height="50"/> &nbsp <img src="https://user-images.githubusercontent.com/98155526/228425751-4b8fc644-6d7d-4ee1-9e10-e4dfba4526d3.png" width="50" height="50"/> &nbsp <img src="https://user-images.githubusercontent.com/98155526/228425784-bc0bb024-531c-4c31-9112-caade90bc20b.png" width="50" height="50"/> &nbsp <img src="https://user-images.githubusercontent.com/98155526/228425793-60c3914b-e5cf-47a5-b56e-214ea4c92a20.png" width="50" height="50"/> 
+<p align="left"> <img src="https://user-images.githubusercontent.com/98155526/228425642-7039abc5-3c94-4138-a936-1ae6f24b8ce2.png" width="100" height="100"/> &nbsp <img src="https://user-images.githubusercontent.com/98155526/228425662-a0e93f6d-a832-4669-b4b3-808c0d479ddf.png" width="100" height="100"/> &nbsp <img src="https://user-images.githubusercontent.com/98155526/228661061-3e5e927a-4e41-423e-a198-2360526008d0.png" width="100" height="100"/> &nbsp <img src="https://user-images.githubusercontent.com/98155526/228425736-0f4af619-3afc-4fbd-9e79-189f06981f9e.png" width="100" height="100"/> &nbsp <img src="https://user-images.githubusercontent.com/98155526/228425751-4b8fc644-6d7d-4ee1-9e10-e4dfba4526d3.png" width="100" height="100"/> &nbsp <img src="https://user-images.githubusercontent.com/98155526/228425784-bc0bb024-531c-4c31-9112-caade90bc20b.png" width="100" height="100"/> &nbsp <img src="https://user-images.githubusercontent.com/98155526/228425793-60c3914b-e5cf-47a5-b56e-214ea4c92a20.png" width="100" height="100"/> 
 
 <b> 1. No Poverty </b>
 
@@ -94,28 +90,27 @@ With our cutting-edge app, we aim to provide a gateway to vocational courses for
 ## 🛠️ Techstack
 <p align="left"> <a href="https://developer.android.com" target="_blank" rel="noreferrer"> <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/android-logo.png" alt="android" width="40" height="40"/> &nbsp <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">  <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a> &nbsp <a href="https://flutter.dev/" target="_blank" rel="noreferrer"> <img src="https://user-images.githubusercontent.com/98155526/228361804-00091d7a-89bd-4e6e-955c-33daac2902c0.jpg" alt="flutter" width="40" height="40"/> </a> 
 
-## 🌟Feature
-s of our Application
+## 🌟Features of our Application
 
-1. Unique verification code for donations made.
+1. **Unique verification** code for donations made.
 
-2. Indication of nearby locations by tracking location of the volunteer. 
+2. Indication of nearby locations by **tracking location** of the volunteer. 
 
-3. Provide Certificates to the volunteers as a recognization of their work.
+3. Provide **Certificates to the volunteers** as a recognization of their work.
 
-4. A special calander will be displayed on the home page that will show the schedule that what courses are taught at what time in which location.
+4. A special **calander** will be displayed on the home page that will show the schedule that what courses are taught at what time in which location.
 
-5. The location, course and time span for which they want to teach, will be booked in advance by volunteers.
+5. The location, course and time span for which they want to teach, will be **booked in advance** by volunteers.
 
-6. Flexibility in the teaching time for volunteers.
+6. **Flexibility** in the **teaching time** for volunteers.
 
-7. Provides 20+ languages from which the volunteer can choose in which he/she is comfortable to communicate.
+7. Provides **20+ languages** from which the volunteer can choose in which he/she is comfortable to communicate.
 
-8. The job providers can give an advertisement of the job roles for which they need workers in the jobs section of the app.
+8. The **job providers** can give an advertisement of the job roles for which they need workers in the jobs section of the app.
 
-9. Small businesses will be promoted in the business promotion section of the application.
+9. Small businesses will be promoted in the **business promotion** section of the application.
 
-10. Volunteers can also share their experience by posting them on feeds section.
+10. Volunteers can also share their experience by posting them on **feeds section.**
  
 
 ## 🎯 Usuage and Functionality of ImpactMe App
