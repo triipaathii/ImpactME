@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
-import 'package:flutter_app/main.dart';
 import 'package:flutter_app/screens/about_us.dart';
 import 'package:flutter_app/screens/add_feed.dart';
 import 'package:flutter_app/screens/enter_user_number.dart';
@@ -26,7 +25,7 @@ class _UserHomePageState extends State<UserHomePage> {
   int pageIndex = 0;
 
   String? userId;
-  bool? isVolunteer;
+  bool? isVolunteer = false;
 
   Future<void> _fetchUserId() async {
     final prefs = await SharedPreferences.getInstance();
