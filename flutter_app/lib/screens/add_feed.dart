@@ -48,7 +48,8 @@ class _AddFeedState extends State<AddFeed> {
   }
 
   Future<void> _uploadFeedImage() async {
-    final storage = FirebaseStorage.instance.ref("feeds/");
+    final storage = FirebaseStorage.instance
+        .ref("feeds/${userId}${DateTime.now().toString()}");
     try {
       await storage.putFile(File(userImage!.path));
       final getUrl = await storage.getDownloadURL();
@@ -72,7 +73,6 @@ class _AddFeedState extends State<AddFeed> {
   void initState() {
     super.initState();
     _loadUserId();
-    
   }
 
   @override
@@ -113,7 +113,6 @@ class _AddFeedState extends State<AddFeed> {
                         // 'timestamp': FieldValue.serverTimestamp()
                       }).then((DocumentReference doc) async {
                         print('DocumentSnapshot added with ID: ${doc.id}');
-
                         Navigator.pop(context);
                       });
                     });
@@ -180,7 +179,7 @@ class _AddFeedState extends State<AddFeed> {
                 ),
               ),
               SizedBox(
-                height: height * 0.05,
+                height: height * 0.03,
               ),
               badges.Badge(
                 showBadge: userImage == null ? false : true,

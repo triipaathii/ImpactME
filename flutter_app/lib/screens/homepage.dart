@@ -266,7 +266,7 @@ class _UserHomePageState extends State<UserHomePage> {
       ),
       child: Scaffold(
           backgroundColor: Colors.white,
-          floatingActionButton: !isVolunteer! && pageIndex == 1
+          floatingActionButton: isVolunteer! && pageIndex == 1
               ? FloatingActionButton(
                   onPressed: () => Navigator.push(context,
                       MaterialPageRoute(builder: (context) => AddFeed())),
