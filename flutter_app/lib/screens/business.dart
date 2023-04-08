@@ -66,49 +66,35 @@ class _BusinessState extends State<Business> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image.asset(
-                    'assets/images/prom1.jpg',
+                    'assets/images/promo1.png',
                     fit: BoxFit.cover,
                   ),
                 ),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image.asset(
-                    'assets/images/prom2.jpg',
+                    'assets/images/promo2.png',
                     fit: BoxFit.cover,
                   ),
                 ),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image.asset(
-                    'assets/images/prom3.jpg',
+                    'assets/images/promo3.png',
                     fit: BoxFit.cover,
                   ),
                 ),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image.asset(
-                    'assets/images/prom4.jpg',
+                    'assets/images/promo4.png',
                     fit: BoxFit.cover,
                   ),
                 ),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image.asset(
-                    'assets/images/prom5.jpg',
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                    'assets/images/prom6.jpg',
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                    'assets/images/prom7.jpg',
+                    'assets/images/promo5.png',
                     fit: BoxFit.cover,
                   ),
                 )

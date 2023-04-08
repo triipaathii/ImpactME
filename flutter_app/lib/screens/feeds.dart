@@ -145,7 +145,9 @@ class _FeedsState extends State<Feeds> {
                                 IconButton(
                                     onPressed: () {},
                                     icon:
-                                        Icon(CupertinoIcons.ellipsis_vertical))
+                                        Icon(Icons.delete),
+                                        iconSize: 30,
+                                        color: Color(0xff243b55),)
                               ],
                             ),
                             SizedBox(
