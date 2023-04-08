@@ -105,6 +105,7 @@ class _BusinessState extends State<Business> {
                       currentCarouselPageIndex = index;
                     });
                   },
+                  height: height * 0.2,
                   autoPlay: true,
                   autoPlayAnimationDuration: Duration(seconds: 1),
                   autoPlayCurve: Curves.decelerate,
