@@ -3,11 +3,11 @@
 ## *"Ending Poverty's Vicious Cycle"*
 
 
-
+<!-- 
 # Google Solution Challenge 2023
 
 
-<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228425245-568ebcfc-b1ec-46a3-8b09-e9103a968072.jpg" align="center"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/98155526/228425245-568ebcfc-b1ec-46a3-8b09-e9103a968072.jpg" align="center"></p> -->
 
 
 At ImpactMe, we envision a world where no individual is deprivedof access to education and the opportunity to earn a livelihood. We believe that education is the most powerful tool that can be used to break the cycle of poverty, and our mission is to make it accessible to all, regardless of their socio-economic background.
